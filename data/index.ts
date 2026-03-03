@@ -71,68 +71,170 @@ export const gridItems = [
 
 // Tech Stack Items for Animated Tooltip
 export const techStackItems = [
+  // Frontend
   {
     id: 1,
-    name: "React",
-    designation: "Frontend Library",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    name: "HTML",
+    designation: "Frontend",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
   },
   {
     id: 2,
-    name: "PHP",
-    designation: "Backend Language",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+    name: "CSS",
+    designation: "Frontend",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
   },
   {
     id: 3,
-    name: "Laravel",
-    designation: "PHP Framework",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg",
+    name: "JavaScript",
+    designation: "Frontend",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
   },
   {
     id: 4,
-    name: "JavaScript",
-    designation: "Programming Language",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+    name: "Bootstrap",
+    designation: "Frontend",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
   },
   {
     id: 5,
-    name: "Python",
-    designation: "Programming Language",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    name: "Tailwind CSS",
+    designation: "Frontend",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
   },
   {
     id: 6,
-    name: "FastAPI",
-    designation: "Python Framework",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
+    name: "React.js",
+    designation: "Frontend",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
   },
   {
     id: 7,
-    name: "Tailwind CSS",
-    designation: "CSS Framework",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+    name: "Laravel",
+    designation: "Frontend",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg",
   },
   {
     id: 8,
-    name: "PostgreSQL",
-    designation: "SQL Database",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+    name: "Next.js",
+    designation: "Frontend",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
   },
   {
     id: 9,
-    name: "Azure",
-    designation: "Cloud Platform",
-    image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
+    name: "Livewire",
+    designation: "Frontend",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/livewire/livewire-original.svg",
+  },
+  // Backend
+  {
+    id: 10,
+    name: "Python",
+    designation: "Backend",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+  },
+  {
+    id: 11,
+    name: "Django REST",
+    designation: "Backend",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/djangorest/djangorest-original.svg",
+  },
+  {
+    id: 12,
+    name: "Golang",
+    designation: "Backend",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg",
+  },
+  {
+    id: 13,
+    name: "Java",
+    designation: "Backend",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+  },
+  {
+    id: 14,
+    name: "Spring Boot",
+    designation: "Backend",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
+  },
+  {
+    id: 15,
+    name: "Express.js",
+    designation: "Backend",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+  },
+  {
+    id: 16,
+    name: "Nest.js",
+    designation: "Backend",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg",
+  },
+  {
+    id: 17,
+    name: "Flask",
+    designation: "Backend",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg",
+  },
+  {
+    id: 18,
+    name: "FastAPI",
+    designation: "Backend",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
+  },
+  // Other Tools
+  {
+    id: 19,
+    name: "MySQL",
+    designation: "Other Tools",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+  },
+  {
+    id: 20,
+    name: "PostgreSQL",
+    designation: "Other Tools",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+  },
+  {
+    id: 21,
+    name: "MongoDB",
+    designation: "Other Tools",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+  },
+  {
+    id: 22,
+    name: "REST API",
+    designation: "Other Tools",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/openapi/openapi-original.svg",
+  },
+  {
+    id: 23,
+    name: "PowerApps",
+    designation: "Other Tools",
+    image: "/power-apps.svg",
+  },
+  {
+    id: 24,
+    name: "SharePoint",
+    designation: "Other Tools",
+    image: "/sharepoint.svg",
+  },
+  {
+    id: 25,
+    name: "Power Automate",
+    designation: "Other Tools",
+    image: "/power-automate.svg",
+  },
+  {
+    id: 26,
+    name: "RabbitMQ",
+    designation: "Other Tools",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rabbitmq/rabbitmq-original.svg",
+  },
+  {
+    id: 27,
+    name: "VectorDB",
+    designation: "Other Tools",
+    image: "/db-blue.svg",
   },
 ];
 
