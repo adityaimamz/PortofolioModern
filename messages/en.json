@@ -11,18 +11,17 @@
         "tagline": "Dynamic Web Magic with Next.js",
         "title": "Transforming Concepts into Seamless User Experiences",
         "intro": "Hi! I'm Aditya Imam Zuhdi, a Full-Stack Web Developer.",
-        "button": "Show my work"
+        "button": "Download my resume"
     },
     "grid": {
-        "item1Title": "I build end-to-end digital solutions that merge robust back-end architecture with polished, intuitive front-end experiences.",
-        "item1Desc": "Full-Stack Developer specializing in crafting seamless user experiences",
-        "item2Title": "I'm very flexible with time zone communications",
-        "item3Title": "My tech stack",
-        "item3Desc": "I constantly try to improve",
-        "item4Title": "Tech enthusiast with a passion for development.",
-        "item5Title": "Currently building scalable full-stack applications",
-        "item5Desc": "The Inside Scoop",
-        "item6Title": "Do you want to start a project together?"
+        "item1Title": "Building scalable solutions with Go, Python, and Next.js.",
+        "item1Desc": "The Focus",
+        "item2Title": "Developer's logic, photographer's eye.",
+        "item2Desc": "Visual Aesthetics",
+        "item3Title": "I'm very flexible with time zone communications",
+        "item6Title": "Currently building scalable full-stack applications",
+        "item6Desc": "The Inside Scoop",
+        "item7Title": "Do you want to start a project together?"
     },
     "techStack": {
         "heading": "Tech Stack",

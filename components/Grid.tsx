@@ -6,11 +6,10 @@ import { BentoGrid, BentoGridItem } from "./ui/BentoGrid";
 
 const gridTextKeys: Record<number, { title: string; desc?: string }> = {
   1: { title: "grid.item1Title", desc: "grid.item1Desc" },
-  2: { title: "grid.item2Title" },
-  3: { title: "grid.item3Title", desc: "grid.item3Desc" },
-  4: { title: "grid.item4Title" },
-  5: { title: "grid.item5Title", desc: "grid.item5Desc" },
-  6: { title: "grid.item6Title" },
+  2: { title: "grid.item2Title", desc: "grid.item2Desc" },
+  3: { title: "grid.item3Title" },
+  6: { title: "grid.item6Title", desc: "grid.item6Desc" },
+  7: { title: "grid.item7Title" },
 };
 
 const Grid = () => {
@@ -38,4 +37,3 @@ const Grid = () => {
 };
 
 export default Grid;
-

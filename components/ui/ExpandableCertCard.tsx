@@ -43,10 +43,10 @@ export function ExpandableCertCard({ cert, index }: { cert: any; index: number }
             <motion.div
               layoutId={`card-${cert.name}-${id}`}
               ref={ref}
-              className="w-full max-w-2xl flex flex-col bg-slate-900 border border-white/20 sm:rounded-3xl rounded-xl overflow-hidden shadow-2xl"
+              className="w-full max-w-2xl flex flex-col bg-neutral-900 border border-white/20 sm:rounded-3xl rounded-xl overflow-hidden shadow-2xl"
             >
               <div className="relative relative flex items-center justify-center p-4">
-                <div className="w-full relative overflow-hidden bg-slate-800 rounded-t-xl sm:rounded-tl-3xl sm:rounded-tr-3xl">
+                <div className="w-full relative overflow-hidden bg-neutral-800 rounded-t-xl sm:rounded-tl-3xl sm:rounded-tr-3xl">
                   {/* Default fallback image / Background */}
                   <img
                     src="/bg.png"
@@ -94,8 +94,8 @@ export function ExpandableCertCard({ cert, index }: { cert: any; index: number }
                 </div>
               </div>
 
-              <div className="p-6 flex flex-col bg-slate-950 relative">
-                <div className="w-16 h-16 rounded-2xl bg-slate-900 border border-white/10 flex items-center justify-center mb-6 z-10 shadow-xl hidden">
+              <div className="p-6 flex flex-col bg-neutral-950 relative">
+                <div className="w-16 h-16 rounded-2xl bg-neutral-900 border border-white/10 flex items-center justify-center mb-6 z-10 shadow-xl hidden">
                   <span className="text-2xl text-purple">📜</span>
                 </div>
                 
@@ -159,7 +159,7 @@ export function ExpandableCertCard({ cert, index }: { cert: any; index: number }
           <div className="flex-1 min-w-0">
             <motion.h3 
               layoutId={`title-${cert.name}-${id}`}
-              className="text-sm md:text-base font-bold text-white truncate"
+              className="text-sm md:text-base font-bold text-white line-clamp-2 leading-snug"
             >
               {cert.name}
             </motion.h3>

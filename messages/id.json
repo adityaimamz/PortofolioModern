@@ -11,18 +11,17 @@
         "tagline": "Keajaiban Web Dinamis dengan Next.js",
         "title": "Mengubah Konsep Menjadi Pengalaman Pengguna yang Mulus",
         "intro": "Halo! Saya Aditya Imam Zuhdi, Full-Stack Web Developer.",
-        "button": "Lihat karya saya"
+        "button": "Unduh resume saya"
     },
     "grid": {
-        "item1Title": "Saya membangun solusi digital end-to-end yang menggabungkan arsitektur back-end yang kuat dengan pengalaman front-end yang halus dan intuitif.",
-        "item1Desc": "Full-Stack Developer yang berspesialisasi dalam menciptakan pengalaman pengguna yang mulus",
-        "item2Title": "Saya sangat fleksibel dengan komunikasi lintas zona waktu",
-        "item3Title": "Tech stack saya",
-        "item3Desc": "Saya selalu berusaha untuk meningkatkan kemampuan",
-        "item4Title": "Penggemar teknologi dengan semangat untuk pengembangan.",
-        "item5Title": "Sedang membangun aplikasi full-stack yang skalabel",
-        "item5Desc": "Info Terkini",
-        "item6Title": "Ingin memulai proyek bersama?"
+        "item1Title": "Membangun solusi skalabel dengan Go, Python, dan Next.js.",
+        "item1Desc": "Fokus Utama",
+        "item2Title": "Logika developer, mata fotografer.",
+        "item2Desc": "Estetika Visual",
+        "item3Title": "Saya sangat fleksibel dengan komunikasi lintas zona waktu",
+        "item6Title": "Sedang membangun aplikasi full-stack yang skalabel",
+        "item6Desc": "Info Terkini",
+        "item7Title": "Ingin memulai proyek bersama?"
     },
     "techStack": {
         "heading": "Tech Stack",

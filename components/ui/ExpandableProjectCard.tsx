@@ -45,12 +45,12 @@ export function ExpandableProjectCard({ item }: { item: any }) {
             <motion.div
               layoutId={`card-${item.id}-${id}`}
               ref={ref}
-              className="w-full max-w-3xl flex flex-col bg-slate-900 border border-white/20 sm:rounded-3xl rounded-xl overflow-hidden shadow-2xl"
+              className="w-full max-w-3xl flex flex-col bg-neutral-900 border border-white/20 sm:rounded-3xl rounded-xl overflow-hidden shadow-2xl"
             >
               <div className="relative">
                 <motion.div
                   layoutId={`image-${item.id}-${id}`}
-                  className="w-full h-64 md:h-96 relative overflow-hidden bg-[#13162D]"
+                  className="w-full h-64 md:h-96 relative overflow-hidden bg-[#111111]"
                 >
                   <img
                     src="/bg.png"
@@ -90,7 +90,7 @@ export function ExpandableProjectCard({ item }: { item: any }) {
                 </div>
               </div>
 
-              <div className="p-6 md:p-8 flex flex-col bg-slate-950">
+              <div className="p-6 md:p-8 flex flex-col bg-neutral-950">
                 <div className="flex justify-between items-start mb-4 gap-4">
                   <motion.h1
                     layoutId={`title-${item.id}-${id}`}
@@ -163,7 +163,7 @@ export function ExpandableProjectCard({ item }: { item: any }) {
           <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10 transition-transform duration-300 group-hover:scale-[1.02]">
             <motion.div
               layoutId={`image-${item.id}-${id}`}
-              className="absolute inset-0 w-full h-full overflow-hidden rounded-2xl lg:rounded-3xl bg-[#13162D]"
+              className="absolute inset-0 w-full h-full overflow-hidden rounded-2xl lg:rounded-3xl bg-[#111111]"
             >
               <img src="/bg.png" alt="bgimg" className="w-full h-full object-cover" />
               <img

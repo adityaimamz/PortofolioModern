@@ -53,11 +53,11 @@ const Education = () => {
                 </div>
 
                 <div className="relative z-10 p-6">
-                  <div className="flex items-start justify-between mb-3">
+                  <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-3 gap-2 sm:gap-0">
                     <h3 className="text-lg font-bold text-white">
                       {edu.degree}
                     </h3>
-                    <span className="text-purple text-xs font-semibold bg-purple/10 px-3 py-1 rounded-full whitespace-nowrap ml-2">
+                    <span className="text-purple text-xs font-semibold bg-purple/10 px-3 py-1 rounded-full whitespace-nowrap self-start sm:self-auto">
                       {edu.year}
                     </span>
                   </div>
