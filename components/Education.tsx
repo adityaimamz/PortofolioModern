@@ -1,27 +1,40 @@
 "use client";
 
 import React from "react";
-import { educationData, certifications } from "@/data";
+import { useTranslation } from "@/context/LanguageContext";
 import { motion } from "framer-motion";
-import { EvervaultCard } from "./ui/evervault-card";
 
 const Education = () => {
+  const { t } = useTranslation();
+  const degrees = t("education.degrees") as Array<{
+    degree: string;
+    institution: string;
+    year: string;
+    description: string;
+  }>;
+  const certs = t("education.certs") as Array<{
+    name: string;
+    issuer: string;
+    year: string;
+  }>;
+
   return (
     <section className="py-20" id="education">
       <h1 className="heading">
-        Education & <span className="text-purple">Certifications</span>
+        {t("education.headingPrefix")}{" "}
+        <span className="text-purple">{t("education.heading")}</span>
       </h1>
 
       <div className="w-full mt-12 grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
         {/* Education Column */}
         <div>
           <h2 className="text-xl md:text-2xl font-bold text-white mb-6 flex items-center gap-2">
-            <span className="text-purple">🎓</span> Education
+            <span className="text-purple">🎓</span> {t("education.educationLabel")}
           </h2>
           <div className="flex flex-col gap-6">
-            {educationData.map((edu, index) => (
+            {degrees.map((edu, index) => (
               <motion.div
-                key={edu.id}
+                key={index}
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
@@ -62,12 +75,12 @@ const Education = () => {
         {/* Certifications Column */}
         <div>
           <h2 className="text-xl md:text-2xl font-bold text-white mb-6 flex items-center gap-2">
-            <span className="text-purple">📜</span> Certifications
+            <span className="text-purple">📜</span> {t("education.certificationsLabel")}
           </h2>
           <div className="flex flex-col gap-4">
-            {certifications.map((cert, index) => (
+            {certs.map((cert, index) => (
               <motion.div
-                key={cert.id}
+                key={index}
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -107,3 +120,4 @@ const Education = () => {
 };
 
 export default Education;
+

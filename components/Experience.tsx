@@ -1,12 +1,20 @@
 "use client";
 
 import React from "react";
-import { workExperience } from "@/data";
+import { useTranslation } from "@/context/LanguageContext";
 import { Timeline } from "./ui/timeline";
 
 const Experience = () => {
-  const timelineData = workExperience
-    .slice()
+  const { t } = useTranslation();
+  const jobs = t("experience.jobs") as Array<{
+    title: string;
+    company: string;
+    duration: string;
+    desc: string;
+    achievements: string[];
+  }>;
+
+  const timelineData = [...jobs]
     .reverse()
     .map((exp) => ({
       title: exp.duration,
@@ -31,10 +39,10 @@ const Experience = () => {
           {exp.achievements && exp.achievements.length > 0 && (
             <div className="space-y-2">
               <p className="text-white text-sm font-semibold">
-                Key Achievements:
+                {t("experience.keyAchievements")}
               </p>
               <ul className="space-y-2">
-                {exp.achievements.map((achievement, i) => (
+                {exp.achievements.map((achievement: string, i: number) => (
                   <li
                     key={i}
                     className="flex items-start gap-2 text-white-100 text-sm"
@@ -46,15 +54,6 @@ const Experience = () => {
               </ul>
             </div>
           )}
-
-          {/* Thumbnail */}
-          <div className="mt-4 flex items-center gap-3">
-            <img
-              src={exp.thumbnail}
-              alt={exp.title}
-              className="w-10 h-10 md:w-12 md:h-12 opacity-60"
-            />
-          </div>
         </div>
       ),
     }));
@@ -62,7 +61,8 @@ const Experience = () => {
   return (
     <div className="py-20 w-full" id="experience">
       <h1 className="heading">
-        My <span className="text-purple">work experience</span>
+        {t("experience.headingPrefix")}{" "}
+        <span className="text-purple">{t("experience.heading")}</span>
       </h1>
       <div className="w-full mt-12">
         <Timeline data={timelineData} />
@@ -72,3 +72,4 @@ const Experience = () => {
 };
 
 export default Experience;
+

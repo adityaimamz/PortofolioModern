@@ -1,9 +1,14 @@
+"use client";
+
 import { FaLocationArrow } from "react-icons/fa6";
+import { useTranslation } from "@/context/LanguageContext";
 
 import { socialMedia } from "@/data";
 import MagicButton from "./MagicButton";
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="w-full pt-20 pb-10" id="contact">
       {/* background grid */}
@@ -17,16 +22,16 @@ const Footer = () => {
 
       <div className="flex flex-col items-center">
         <h1 className="heading lg:max-w-[45vw]">
-          Ready to take <span className="text-purple">your</span> digital
-          presence to the next level?
+          {t("footer.headingPart1")}{" "}
+          <span className="text-purple">{t("footer.headingHighlight")}</span>{" "}
+          {t("footer.headingPart2")}
         </h1>
         <p className="text-white-200 md:mt-10 my-5 text-center">
-          Reach out to me today and let&apos;s discuss how I can help you
-          achieve your goals.
+          {t("footer.subtitle")}
         </p>
         <a href="mailto:20102217@ittelkom-pwt.ac.id">
           <MagicButton
-            title="Let's get in touch"
+            title={t("footer.button")}
             icon={<FaLocationArrow />}
             position="right"
           />
@@ -34,7 +39,7 @@ const Footer = () => {
       </div>
       <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
         <p className="md:text-base text-sm md:font-normal font-light">
-          Copyright © 2024 Aditya Imam Zuhdi
+          {t("footer.copyright")}
         </p>
 
         <div className="flex items-center md:gap-3 gap-6">
@@ -56,3 +61,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

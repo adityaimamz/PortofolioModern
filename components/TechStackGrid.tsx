@@ -2,18 +2,21 @@
 
 import React from "react";
 import { techStackItems } from "@/data";
+import { useTranslation } from "@/context/LanguageContext";
 import { AnimatedTooltip } from "./ui/animated-tooltip";
 import { motion } from "framer-motion";
 
 const TechStackGrid = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="py-20" id="tech-stack">
       <h1 className="heading">
-        My <span className="text-purple">Tech Stack</span>
+        {t("techStack.headingPrefix")}{" "}
+        <span className="text-purple">{t("techStack.heading")}</span>
       </h1>
       <p className="text-center text-white-200 mt-4 mb-12 text-sm md:text-base max-w-2xl mx-auto">
-        Technologies I work with to build robust, scalable, and beautiful
-        applications
+        {t("techStack.subtitle")}
       </p>
 
       {/* Animated Tooltip Row */}
@@ -64,3 +67,4 @@ const TechStackGrid = () => {
 };
 
 export default TechStackGrid;
+

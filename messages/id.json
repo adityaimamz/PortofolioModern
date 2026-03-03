@@ -1,0 +1,168 @@
+{
+    "nav": {
+        "about": "Tentang",
+        "projects": "Proyek",
+        "testimonials": "Testimoni",
+        "experience": "Pengalaman",
+        "contact": "Kontak",
+        "contactMe": "Hubungi Saya"
+    },
+    "hero": {
+        "tagline": "Keajaiban Web Dinamis dengan Next.js",
+        "title": "Mengubah Konsep Menjadi Pengalaman Pengguna yang Mulus",
+        "intro": "Halo! Saya Aditya Imam Zuhdi, Full-Stack Web Developer.",
+        "button": "Lihat karya saya"
+    },
+    "grid": {
+        "item1Title": "Saya membangun solusi digital end-to-end yang menggabungkan arsitektur back-end yang kuat dengan pengalaman front-end yang halus dan intuitif.",
+        "item1Desc": "Full-Stack Developer yang berspesialisasi dalam menciptakan pengalaman pengguna yang mulus",
+        "item2Title": "Saya sangat fleksibel dengan komunikasi lintas zona waktu",
+        "item3Title": "Tech stack saya",
+        "item3Desc": "Saya selalu berusaha untuk meningkatkan kemampuan",
+        "item4Title": "Penggemar teknologi dengan semangat untuk pengembangan.",
+        "item5Title": "Sedang membangun aplikasi full-stack yang skalabel",
+        "item5Desc": "Info Terkini",
+        "item6Title": "Ingin memulai proyek bersama?"
+    },
+    "techStack": {
+        "heading": "Tech Stack",
+        "headingPrefix": "",
+        "subtitle": "Teknologi yang saya gunakan untuk membangun aplikasi yang kuat, skalabel, dan indah"
+    },
+    "experience": {
+        "heading": "pengalaman kerja",
+        "headingPrefix": "",
+        "keyAchievements": "Pencapaian Utama:",
+        "jobs": [
+            {
+                "title": "Full-stack Developer",
+                "company": "PT. Sigma Cipta Caraka (Telkomsigma)",
+                "duration": "Juli 2024 - Sekarang",
+                "desc": "Mengembangkan aplikasi backend menggunakan Python, Java, JavaScript, dan Golang.",
+                "achievements": [
+                    "Berkolaborasi dalam pengembangan aplikasi internal/eksternal",
+                    "Menambahkan fitur baru dan memperbaiki bug",
+                    "Melaksanakan migrasi data komprehensif"
+                ]
+            },
+            {
+                "title": "Full-stack Web Developer",
+                "company": "Bakso Liktono",
+                "duration": "Desember 2023 - Maret 2024",
+                "desc": "Mengembangkan berbagai solusi web sebagai Full-stack Developer.",
+                "achievements": []
+            },
+            {
+                "title": "Full-stack Web Developer",
+                "company": "Persatuan Ahli Gizi Indonesia (PERSAGI)",
+                "duration": "Juli 2023 - September 2023",
+                "desc": "Berkontribusi dalam pengembangan dan pemeliharaan website.",
+                "achievements": []
+            },
+            {
+                "title": "Full-stack Developer",
+                "company": "Solo Technopark",
+                "duration": "Februari 2023 - Juli 2023",
+                "desc": "Terlibat dalam perancangan sistem informasi 'Soto Panaz' (Solo Technopark Analyzer).",
+                "achievements": [
+                    "Migrasi website dari WordPress ke Node.js",
+                    "Implementasi sistem menggunakan PHP, Bootstrap, Next.js, Express.js, dan Tailwind CSS"
+                ]
+            }
+        ]
+    },
+    "education": {
+        "heading": "Sertifikasi",
+        "headingPrefix": "Pendidikan &",
+        "educationLabel": "Pendidikan",
+        "certificationsLabel": "Sertifikasi",
+        "degrees": [
+            {
+                "degree": "S.Kom, Pemrograman Komputer",
+                "institution": "Universitas Telkom",
+                "year": "Juni 2020 - Juni 2024",
+                "description": "Aplikasi Spesifik. Lulus dengan gelar Sarjana Komputer."
+            },
+            {
+                "degree": "Studi Independen (Pengembangan Web)",
+                "institution": "Dicoding Indonesia",
+                "year": "Juli 2022 - Februari 2023",
+                "description": "Fokus pada pengembangan web, JavaScript, HTML, CSS, dan penggunaan Git."
+            }
+        ],
+        "certs": [
+            {
+                "name": "Prompt Engineering untuk Software Developer",
+                "issuer": "Sertifikasi",
+                "year": "N/A"
+            },
+            {
+                "name": "Microsoft Certified: Azure AI Fundamentals",
+                "issuer": "Microsoft",
+                "year": "N/A"
+            },
+            {
+                "name": "Belajar Dasar Pemrograman Web",
+                "issuer": "Sertifikasi",
+                "year": "N/A"
+            },
+            {
+                "name": "Business Ethics for Sales Professionals",
+                "issuer": "Sertifikasi",
+                "year": "N/A"
+            }
+        ]
+    },
+    "projects": {
+        "heading": "proyek terbaru",
+        "headingPrefix": "Beberapa pilihan",
+        "items": [
+            {
+                "title": "Celestial Scroll - Novel Reader",
+                "des": "Platform membaca web modern yang dirancang khusus untuk pembaca light novel dengan fitur kustomisasi penuh dan PWA."
+            },
+            {
+                "title": "POS for UMKM Cemanting Art",
+                "des": "Aplikasi Full-Stack POS yang dikembangkan untuk mengatasi masalah manajemen keuangan dan pencatatan laba/rugi pada UMKM."
+            },
+            {
+                "title": "SoloTechnopark.id & Incubator Portal",
+                "des": "Profil perusahaan yang menjadi portal khusus bagi lembaga inkubator untuk pendampingan UKM dan Start-Up di Kota Solo."
+            },
+            {
+                "title": "E-learning School",
+                "des": "Platform inovatif untuk meningkatkan pendidikan daring melalui manajemen materi edukasi, penugasan, hingga fitur chat."
+            }
+        ]
+    },
+    "approach": {
+        "heading": "pendekatan",
+        "headingPrefix": "",
+        "phases": [
+            {
+                "title": "Perencanaan & Strategi",
+                "order": "Fase 1",
+                "des": "Kita akan berkolaborasi untuk memetakan tujuan website Anda, target audiens, dan fungsionalitas utama. Kita akan mendiskusikan hal-hal seperti struktur situs, navigasi, dan kebutuhan konten."
+            },
+            {
+                "title": "Pengembangan & Update Progres",
+                "order": "Fase 2",
+                "des": "Setelah kita sepakat dengan rencana, saya mulai coding dengan playlist lofi. Dari sketsa awal hingga kode yang rapi, saya selalu mengupdate Anda di setiap langkah."
+            },
+            {
+                "title": "Pengembangan & Peluncuran",
+                "order": "Fase 3",
+                "des": "Di sinilah keajaiban terjadi! Berdasarkan desain yang disetujui, saya akan menerjemahkan semuanya menjadi kode fungsional, membangun website Anda dari nol."
+            }
+        ]
+    },
+    "footer": {
+        "heading": "Siap membawa kehadiran <span>digital</span> Anda ke level berikutnya?",
+        "headingPart1": "Siap membawa kehadiran",
+        "headingHighlight": "digital",
+        "headingPart2": "Anda ke level berikutnya?",
+        "subtitle": "Hubungi saya hari ini dan mari diskusikan bagaimana saya bisa membantu Anda mencapai tujuan Anda.",
+        "button": "Mari terhubung",
+        "copyright": "Hak Cipta © 2024 Aditya Imam Zuhdi"
+    }
+}

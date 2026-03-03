@@ -1,0 +1,168 @@
+{
+    "nav": {
+        "about": "About",
+        "projects": "Projects",
+        "testimonials": "Testimonials",
+        "experience": "Experience",
+        "contact": "Contact",
+        "contactMe": "Contact Me"
+    },
+    "hero": {
+        "tagline": "Dynamic Web Magic with Next.js",
+        "title": "Transforming Concepts into Seamless User Experiences",
+        "intro": "Hi! I'm Aditya Imam Zuhdi, a Full-Stack Web Developer.",
+        "button": "Show my work"
+    },
+    "grid": {
+        "item1Title": "I build end-to-end digital solutions that merge robust back-end architecture with polished, intuitive front-end experiences.",
+        "item1Desc": "Full-Stack Developer specializing in crafting seamless user experiences",
+        "item2Title": "I'm very flexible with time zone communications",
+        "item3Title": "My tech stack",
+        "item3Desc": "I constantly try to improve",
+        "item4Title": "Tech enthusiast with a passion for development.",
+        "item5Title": "Currently building scalable full-stack applications",
+        "item5Desc": "The Inside Scoop",
+        "item6Title": "Do you want to start a project together?"
+    },
+    "techStack": {
+        "heading": "Tech Stack",
+        "headingPrefix": "My",
+        "subtitle": "Technologies I work with to build robust, scalable, and beautiful applications"
+    },
+    "experience": {
+        "heading": "work experience",
+        "headingPrefix": "My",
+        "keyAchievements": "Key Achievements:",
+        "jobs": [
+            {
+                "title": "Full-stack Developer",
+                "company": "PT. Sigma Cipta Caraka (Telkomsigma)",
+                "duration": "July 2024 - Present",
+                "desc": "Developing backend applications using Python, Java, JavaScript, and Golang.",
+                "achievements": [
+                    "Collaborated in the development of internal/external applications",
+                    "Added new features and fixed bugs",
+                    "Performed comprehensive data migration"
+                ]
+            },
+            {
+                "title": "Full-stack Web Developer",
+                "company": "Bakso Liktono",
+                "duration": "December 2023 - March 2024",
+                "desc": "Developed various web solutions as a Full-stack Developer.",
+                "achievements": []
+            },
+            {
+                "title": "Full-stack Web Developer",
+                "company": "Persatuan Ahli Gizi Indonesia (PERSAGI)",
+                "duration": "July 2023 - September 2023",
+                "desc": "Contributed to the development and maintenance of the website.",
+                "achievements": []
+            },
+            {
+                "title": "Full-stack Developer",
+                "company": "Solo Technopark",
+                "duration": "February 2023 - July 2023",
+                "desc": "Involved in designing the 'Soto Panaz' (Solo Technopark Analyzer) information system.",
+                "achievements": [
+                    "Migrated website from WordPress to Node.js",
+                    "Implemented systems using PHP, Bootstrap, Next.js, Express.js, and Tailwind CSS"
+                ]
+            }
+        ]
+    },
+    "education": {
+        "heading": "Certifications",
+        "headingPrefix": "Education &",
+        "educationLabel": "Education",
+        "certificationsLabel": "Certifications",
+        "degrees": [
+            {
+                "degree": "S.Kom, Computer Programming",
+                "institution": "Universitas Telkom",
+                "year": "June 2020 - June 2024",
+                "description": "Specific Application. Graduated with a Bachelor of Computer Science degree."
+            },
+            {
+                "degree": "Independent Study (Web Development)",
+                "institution": "Dicoding Indonesia",
+                "year": "July 2022 - February 2023",
+                "description": "Focused on web development, JavaScript, HTML, CSS, and Git usage."
+            }
+        ],
+        "certs": [
+            {
+                "name": "Prompt Engineering for Software Developers",
+                "issuer": "Certification",
+                "year": "N/A"
+            },
+            {
+                "name": "Microsoft Certified: Azure AI Fundamentals",
+                "issuer": "Microsoft",
+                "year": "N/A"
+            },
+            {
+                "name": "Basic Web Programming",
+                "issuer": "Certification",
+                "year": "N/A"
+            },
+            {
+                "name": "Business Ethics for Sales Professionals",
+                "issuer": "Certification",
+                "year": "N/A"
+            }
+        ]
+    },
+    "projects": {
+        "heading": "recent projects",
+        "headingPrefix": "A small selection of",
+        "items": [
+            {
+                "title": "Celestial Scroll - Novel Reader",
+                "des": "A modern web reading platform designed specifically for light novel readers with full customization features and PWA."
+            },
+            {
+                "title": "POS for UMKM Cemanting Art",
+                "des": "A Full-Stack POS application developed to address financial management and profit/loss tracking issues in small businesses."
+            },
+            {
+                "title": "SoloTechnopark.id & Incubator Portal",
+                "des": "A company profile serving as a dedicated portal for incubator institutions to support SMEs and Start-Ups in Solo City."
+            },
+            {
+                "title": "E-learning School",
+                "des": "An innovative platform to enhance online education through educational material management, assignments, and chat features."
+            }
+        ]
+    },
+    "approach": {
+        "heading": "approach",
+        "headingPrefix": "My",
+        "phases": [
+            {
+                "title": "Planning & Strategy",
+                "order": "Phase 1",
+                "des": "We'll collaborate to map out your website's goals, target audience, and key functionalities. We'll discuss things like site structure, navigation, and content requirements."
+            },
+            {
+                "title": "Development & Progress Update",
+                "order": "Phase 2",
+                "des": "Once we agree on the plan, I cue my lofi playlist and dive into coding. From initial sketches to polished code, I keep you updated every step of the way."
+            },
+            {
+                "title": "Development & Launch",
+                "order": "Phase 3",
+                "des": "This is where the magic happens! Based on the approved design, I'll translate everything into functional code, building your website from the ground up."
+            }
+        ]
+    },
+    "footer": {
+        "heading": "Ready to take <span>your</span> digital presence to the next level?",
+        "headingPart1": "Ready to take",
+        "headingHighlight": "your",
+        "headingPart2": "digital presence to the next level?",
+        "subtitle": "Reach out to me today and let's discuss how I can help you achieve your goals.",
+        "button": "Let's get in touch",
+        "copyright": "Copyright © 2024 Aditya Imam Zuhdi"
+    }
+}
