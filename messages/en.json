@@ -94,22 +94,26 @@
             {
                 "name": "Prompt Engineering for Software Developers",
                 "issuer": "Certification",
-                "year": "N/A"
+                "img": "/cert/prompt-engineer.png",
+                "year": "2025"
             },
             {
                 "name": "Microsoft Certified: Azure AI Fundamentals",
                 "issuer": "Microsoft",
-                "year": "N/A"
+                "img": "/cert/Microsoft Certified Azure AI Fundamentals.jpg",
+                "year": "2025"
             },
             {
                 "name": "Basic Web Programming",
-                "issuer": "Certification",
-                "year": "N/A"
+                "issuer": "BNSP Indonesia (Badan Nasional Sertifikasi Profesi)",
+                "img": "/cert/BNSP.jpg",
+                "year": "2024"
             },
             {
-                "name": "Business Ethics for Sales Professionals",
+                "name": "NestJS Zero to Hero - Modern TypeScript Back-end Development",
                 "issuer": "Certification",
-                "year": "N/A"
+                "img": "/cert/Nest Js Udemy.jpg",
+                "year": "2025"
             }
         ]
     },

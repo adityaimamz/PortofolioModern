@@ -132,10 +132,12 @@ Aditya adalah seorang Full-Stack Web Developer yang berdedikasi dengan minat kua
 * Microsoft Certified: Azure AI Fundamentals.
 
 
-* Belajar Dasar Pemrograman Web.
+* Junior Web Developer.
 
 
-* Business Ethics for Sales Professionals.
+* NestJS Zero to Hero - Modern TypeScript Back-end Development
+
+.
 
 
 
