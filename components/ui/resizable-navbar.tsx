@@ -231,9 +231,12 @@ export const NavbarLogo = () => {
   return (
     <a
       href="#"
-      className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal"
+      className="relative z-20 mr-4 flex items-center space-x-3 px-2 py-1"
     >
-      <span className="font-bold text-lg text-white">Portfolio</span>
+      <img src="/logo.png" alt="Logo IZAditya" width={38} height={38} className="object-contain" />
+      <span className="text-2xl tracking-widest text-white uppercase">
+        <span className="font-bold">IZ</span><span className="font-light">Aditya</span>
+      </span>
     </a>
   );
 };
