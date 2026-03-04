@@ -1,0 +1,10 @@
+﻿components/ui/Globe.tsx(5,20): error TS2305: Module '"@react-three/fiber"' has no exported member 'Object3DNode'.
+components/ui/HoverBorder.tsx(59,6): error TS2746: This JSX tag's 'children' prop expects a single child of type 'never', but multiple children were provided.
+components/ui/HoverBorder.tsx(60,7): error TS2322: Type '(event: React.MouseEvent<HTMLDivElement>) => void' is not assignable to type 'never'.
+components/ui/HoverBorder.tsx(63,7): error TS2322: Type '() => void' is not assignable to type 'never'.
+components/ui/HoverBorder.tsx(64,7): error TS2322: Type 'string' is not assignable to type 'never'.
+components/ui/MovingBorders.tsx(86,19): error TS2554: Expected 1 arguments, but got 0.
+components/ui/ResizableNavbar.tsx(274,6): error TS2745: This JSX tag's 'children' prop expects type 'never' which requires multiple children, but only a single child was provided.
+components/ui/ResizableNavbar.tsx(275,7): error TS2322: Type 'string | undefined' is not assignable to type 'never'.
+  Type 'undefined' is not assignable to type 'never'.
+components/ui/ResizableNavbar.tsx(276,7): error TS2322: Type 'string' is not assignable to type 'never'.

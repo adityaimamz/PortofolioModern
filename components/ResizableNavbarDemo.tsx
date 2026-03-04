@@ -9,7 +9,7 @@ import {
   MobileNavHeader,
   MobileNavToggle,
   MobileNavMenu,
-} from "@/components/ui/resizable-navbar";
+} from "@/components/ui/ResizableNavbar";
 import { useState } from "react";
 
 export default function NavbarDemo() {

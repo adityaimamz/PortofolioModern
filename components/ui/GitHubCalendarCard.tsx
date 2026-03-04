@@ -101,6 +101,7 @@ const GitHubCalendarCard = () => {
           <span className="text-white/70 text-xs sm:text-sm font-medium">
             {language === "id" ? "Kontribusi GitHub" : "GitHub Contributions"}
           </span>
+          <span className="font-light text-xs sm:text-sm text-white/70">@adityaimamz</span>
         </div>
         <motion.span
           initial={{ opacity: 0, scale: 0.8 }}
@@ -153,8 +154,8 @@ const GitHubCalendarCard = () => {
       <div className="flex items-center justify-between mt-3 z-10">
         <p className="text-white/30 text-[10px] sm:text-xs italic">
           {language === "id"
-            ? "Konsistensi adalah kunci saya."
-            : "Consistency is my middle name."}
+            ? "Aktivitas GitHub saya selama setahun terakhir."
+            : "My GitHub activity over the past year."}
         </p>
         {/* Legend */}
         <div className="flex items-center gap-1">

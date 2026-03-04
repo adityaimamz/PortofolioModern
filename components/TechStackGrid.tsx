@@ -3,7 +3,7 @@
 import React from "react";
 import { techStackItems } from "@/data";
 import { useTranslation } from "@/context/LanguageContext";
-import { AnimatedTooltip } from "./ui/animated-tooltip";
+import { AnimatedTooltip } from "./ui/AnimatedTooltip";
 import { motion } from "framer-motion";
 
 const categories = [

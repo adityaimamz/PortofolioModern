@@ -5,7 +5,7 @@ import { useTranslation } from "@/context/LanguageContext";
 
 import MagicButton from "./MagicButton";
 // import { Spotlight } from "./ui/Spotlight";
-import { Spotlight } from "./ui/spotlight-new";
+import { Spotlight } from "./ui/SpotlightNew";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 
 const Hero = () => {
@@ -59,6 +59,7 @@ const Hero = () => {
            *  change md:text-6xl, add more responsive code
            */}
           <TextGenerateEffect
+            key={t("hero.title")}
             words={t("hero.title")}
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
           />

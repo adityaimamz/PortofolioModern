@@ -23,7 +23,7 @@ import {
   MobileNavHeader,
   MobileNavToggle,
   MobileNavMenu,
-} from "@/components/ui/resizable-navbar";
+} from "@/components/ui/ResizableNavbar";
 
 const Home = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
