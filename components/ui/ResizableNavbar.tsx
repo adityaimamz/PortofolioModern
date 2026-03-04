@@ -84,6 +84,7 @@ export const Navbar = ({ children, className }: NavbarProps) => {
 };
 
 export const NavBody = ({ children, className, visible }: NavBodyProps) => {
+  const childrenArray = React.Children.toArray(children);
   return (
     <motion.div
       animate={{
@@ -100,12 +101,26 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         damping: 50,
       }}
       className={cn(
-        "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-full overflow-hidden bg-transparent px-4 py-2 lg:flex",
+        "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-full overflow-hidden bg-transparent px-4 py-2 lg:flex gap-4",
         visible && "bg-black-200/80 backdrop-blur-md border border-white/[0.1]",
         className,
       )}
     >
-      {children}
+      <div className={cn(
+        "flex items-center justify-start shrink-0",
+        !visible && "flex-1 basis-0"
+      )}>
+        {childrenArray[0]}
+      </div>
+      <div className="flex-none shrink-0">
+        {childrenArray[1]}
+      </div>
+      <div className={cn(
+        "flex items-center justify-end shrink-0",
+        !visible && "flex-1 basis-0"
+      )}>
+        {childrenArray[2]}
+      </div>
     </motion.div>
   );
 };
@@ -117,7 +132,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
     <motion.div
       onMouseLeave={() => setHovered(null)}
       className={cn(
-        "hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-zinc-600 transition duration-200 hover:text-zinc-800 lg:flex lg:space-x-2",
+        "hidden flex-none flex-row items-center justify-center space-x-2 text-sm font-medium text-zinc-600 transition duration-200 hover:text-zinc-800 lg:flex lg:space-x-2",
         className,
       )}
     >
