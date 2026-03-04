@@ -34,38 +34,37 @@
         "keyAchievements": "Pencapaian Utama:",
         "jobs": [
             {
-                "title": "Full-stack Developer",
-                "company": "PT. Sigma Cipta Caraka (Telkomsigma)",
-                "duration": "Juli 2024 - Sekarang",
-                "desc": "Mengembangkan aplikasi backend menggunakan Python, Java, JavaScript, dan Golang.",
+                "title": "Programmer",
+                "company": "PT Sigma Cipta Caraka (Telkomsigma)",
+                "duration": "Jul 2024 - Sekarang",
+                "desc": "Merancang dan mengimplementasikan aplikasi web backend menggunakan Django Rest Framework, Golang, Java Springboot, Flask, FastAPI, dan Nest Js.",
                 "achievements": [
-                    "Berkolaborasi dalam pengembangan aplikasi internal/eksternal",
-                    "Menambahkan fitur baru dan memperbaiki bug",
-                    "Melaksanakan migrasi data komprehensif"
+                    "Melakukan pemutakhiran komponen dan migrasi pada sistem e-CLEARS KPEI menggunakan Java Spring Boot, memastikan kompatibilitas dengan versi Spring Boot terbaru dan Java 17+, serta mengintegrasikan pemutakhiran di dalam arsitektur microservices.",
+                    "Berkolaborasi dengan tim lintas disiplin untuk meningkatkan aplikasi web internal maupun eksternal.",
+                    "Melakukan migrasi data untuk memastikan integrasi yang mulus pada implementasi aplikasi baru.",
+                    "Bekerja sama dengan developer untuk memecahkan masalah teknis (bug fixes) dan mengantarkan fitur baru secara efektif.",
+                    "Mengembangkan aplikasi bisnis berbasis low-code menggunakan PowerApps guna merampingkan alur kerja dan meningkatkan produktivitas."
                 ]
             },
             {
-                "title": "Full-stack Web Developer",
-                "company": "Bakso Liktono",
-                "duration": "Desember 2023 - Maret 2024",
-                "desc": "Mengembangkan berbagai solusi web sebagai Full-stack Developer.",
-                "achievements": []
-            },
-            {
-                "title": "Full-stack Web Developer",
-                "company": "Persatuan Ahli Gizi Indonesia (PERSAGI)",
-                "duration": "Juli 2023 - September 2023",
-                "desc": "Berkontribusi dalam pengembangan dan pemeliharaan website.",
-                "achievements": []
-            },
-            {
-                "title": "Full-stack Developer",
-                "company": "Solo Technopark",
-                "duration": "Februari 2023 - Juli 2023",
-                "desc": "Terlibat dalam perancangan sistem informasi 'Soto Panaz' (Solo Technopark Analyzer).",
+                "title": "Full-Stack Web Developer",
+                "company": "Freelance (Remote)",
+                "duration": "Jan 2023 - Agu 2024",
+                "desc": "Memberikan solusi pengembangan website khusus, menyelesaikan proyek-proyek penting lintas domain.",
                 "achievements": [
-                    "Migrasi website dari WordPress ke Node.js",
-                    "Implementasi sistem menggunakan PHP, Bootstrap, Next.js, Express.js, dan Tailwind CSS"
+                    "Menyelesaikan proyek seperti Sistem Antrian Barbershop, Sistem Pakar Perawatan Kulit, Platform E-Learning Sekolah, dan Website Pemesanan Wisata.",
+                    "Menerapkan keahlian di berbagai teknologi modern, memastikan hasil pekerjaan berkualitas tinggi dan kepuasan penuh dari klien."
+                ]
+            },
+            {
+                "title": "Intern",
+                "company": "Solo Technopark",
+                "duration": "Feb 2023 - Jul 2023",
+                "desc": "Pusat Inovasi dan Vokasi yang memadukan unsur pengembangan sains, teknologi, dan bisnis.",
+                "achievements": [
+                    "Merancang sistem informasi untuk Soto Panaz, mencakup arsitektur sistem, pengelolaan basis data, dan antarmuka pengguna (UI) menggunakan PHP serta Bootstrap.",
+                    "Memigrasi website Solo Technopark & Solo Techno Incubator dari WordPress ke Node.js dengan Next.js, Express.js, dan Tailwind CSS.",
+                    "Melakukan pengujian fungsi, integrasi, serta beban aplikasi (performance testing) berdampingan dengan perbaikan bug secara berkala pada aplikasi terkait."
                 ]
             }
         ]
@@ -77,16 +76,10 @@
         "certificationsLabel": "Sertifikasi",
         "degrees": [
             {
-                "degree": "S.Kom, Pemrograman Komputer",
+                "degree": "S.Kom (Bachelor of Informatics Engineering), 3.94/4.00",
                 "institution": "Universitas Telkom",
-                "year": "Juni 2020 - Juni 2024",
-                "description": "Aplikasi Spesifik. Lulus dengan gelar Sarjana Komputer."
-            },
-            {
-                "degree": "Studi Independen (Pengembangan Web)",
-                "institution": "Dicoding Indonesia",
-                "year": "Juli 2022 - Februari 2023",
-                "description": "Fokus pada pengembangan web, JavaScript, HTML, CSS, dan penggunaan Git."
+                "year": "Jul 2020 - Jul 2024",
+                "description": "Penerima beasiswa penuh selama 4 tahun melalui seleksi prestasi. Aktif di Organisasi Kemahasiswaan serta kepanitiaan. Menjabat sebagai Asisten Praktikum untuk Jaringan Komunikasi Data dan Pemrograman Web."
             }
         ],
         "certs": [

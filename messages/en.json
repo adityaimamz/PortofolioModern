@@ -34,38 +34,37 @@
         "keyAchievements": "Key Achievements:",
         "jobs": [
             {
-                "title": "Full-stack Developer",
-                "company": "PT. Sigma Cipta Caraka (Telkomsigma)",
-                "duration": "July 2024 - Present",
-                "desc": "Developing backend applications using Python, Java, JavaScript, and Golang.",
+                "title": "Programmer",
+                "company": "PT Sigma Cipta Caraka (Telkomsigma)",
+                "duration": "Jul 2024 - Present",
+                "desc": "Designed and implemented backend web applications using Django Rest Framework, Golang, Java Springboot, Flask, FastAPI and Nest Js.",
                 "achievements": [
-                    "Collaborated in the development of internal/external applications",
-                    "Added new features and fixed bugs",
-                    "Performed comprehensive data migration"
+                    "Performed component upgrades and migration on KPEI’s e-CLEARS system using Java Spring Boot, ensuring compatibility with newer Spring Boot versions and Java 17+, and integrated updates within microservices architecture.",
+                    "Collaborated with cross-functional teams to enhance internal and external web applications.",
+                    "Conducted data migrations to ensure seamless integration for new application implementations.",
+                    "Partnered with developers to resolve technical issues and deliver new features effectively.",
+                    "Developed low-code business applications using PowerApps to streamline workflows and enhance productivity."
                 ]
             },
             {
-                "title": "Full-stack Web Developer",
-                "company": "Bakso Liktono",
-                "duration": "December 2023 - March 2024",
-                "desc": "Developed various web solutions as a Full-stack Developer.",
-                "achievements": []
-            },
-            {
-                "title": "Full-stack Web Developer",
-                "company": "Persatuan Ahli Gizi Indonesia (PERSAGI)",
-                "duration": "July 2023 - September 2023",
-                "desc": "Contributed to the development and maintenance of the website.",
-                "achievements": []
-            },
-            {
-                "title": "Full-stack Developer",
-                "company": "Solo Technopark",
-                "duration": "February 2023 - July 2023",
-                "desc": "Involved in designing the 'Soto Panaz' (Solo Technopark Analyzer) information system.",
+                "title": "Full-Stack Web Developer",
+                "company": "Freelance (Remote)",
+                "duration": "Jan 2023 - Aug 2024",
+                "desc": "Delivered custom website development solutions, completing projects across various domains.",
                 "achievements": [
-                    "Migrated website from WordPress to Node.js",
-                    "Implemented systems using PHP, Bootstrap, Next.js, Express.js, and Tailwind CSS"
+                    "COMPLETED projects such as: Barber Queuing System, Skin Treatment Expert System, School E-Learning Platform, Tourist Booking Website.",
+                    "Applied expertise in various technologies, ensuring high-quality results and client satisfaction."
+                ]
+            },
+            {
+                "title": "Intern",
+                "company": "Solo Technopark",
+                "duration": "Feb 2023 - Jul 2023",
+                "desc": "Innovation and Vocational Center that combines elements of science and technology development, market needs, industry and business.",
+                "achievements": [
+                    "Designed an information system for Soto Panaz, covering system architecture, database management, and user interface using PHP and Bootstrap.",
+                    "Migrated the Solo Technopark & Solo Techno Incubator websites from WordPress to Node.js using Next.js, Express.js, and Tailwind CSS.",
+                    "Conducted functional, integration, and performance testing while maintaining bug fixes for Soto Panaz, Solo Technopark, and Solo Techno Incubator."
                 ]
             }
         ]
@@ -77,16 +76,10 @@
         "certificationsLabel": "Certifications",
         "degrees": [
             {
-                "degree": "S.Kom, Computer Programming",
+                "degree": "Bachelor of Informatics Engineering, 3.94/4.00",
                 "institution": "Universitas Telkom",
-                "year": "June 2020 - June 2024",
-                "description": "Specific Application. Graduated with a Bachelor of Computer Science degree."
-            },
-            {
-                "degree": "Independent Study (Web Development)",
-                "institution": "Dicoding Indonesia",
-                "year": "July 2022 - February 2023",
-                "description": "Focused on web development, JavaScript, HTML, CSS, and Git usage."
+                "year": "Jul 2020 - Jul 2024",
+                "description": "Got a full scholarship for 4 years through test selection. Active in the Student Council Organization and event committees. Served as a practicum assistant for Data Communication Network and Web Programming."
             }
         ],
         "certs": [

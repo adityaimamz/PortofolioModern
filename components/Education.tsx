@@ -4,6 +4,13 @@ import React from "react";
 import { useTranslation } from "@/context/LanguageContext";
 import { motion } from "framer-motion";
 import { ExpandableCertCard } from "./ui/ExpandableCertCard";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "./ui/Carousel";
 const Education = () => {
   const { t } = useTranslation();
   const degrees = t("education.degrees") as Array<{
@@ -78,11 +85,27 @@ const Education = () => {
           <h2 className="text-xl md:text-2xl font-bold text-white mb-6 flex items-center gap-2">
             <span className="text-purple">📜</span> {t("education.certificationsLabel")}
           </h2>
-          <div className="flex flex-col gap-4">
-            {certs.map((cert, index) => (
-              <ExpandableCertCard key={index} cert={cert} index={index} />
-            ))}
-          </div>
+          {certs.length > 4 ? (
+            <Carousel className="w-full">
+              <CarouselContent>
+                {certs.map((cert, index) => (
+                  <CarouselItem key={index} className="basis-full">
+                    <ExpandableCertCard cert={cert} index={index} />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <div className="flex justify-center gap-4 mt-6">
+                <CarouselPrevious className="static translate-y-0 translate-x-0" />
+                <CarouselNext className="static translate-y-0 translate-x-0" />
+              </div>
+            </Carousel>
+          ) : (
+            <div className="flex flex-col gap-4">
+              {certs.map((cert, index) => (
+                <ExpandableCertCard key={index} cert={cert} index={index} />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>

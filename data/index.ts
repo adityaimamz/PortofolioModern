@@ -342,47 +342,43 @@ export const companies = [
 export const workExperience = [
   {
     id: 1,
-    title: "Full-stack Developer",
-    company: "PT. Sigma Cipta Caraka (Telkomsigma)",
-    duration: "Juli 2024 - Sekarang",
-    desc: "Mengembangkan aplikasi backend menggunakan Python, Java, JavaScript, dan Golang.",
+    title: "Programmer",
+    company: "PT Sigma Cipta Caraka (Telkomsigma)",
+    duration: "Jul 2024 - Present",
+    desc: "Mengembangkan aplikasi backend menggunakan Django Rest Framework, Golang, Java Springboot, Flask, FastAPI, dan Nest Js.",
     achievements: [
-      "Berkolaborasi dalam pengembangan aplikasi internal/eksternal",
-      "Menambahkan fitur baru dan memperbaiki bug",
-      "Melaksanakan migrasi data komprehensif"
+      "Melakukan pembaruan komponen dan migrasi pada sistem e-CLEARS KPEI menggunakan Java Spring Boot.",
+      "Berkolaborasi dengan tim lintas fungsi untuk meningkatkan aplikasi web internal dan eksternal.",
+      "Melakukan migrasi data untuk memastikan integrasi yang lancar bagi implementasi aplikasi baru.",
+      "Bekerja sama dengan developer lain untuk menyelesaikan masalah teknis dan memberikan fitur baru secara efektif.",
+      "Mengembangkan aplikasi bisnis low-code menggunakan PowerApps untuk menyederhanakan alur kerja dan meningkatkan produktivitas."
     ],
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
   },
   {
     id: 2,
-    title: "Full-stack Web Developer",
-    company: "Bakso Liktono",
-    duration: "Desember 2023 - Maret 2024",
-    desc: "Mengembangkan berbagai solusi web sebagai Full-stack Developer.",
-    achievements: [],
+    title: "Full-Stack Web Developer",
+    company: "Freelance",
+    duration: "Jan 2023 - Aug 2024",
+    desc: "Memberikan solusi pengembangan website khusus untuk klien.",
+    achievements: [
+      "Menyelesaikan proyek seperti: Sistem Antrean Barber, Sistem Pakar Perawatan Kulit, Platform E-Learning Sekolah, dan Website Pemesanan Turis.",
+      "Menerapkan keahlian dalam berbagai teknologi, memastikan hasil berkualitas tinggi dan kepuasan klien."
+    ],
     className: "md:col-span-2",
     thumbnail: "/exp2.svg",
   },
   {
     id: 3,
-    title: "Full-stack Web Developer",
-    company: "Persatuan Ahli Gizi Indonesia (PERSAGI)",
-    duration: "Juli 2023 - September 2023",
-    desc: "Berkontribusi dalam pengembangan dan pemeliharaan website.",
-    achievements: [],
-    className: "md:col-span-2",
-    thumbnail: "/exp3.svg",
-  },
-  {
-    id: 4,
-    title: "Full-stack Developer",
+    title: "Intern",
     company: "Solo Technopark",
-    duration: "Februari 2023 - Juli 2023",
-    desc: "Terlibat dalam perancangan sistem informasi 'Soto Panaz' (Solo Technopark Analyzer).",
+    duration: "Feb 2023 - Jul 2023",
+    desc: "Pusat Inovasi dan Vokasi yang menggabungkan elemen pengembangan sains dan teknologi.",
     achievements: [
-      "Migrasi website dari WordPress ke Node.js",
-      "Implementasi sistem menggunakan PHP, Bootstrap, Next.js, Express.js, dan Tailwind CSS"
+      "Merancang arsitektur sistem, database, dan antarmuka untuk Soto Panaz menggunakan PHP dan Bootstrap.",
+      "Memigrasikan situs web Solo Technopark & Solo Techno Incubator dari WordPress ke Node.js menggunakan Next.js, Express.js, dan Tailwind CSS.",
+      "Melakukan pengujian fungsionalitas, integrasi, dan performa serta memelihara perbaikan bug untuk sistem terkait."
     ],
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",
