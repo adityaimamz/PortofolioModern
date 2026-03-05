@@ -5,35 +5,99 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useChat } from '@ai-sdk/react';
 import { MessageCircle, X, Send, Bot, User } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import ReactMarkdown from 'react-markdown';
+import { v4 as uuidv4 } from 'uuid'; // Gunakan uuid untuk sessionId unik
 
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState('');
   
-  const { messages, sendMessage, status } = useChat({
+  // Generate UUID unik hanya sekali saat komponen dimount (per sesi browser/refresh)
+  const sessionId = useRef(uuidv4());
+  
+  type ChatMessage = {
+    id: string;
+    role: 'user' | 'assistant' | 'system';
+    parts: { type: 'text'; text: string }[];
+  };
+
+  const { messages, setMessages } = useChat({
     messages: [
       {
         id: 'welcome',
-        role: 'assistant' as const,
-        parts: [{ type: 'text' as const, text: 'Halo! Saya asisten AI milik Aditya Imam Zuhdi. Anda bisa menanyakan pengalaman kerja, Tech Stack, atau proyek yang pernah saya kerjakan. Apa yang ingin Anda ketahui?' }],
+        role: 'assistant',
+        parts: [{ type: 'text', text: 'Halo! Saya asisten AI milik Aditya Imam Zuhdi. Anda bisa menanyakan pengalaman kerja, Tech Stack, atau proyek yang pernah saya kerjakan. Apa yang ingin Anda ketahui?' }],
       }
-    ],
-    onError: (error: any) => {
-      console.error('Chat Error:', error);
-    },
+    ] as ChatMessage[]
   });
 
-  const isLoading = status === 'submitted' || status === 'streaming';
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim() || isLoading) return;
-    sendMessage({ text: input });
+    
+    const userMessage = input;
     setInput('');
+    setIsLoading(true);
+
+    // Tambahkan pesan user ke UI
+    setMessages([...messages, { 
+      id: Date.now().toString(), 
+      role: 'user', 
+      parts: [{ type: 'text', text: userMessage }] 
+    }]);
+
+    try {
+      const maxHistoryLength = 5;
+      const recentMessages = messages.slice(-maxHistoryLength);
+
+      const response = await fetch(`/api/chat?sessionId=${sessionId.current}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          messages: [...recentMessages, { role: 'user', content: userMessage }]
+        })
+      });
+
+      if (!response.ok) throw new Error('Network response was not ok');
+
+
+      const data = await response.json();
+      const aiResponseText = data.text;
+      
+      const assistantMessageId = data.id || (Date.now() + 1).toString();
+      
+
+      const words = aiResponseText.split(' ');
+      let currentText = '';
+      
+      setMessages(prev => [...prev, {
+        id: assistantMessageId,
+        role: 'assistant',
+        parts: [{ type: 'text', text: '' }]
+      }]);
+      
+      for (let i = 0; i < words.length; i++) {
+        currentText += words[i] + ' ';
+        // Update pesan yang sama
+        setMessages(prev => prev.map(msg => 
+          msg.id === assistantMessageId 
+            ? { ...msg, parts: [{ type: 'text', text: currentText }] }
+            : msg
+        ));
+        // delay per kata 20ms
+        await new Promise(r => setTimeout(r, 20));
+      }
+    } catch (error) {
+      console.error('Chat failed:', error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -127,12 +191,9 @@ export default function ChatWidget() {
                       {message.parts?.map((part: any, index: number) => {
                         if (part.type === 'text') {
                           return (
-                            <span 
-                              key={index}
-                              dangerouslySetInnerHTML={{ 
-                                __html: part.text.replace(/\n/g, '<br />').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') 
-                              }}
-                            />
+                            <ReactMarkdown key={index}>
+                              {part.text}
+                            </ReactMarkdown>
                           );
                         }
                         return null;

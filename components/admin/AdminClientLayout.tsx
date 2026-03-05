@@ -8,6 +8,7 @@ import {
   IconDashboard,
   IconArrowLeft,
   IconUser,
+  IconMessage2,
 } from "@tabler/icons-react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -49,7 +50,7 @@ export default function AdminClientLayout({
     localStorage.removeItem("adminAuth");
   };
 
-  // Jangan render UI auth jika masih hydrate dari server ke client
+
   if (isAuthenticated === null) return null;
 
   if (!isAuthenticated) {
@@ -117,6 +118,13 @@ export default function AdminClientLayout({
       href: "/admin/knowledge",
       icon: (
         <IconBrain className="text-white-100 h-5 w-5 flex-shrink-0 group-hover/sidebar:text-purple transition-colors" />
+      ),
+    },
+    {
+      label: "Riwayat Chat AI",
+      href: "/admin/chats",
+      icon: (
+        <IconMessage2 className="text-white-100 h-5 w-5 flex-shrink-0 group-hover/sidebar:text-cyan transition-colors" />
       ),
     },
     {

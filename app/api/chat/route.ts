@@ -1,6 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 import { google } from '@ai-sdk/google';
-import { streamText, embed } from 'ai';
+import { streamText, embed, generateText } from 'ai';
 import { NextResponse } from 'next/server';
 
 // Memungkinkan response streaming
@@ -9,6 +9,10 @@ export const maxDuration = 60;
 export async function POST(req: Request) {
   try {
     const { messages } = await req.json();
+
+    // Dapatkan sessionId dari query param atau fallback ke "anonymous"
+    const { searchParams } = new URL(req.url);
+    const sessionId = searchParams.get('sessionId') || 'anonymous-' + Date.now();
 
     // Dapatkan pesan terakhir dari user
     const lastMessage = messages[messages.length - 1];
@@ -22,13 +26,20 @@ export async function POST(req: Request) {
     console.log("Menerima query:", userQuery);
 
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-    const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-    if (!supabaseUrl || !supabaseKey) {
+    const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+    if (!supabaseUrl || !supabaseServiceKey) {
       throw new Error("Supabase credentials missing.");
     }
     
-    const supabase = createClient(supabaseUrl, supabaseKey);
+    const supabase = createClient(supabaseUrl, supabaseServiceKey);
+
+    const _ = await supabase.from('chat_logs').insert({
+      session_id: sessionId,
+      role: 'user',
+      content: userQuery,
+    });
 
     // 1. Generate Embedding untuk query pengguna
     const { embedding } = await embed({
@@ -57,7 +68,7 @@ export async function POST(req: Request) {
 
     console.log(`RPC result: ${documents.length} dokumen ditemukan.`);
 
-    // Fallback: jika RPC gagal ATAU mengembalikan 0 hasil, ambil semua data langsung
+
     if (documents.length === 0) {
       console.log("Fallback: mengambil semua dokumen langsung dari tabel...");
       const { data: fallbackData, error: fallbackError } = await supabase
@@ -117,15 +128,56 @@ ${contextText || '(Tidak ada konteks spesifik tersedia saat ini)'}
       return { role: msg.role, content: '...' };
     });
 
-    // 6. Panggil Gemini via Vercel AI SDK
-    const result = streamText({
-      model: google('gemini-3.1-flash-lite'),
-      system: systemPrompt,
-      messages: convertedMessages,
-    });
 
-    // 7. Kembalikan UI message stream ke client (kompatibel dengan useChat hook)
-    return result.toUIMessageStreamResponse();
+    const modelCandidates = [
+      'gemini-2.5-flash-lite',  
+      'gemini-2.5-flash',       
+      'gemini-2.0-flash',       
+    ];
+
+    for (const modelName of modelCandidates) {
+      try {
+        console.log(`Mencoba model: ${modelName}`);
+        const result = await generateText({
+          model: google(modelName),
+          system: systemPrompt,
+          messages: convertedMessages,
+          maxRetries: 0,
+        });
+
+        console.log(`✅ Model ${modelName} berhasil.`);
+
+        // 7. Bungkus hasil generateText ke format UIMessageStream
+        const responseText = result.text;
+        const msgId = `msg-${Date.now()}`;
+
+        // [MODIFIKASI] Simpan balasan AI ke Chat Logs
+        // Fire-and-forget (tidak di-await agar response ke user lebih cepat)
+        supabase.from('chat_logs').insert({
+          session_id: sessionId,
+          role: 'assistant',
+          content: responseText,
+        }).then(({ error: logError }) => {
+          if (logError) console.error("Gagal menyimpan log AI:", logError);
+        });
+
+        return NextResponse.json({ 
+          id: msgId,
+          text: responseText 
+        }, { status: 200 });
+
+      } catch (err: any) {
+        console.warn(`❌ Model ${modelName} gagal: ${err.message?.slice(0, 120)}`);
+        continue;
+      }
+    }
+
+    // Semua model gagal
+    console.error('Semua model AI gagal.');
+    return NextResponse.json(
+      { error: 'Semua model AI sedang tidak tersedia saat ini. Silakan coba lagi nanti.' },
+      { status: 503 }
+    );
 
   } catch (error: any) {
     console.error('Chat API Error:', error);
