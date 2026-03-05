@@ -437,12 +437,12 @@ export const socialMedia = [
   {
     id: 1,
     img: "/git.svg",
-    link: "https://github.com",
+    link: "https://github.com/adityaimamz",
   },
   {
     id: 2,
-    img: "/twit.svg",
-    link: "https://twitter.com",
+    img: "/insta.svg",
+    link: "https://www.instagram.com/adityaimamz/",
   },
   {
     id: 3,

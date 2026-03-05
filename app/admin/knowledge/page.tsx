@@ -8,6 +8,7 @@ import {
   IconList,
   IconTrash,
   IconRefresh,
+  IconDownload,
 } from "@tabler/icons-react";
 
 type KnowledgeDocument = {
@@ -108,6 +109,36 @@ export default function KnowledgeBasePage() {
     } finally {
       setIsDeletingId(null);
     }
+  };
+
+  const handleExportJson = () => {
+    if (documents.length === 0) {
+      setListStatus({ type: "error", text: "Tidak ada dokumen untuk diekspor." });
+      return;
+    }
+
+    const exportData = documents.map((doc) => ({
+      id: doc.id,
+      content: doc.content,
+      metadata: doc.metadata || {},
+      created_at: doc.created_at || null,
+    }));
+
+    const jsonString = JSON.stringify(exportData, null, 2);
+    const blob = new Blob([jsonString], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `knowledge-export-${new Date().toISOString().split("T")[0]}.json`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+
+    setListStatus({
+      type: "success",
+      text: `Berhasil mengekspor ${documents.length} dokumen.`,
+    });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -496,16 +527,26 @@ export default function KnowledgeBasePage() {
               <>
                 <div className="flex items-center justify-between mb-4">
                   <h2 className="text-xl font-semibold">Daftar Knowledge</h2>
-                  <button
-                    onClick={() => void loadDocuments()}
-                    disabled={isListLoading}
-                    className="inline-flex items-center gap-2 px-3 py-2 text-xs rounded-lg border border-white-100/15 bg-white-100/5 hover:bg-white-100/10 disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    <IconRefresh
-                      className={`w-4 h-4 ${isListLoading ? "animate-spin" : ""}`}
-                    />
-                    Refresh
-                  </button>
+                  <div className="flex items-center gap-2">
+                    <button
+                      onClick={handleExportJson}
+                      disabled={isListLoading || documents.length === 0}
+                      className="inline-flex items-center gap-2 px-3 py-2 text-xs rounded-lg border border-cyan/30 bg-cyan/10 text-cyan hover:bg-cyan/20 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      <IconDownload className="w-4 h-4" />
+                      Export JSON
+                    </button>
+                    <button
+                      onClick={() => void loadDocuments()}
+                      disabled={isListLoading}
+                      className="inline-flex items-center gap-2 px-3 py-2 text-xs rounded-lg border border-white-100/15 bg-white-100/5 hover:bg-white-100/10 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      <IconRefresh
+                        className={`w-4 h-4 ${isListLoading ? "animate-spin" : ""}`}
+                      />
+                      Refresh
+                    </button>
+                  </div>
                 </div>
 
                 {isListLoading && (

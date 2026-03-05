@@ -139,7 +139,7 @@ export function ExpandableProjectCard({ item }: { item: any }) {
                       rel="noopener noreferrer"
                       className="flex justify-center items-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-full font-semibold transition-colors w-full sm:w-auto text-sm md:text-base"
                     >
-                      Check Live Site
+                      Check on Github
                       <FaLocationArrow className="ms-2" />
                     </motion.a>
                   </div>
@@ -208,7 +208,7 @@ export function ExpandableProjectCard({ item }: { item: any }) {
               className="flex justify-center items-center"
             >
               <p className="flex lg:text-xl md:text-xs text-sm text-purple group-hover:text-white transition-colors">
-                Check Live Site
+                Check on Github
               </p>
               <FaLocationArrow className="ms-3 text-[#CBACF9] group-hover:text-white transition-colors" />
             </motion.div>
