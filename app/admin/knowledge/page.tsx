@@ -113,7 +113,10 @@ export default function KnowledgeBasePage() {
 
   const handleExportJson = () => {
     if (documents.length === 0) {
-      setListStatus({ type: "error", text: "Tidak ada dokumen untuk diekspor." });
+      setListStatus({
+        type: "error",
+        text: "Tidak ada dokumen untuk diekspor.",
+      });
       return;
     }
 
