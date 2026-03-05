@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./provider";
 import { LanguageProvider } from "@/context/LanguageContext";
+import ChatWidget from "@/components/ChatWidget";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,6 +32,7 @@ export default function RootLayout({
         >
           <LanguageProvider>
             {children}
+            <ChatWidget />
           </LanguageProvider>
         </ThemeProvider>
       </body>

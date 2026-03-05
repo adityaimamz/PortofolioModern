@@ -194,6 +194,7 @@ export const techStackItems = [
     designation: "Other Tools",
     image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
   },
+  
   {
     id: 21,
     name: "MongoDB",
@@ -236,6 +237,12 @@ export const techStackItems = [
     designation: "Other Tools",
     image: "/db-blue.svg",
   },
+  {
+    id: 28,
+    name: "Supabase",
+    designation: "Other Tools",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg",
+  },
 ];
 
 export const projects = [
@@ -243,33 +250,33 @@ export const projects = [
     id: 1,
     title: "Celestial Scroll - Novel Reader",
     des: "Platform membaca web modern yang dirancang khusus untuk pembaca light novel dengan fitur kustomisasi penuh dan PWA.",
-    img: "/p1.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/c.svg"],
-    link: "https://github.com/izaditya",
+    img: "/celestialscrolls.webp",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg" , "supabase.svg"],
+    link: "https://github.com/adityaimamz/CelestialScroll",
   },
   {
     id: 2,
     title: "POS for UMKM Cemanting Art",
     des: "Aplikasi Full-Stack POS yang dikembangkan untuk mengatasi masalah manajemen keuangan dan pencatatan laba/rugi pada UMKM.",
-    img: "/p2.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/c.svg"],
-    link: "https://github.com/izaditya",
+    img: "/cemantingart.webp",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/mysql.svg", "/nodejs.svg", "/express.svg"],
+    link: "https://github.com/adityaimamz/POS-CemantingArt-API-Backend",
   },
-  {
+ {
     id: 3,
-    title: "SoloTechnopark.id & Incubator Portal",
-    des: "Profil perusahaan yang menjadi portal khusus bagi lembaga inkubator untuk pendampingan UKM dan Start-Up di Kota Solo.",
-    img: "/p3.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/re.svg", "/c.svg"],
-    link: "https://solotechnopark.id/",
+    title: "WhatsApp AI Chatbot with RAG",
+    des: "Sistem backend cerdas yang mengkloning kepribadian pengguna menggunakan RAG (Retrieval-Augmented Generation) untuk balasan otomatis yang personal.",
+    img: "/chatbotwa.webp", 
+    iconLists: ["/ts.svg", "/nodejs.svg", "/sqlite.svg", "/gemini.svg", "/openrouter.svg"],
+    link: "https://github.com/adityaimamz/Chatbot-Whatsapp",
   },
   {
     id: 4,
     title: "E-learning School",
     des: "Platform inovatif untuk meningkatkan pendidikan daring melalui manajemen materi edukasi, penugasan, hingga fitur chat.",
-    img: "/p4.svg",
-    iconLists: ["/tail.svg", "/c.svg"],
-    link: "https://github.com/izaditya",
+    img: "/elearning.webp",
+    iconLists: ["/bootstrap.svg", "/laravel.svg", "/livewire.svg", "/mysql.svg", "/php.svg"],
+    link: "https://github.com/adityaimamz/E-learning-Laravel",
   },
 ];
 
@@ -345,13 +352,13 @@ export const workExperience = [
     title: "Programmer",
     company: "PT Sigma Cipta Caraka (Telkomsigma)",
     duration: "Jul 2024 - Present",
-    desc: "Mengembangkan aplikasi backend menggunakan Django Rest Framework, Golang, Java Springboot, Flask, FastAPI, dan Nest Js.",
+    desc: "Developing backend services and enterprise APIs using Django REST Framework, Golang, Java Spring Boot, Flask, FastAPI, and NestJS.",
     achievements: [
-      "Melakukan pembaruan komponen dan migrasi pada sistem e-CLEARS KPEI menggunakan Java Spring Boot.",
-      "Berkolaborasi dengan tim lintas fungsi untuk meningkatkan aplikasi web internal dan eksternal.",
-      "Melakukan migrasi data untuk memastikan integrasi yang lancar bagi implementasi aplikasi baru.",
-      "Bekerja sama dengan developer lain untuk menyelesaikan masalah teknis dan memberikan fitur baru secara efektif.",
-      "Mengembangkan aplikasi bisnis low-code menggunakan PowerApps untuk menyederhanakan alur kerja dan meningkatkan produktivitas."
+      "Upgraded and migrated components of the KPEI e-CLEARS system using Java Spring Boot, ensuring compatibility with Java 17+ and modern microservices architecture.",
+      "Collaborated with cross-functional teams to develop and enhance both internal and client-facing web applications.",
+      "Performed data migrations to ensure smooth integration during system upgrades and new application deployments.",
+      "Resolved production issues and implemented new features to improve system performance and stability.",
+      "Developed low-code business applications using Microsoft PowerApps to streamline internal workflows."
     ],
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
@@ -361,10 +368,10 @@ export const workExperience = [
     title: "Full-Stack Web Developer",
     company: "Freelance",
     duration: "Jan 2023 - Aug 2024",
-    desc: "Memberikan solusi pengembangan website khusus untuk klien.",
+    desc: "Delivered custom web application solutions for clients across different industries.",
     achievements: [
-      "Menyelesaikan proyek seperti: Sistem Antrean Barber, Sistem Pakar Perawatan Kulit, Platform E-Learning Sekolah, dan Website Pemesanan Turis.",
-      "Menerapkan keahlian dalam berbagai teknologi, memastikan hasil berkualitas tinggi dan kepuasan klien."
+      "Developed systems including a Barber Queue Management System, Skin Treatment Expert System, School E-Learning Platform, and a Tourism Booking Website.",
+      "Applied modern web technologies to build reliable, user-friendly applications that met client requirements."
     ],
     className: "md:col-span-2",
     thumbnail: "/exp2.svg",
@@ -374,11 +381,11 @@ export const workExperience = [
     title: "Intern",
     company: "Solo Technopark",
     duration: "Feb 2023 - Jul 2023",
-    desc: "Pusat Inovasi dan Vokasi yang menggabungkan elemen pengembangan sains dan teknologi.",
+    desc: "Contributed to digital system development and website modernization initiatives.",
     achievements: [
-      "Merancang arsitektur sistem, database, dan antarmuka untuk Soto Panaz menggunakan PHP dan Bootstrap.",
-      "Memigrasikan situs web Solo Technopark & Solo Techno Incubator dari WordPress ke Node.js menggunakan Next.js, Express.js, dan Tailwind CSS.",
-      "Melakukan pengujian fungsionalitas, integrasi, dan performa serta memelihara perbaikan bug untuk sistem terkait."
+      "Developed an information system for Soto Panaz including system architecture, database management, and UI implementation using PHP and Bootstrap.",
+      "Migrated Solo Technopark and Solo Techno Incubator websites from WordPress to a modern stack using Next.js, Express.js, and Tailwind CSS.",
+      "Performed functional, integration, and performance testing while maintaining bug fixes across multiple web platforms."
     ],
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",
@@ -388,33 +395,24 @@ export const workExperience = [
 export const educationData = [
   {
     id: 1,
-    degree: "S.Kom, Computer Programming",
-    institution: "Universitas Telkom",
-    year: "Juni 2020 - Juni 2024",
-    description:
-      "Aplikasi Spesifik. Lulus dengan gelar Sarjana Komputer.",
-  },
-  {
-    id: 2,
-    degree: "Studi Independen (Pengembangan Web)",
-    institution: "Dicoding Indonesia",
-    year: "Juli 2022 - Februari 2023",
-    description:
-      "Fokus pada pengembangan web, JavaScript, HTML, CSS, dan penggunaan Git.",
-  },
+    degree: "Bachelor of Informatics Engineering (GPA 3.94/4.00)",
+    institution: "Telkom University",
+    year: "Jul 2020 - Jul 2024",
+    description: "Awarded a full academic scholarship for four years through a merit-based selection process. Actively involved in student organizations and served as a teaching assistant for Data Communication Networks and Web Programming.",
+  }
 ];
 
 export const certifications = [
   {
     id: 1,
-    name: "Prompt Engineering untuk Software Developer",
-    issuer: "Sertifikasi",
+    name: "Prompt Engineering for Software Developers",
+    issuer: "Certification",
     year: "2025",
     img: "/cert/prompt-engineer.png",
   },
   {
     id: 2,
-    name: "Microsoft Certified Azure AI Fundamentals",
+    name: "Microsoft Certified: Azure AI Fundamentals",
     issuer: "Microsoft",
     year: "2025",
     img: "/cert/Microsoft Certified Azure AI Fundamentals.jpg",
@@ -422,14 +420,14 @@ export const certifications = [
   {
     id: 3,
     name: "Junior Web Developer",
-    issuer: "BNSP Indonesia (Badan Nasional Sertifikasi Profesi",
+    issuer: "BNSP Indonesia (National Professional Certification Agency)",
     year: "2024",
     img: "/cert/BNSP.jpg",
   },
   {
     id: 4,
     name: "NestJS Zero to Hero - Modern TypeScript Back-end Development",
-    issuer: "Sertifikasi",
+    issuer: "Certification",
     year: "2025",
     img: "/cert/Nest Js Udemy.jpg",
   },

@@ -39,3 +39,7 @@ next-env.d.ts
 .sentryclirc
 
 .env
+
+# Chatbot files (ignored, see .example files instead)
+app/api/chat/route.ts
+components/ChatWidget.tsx

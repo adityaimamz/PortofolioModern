@@ -127,7 +127,7 @@ export function ExpandableProjectCard({ item }: { item: any }) {
                             marginLeft: index === 0 ? 0 : "-8px",
                           }}
                         >
-                          <img src={icon} alt={`icon${index}`} className="p-2 w-full h-full object-contain" />
+                          <img src={icon} alt={`icon${index}`} className={`p-2 w-full h-full object-contain ${icon === '/express.svg' ? 'invert' : ''}`} />
                         </div>
                       ))}
                     </motion.div>
@@ -198,7 +198,7 @@ export function ExpandableProjectCard({ item }: { item: any }) {
                     transform: `translateX(-${5 * index + 2}px)`,
                   }}
                 >
-                  <img src={icon} alt={`icon${index}`} className="p-2" />
+                  <img src={icon} alt={`icon${index}`} className={`p-2 ${icon === '/express.svg' ? 'invert' : ''}`} />
                 </div>
               ))}
             </motion.div>

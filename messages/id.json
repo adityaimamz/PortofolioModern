@@ -8,28 +8,28 @@
         "contactMe": "Hubungi Saya"
     },
     "hero": {
-        "tagline": "Keajaiban Web Dinamis dengan Next.js",
-        "title": "Mengubah Konsep Menjadi Pengalaman Pengguna yang Mulus",
-        "intro": "Halo! Saya Aditya Imam Zuhdi, Full-Stack Web Developer.",
-        "button": "Unduh resume saya"
+        "tagline": "Full-Stack Development untuk Web Modern",
+        "title": "Membangun Produk Digital yang Cepat, Skalabel, dan Mudah Digunakan",
+        "intro": "Halo, saya Aditya Imam Zuhdi — Full-Stack Web Developer yang berfokus pada pengembangan backend, sistem skalabel, dan aplikasi web modern.",
+        "button": "Unduh Resume"
     },
     "grid": {
-        "item1Title": "Membangun solusi skalabel dengan Go, Python, dan Next.js.",
+        "item1Title": "Mengembangkan sistem backend dan aplikasi web yang skalabel menggunakan Go, Python, dan Next.js.",
         "item1Desc": "Fokus Utama",
-        "item2Title": "Logika developer, mata fotografer.",
-        "item2Desc": "Estetika Visual",
-        "item3Title": "Saya sangat fleksibel dengan komunikasi lintas zona waktu",
-        "item6Title": "Sedang membangun aplikasi full-stack yang skalabel",
-        "item6Desc": "Info Terkini",
-        "item7Title": "Ingin memulai proyek bersama?"
+        "item2Title": "Pendekatan teknis yang dipadukan dengan kepekaan terhadap desain visual.",
+        "item2Desc": "Teknologi & Estetika",
+        "item3Title": "Terbiasa bekerja dan berkolaborasi dengan tim lintas zona waktu",
+        "item6Title": "Saat ini mengembangkan aplikasi full-stack yang berfokus pada performa dan skalabilitas",
+        "item6Desc": "Sedang Dikerjakan",
+        "item7Title": "Tertarik bekerja sama dalam sebuah proyek?"
     },
     "techStack": {
         "heading": "Tech Stack",
         "headingPrefix": "",
-        "subtitle": "Teknologi yang saya gunakan untuk membangun aplikasi yang kuat, skalabel, dan indah"
+        "subtitle": "Teknologi yang saya gunakan untuk membangun aplikasi web modern yang stabil, skalabel, dan mudah dikembangkan"
     },
     "experience": {
-        "heading": "pengalaman kerja",
+        "heading": "Pengalaman Kerja",
         "headingPrefix": "",
         "keyAchievements": "Pencapaian Utama:",
         "jobs": [
@@ -37,34 +37,34 @@
                 "title": "Programmer",
                 "company": "PT Sigma Cipta Caraka (Telkomsigma)",
                 "duration": "Jul 2024 - Sekarang",
-                "desc": "Merancang dan mengimplementasikan aplikasi web backend menggunakan Django Rest Framework, Golang, Java Springboot, Flask, FastAPI, dan Nest Js.",
+                "desc": "Mengembangkan backend dan layanan API untuk aplikasi enterprise menggunakan Django REST Framework, Golang, Java Spring Boot, Flask, FastAPI, dan NestJS.",
                 "achievements": [
-                    "Melakukan pemutakhiran komponen dan migrasi pada sistem e-CLEARS KPEI menggunakan Java Spring Boot, memastikan kompatibilitas dengan versi Spring Boot terbaru dan Java 17+, serta mengintegrasikan pemutakhiran di dalam arsitektur microservices.",
-                    "Berkolaborasi dengan tim lintas disiplin untuk meningkatkan aplikasi web internal maupun eksternal.",
-                    "Melakukan migrasi data untuk memastikan integrasi yang mulus pada implementasi aplikasi baru.",
-                    "Bekerja sama dengan developer untuk memecahkan masalah teknis (bug fixes) dan mengantarkan fitur baru secara efektif.",
-                    "Mengembangkan aplikasi bisnis berbasis low-code menggunakan PowerApps guna merampingkan alur kerja dan meningkatkan produktivitas."
+                    "Melakukan upgrade dan migrasi komponen sistem e-CLEARS KPEI menggunakan Java Spring Boot agar kompatibel dengan Java 17+ serta arsitektur microservices.",
+                    "Berkolaborasi dengan tim lintas fungsi dalam pengembangan dan peningkatan aplikasi internal maupun eksternal.",
+                    "Melakukan migrasi dan integrasi data pada implementasi sistem baru untuk memastikan transisi yang stabil.",
+                    "Menyelesaikan bug teknis serta mengimplementasikan fitur baru untuk meningkatkan performa dan stabilitas aplikasi.",
+                    "Mengembangkan aplikasi bisnis berbasis low-code menggunakan Microsoft PowerApps untuk meningkatkan efisiensi proses kerja."
                 ]
             },
             {
                 "title": "Full-Stack Web Developer",
                 "company": "Freelance (Remote)",
                 "duration": "Jan 2023 - Agu 2024",
-                "desc": "Memberikan solusi pengembangan website khusus, menyelesaikan proyek-proyek penting lintas domain.",
+                "desc": "Mengembangkan berbagai aplikasi web dan sistem digital untuk klien dari berbagai sektor.",
                 "achievements": [
-                    "Menyelesaikan proyek seperti Sistem Antrian Barbershop, Sistem Pakar Perawatan Kulit, Platform E-Learning Sekolah, dan Website Pemesanan Wisata.",
-                    "Menerapkan keahlian di berbagai teknologi modern, memastikan hasil pekerjaan berkualitas tinggi dan kepuasan penuh dari klien."
+                    "Membangun sistem seperti Sistem Antrian Barbershop, Sistem Pakar Perawatan Kulit, Platform E-Learning Sekolah, dan Website Pemesanan Wisata.",
+                    "Menggunakan berbagai teknologi modern untuk menghasilkan aplikasi yang stabil, mudah digunakan, dan memenuhi kebutuhan klien."
                 ]
             },
             {
                 "title": "Intern",
                 "company": "Solo Technopark",
                 "duration": "Feb 2023 - Jul 2023",
-                "desc": "Pusat Inovasi dan Vokasi yang memadukan unsur pengembangan sains, teknologi, dan bisnis.",
+                "desc": "Berkontribusi dalam pengembangan sistem digital dan penguatan infrastruktur website organisasi.",
                 "achievements": [
-                    "Merancang sistem informasi untuk Soto Panaz, mencakup arsitektur sistem, pengelolaan basis data, dan antarmuka pengguna (UI) menggunakan PHP serta Bootstrap.",
-                    "Memigrasi website Solo Technopark & Solo Techno Incubator dari WordPress ke Node.js dengan Next.js, Express.js, dan Tailwind CSS.",
-                    "Melakukan pengujian fungsi, integrasi, serta beban aplikasi (performance testing) berdampingan dengan perbaikan bug secara berkala pada aplikasi terkait."
+                    "Mengembangkan sistem informasi untuk Soto Panaz, termasuk desain arsitektur sistem, database, serta antarmuka pengguna menggunakan PHP dan Bootstrap.",
+                    "Memigrasikan website Solo Technopark dan Solo Techno Incubator dari WordPress ke stack modern berbasis Next.js, Express.js, dan Tailwind CSS.",
+                    "Melakukan pengujian fungsional, integrasi, dan performa aplikasi serta melakukan perbaikan bug secara berkala."
                 ]
             }
         ]
@@ -76,10 +76,10 @@
         "certificationsLabel": "Sertifikasi",
         "degrees": [
             {
-                "degree": "S.Kom (Bachelor of Informatics Engineering), 3.94/4.00",
+                "degree": "S.Kom – Teknik Informatika (IPK 3.94/4.00)",
                 "institution": "Universitas Telkom",
                 "year": "Jul 2020 - Jul 2024",
-                "description": "Penerima beasiswa penuh selama 4 tahun melalui seleksi prestasi. Aktif di Organisasi Kemahasiswaan serta kepanitiaan. Menjabat sebagai Asisten Praktikum untuk Jaringan Komunikasi Data dan Pemrograman Web."
+                "description": "Penerima beasiswa penuh selama 4 tahun melalui jalur prestasi. Aktif dalam organisasi kemahasiswaan serta berperan sebagai Asisten Praktikum untuk mata kuliah Jaringan Komunikasi Data dan Pemrograman Web."
             }
         ],
         "certs": [
@@ -97,7 +97,7 @@
             },
             {
                 "name": "Junior Web Developer",
-                "issuer": "BNSP Indonesia (Badan Nasional Sertifikasi Profesi",
+                "issuer": "BNSP Indonesia (Badan Nasional Sertifikasi Profesi)",
                 "img": "/cert/BNSP.jpg",
                 "year": "2024"
             },
@@ -110,45 +110,45 @@
         ]
     },
     "projects": {
-        "heading": "proyek terbaru",
-        "headingPrefix": "Beberapa pilihan",
+        "heading": "Proyek",
+        "headingPrefix": "Beberapa",
         "items": [
             {
                 "title": "Celestial Scroll - Novel Reader",
-                "des": "Platform membaca web modern yang dirancang khusus untuk pembaca light novel dengan fitur kustomisasi penuh dan PWA."
+                "des": "Platform membaca web modern untuk pembaca light novel dengan fitur kustomisasi tampilan, performa tinggi, dan dukungan Progressive Web App."
             },
             {
                 "title": "POS for UMKM Cemanting Art",
-                "des": "Aplikasi Full-Stack POS yang dikembangkan untuk mengatasi masalah manajemen keuangan dan pencatatan laba/rugi pada UMKM."
+                "des": "Aplikasi POS full-stack untuk membantu UMKM dalam mengelola transaksi, pencatatan keuangan, serta laporan laba dan rugi."
             },
             {
-                "title": "SoloTechnopark.id & Incubator Portal",
-                "des": "Profil perusahaan yang menjadi portal khusus bagi lembaga inkubator untuk pendampingan UKM dan Start-Up di Kota Solo."
+                "title": "WhatsApp AI Chatbot with RAG",
+                "des": "Sistem backend cerdas yang mengkloning kepribadian pengguna menggunakan RAG (Retrieval-Augmented Generation) untuk balasan otomatis yang personal."
             },
             {
-                "title": "E-learning School",
-                "des": "Platform inovatif untuk meningkatkan pendidikan daring melalui manajemen materi edukasi, penugasan, hingga fitur chat."
+                "title": "E-Learning School",
+                "des": "Platform pembelajaran daring dengan fitur manajemen materi, tugas, serta komunikasi antara siswa dan pengajar."
             }
         ]
     },
     "approach": {
-        "heading": "pendekatan",
+        "heading": "Cara Kerja",
         "headingPrefix": "",
         "phases": [
             {
-                "title": "Perencanaan & Strategi",
+                "title": "Perencanaan & Analisis",
                 "order": "Fase 1",
-                "des": "Kita akan berkolaborasi untuk memetakan tujuan website Anda, target audiens, dan fungsionalitas utama. Kita akan mendiskusikan hal-hal seperti struktur situs, navigasi, dan kebutuhan konten."
+                "des": "Memahami kebutuhan proyek, tujuan bisnis, target pengguna, serta menentukan struktur sistem dan fitur utama yang dibutuhkan."
             },
             {
-                "title": "Pengembangan & Update Progres",
+                "title": "Pengembangan",
                 "order": "Fase 2",
-                "des": "Setelah kita sepakat dengan rencana, saya mulai coding dengan playlist lofi. Dari sketsa awal hingga kode yang rapi, saya selalu mengupdate Anda di setiap langkah."
+                "des": "Mengimplementasikan solusi teknis melalui proses pengembangan bertahap dengan pembaruan progres secara berkala."
             },
             {
-                "title": "Pengembangan & Peluncuran",
+                "title": "Implementasi & Peluncuran",
                 "order": "Fase 3",
-                "des": "Di sinilah keajaiban terjadi! Berdasarkan desain yang disetujui, saya akan menerjemahkan semuanya menjadi kode fungsional, membangun website Anda dari nol."
+                "des": "Melakukan pengujian, optimasi performa, dan menyiapkan sistem hingga siap digunakan secara penuh."
             }
         ]
     },
@@ -157,8 +157,8 @@
         "headingPart1": "Siap membawa kehadiran",
         "headingHighlight": "digital",
         "headingPart2": "Anda ke level berikutnya?",
-        "subtitle": "Hubungi saya hari ini dan mari diskusikan bagaimana saya bisa membantu Anda mencapai tujuan Anda.",
-        "button": "Mari terhubung",
+        "subtitle": "Mari berdiskusi tentang bagaimana saya dapat membantu membangun atau mengembangkan produk digital Anda.",
+        "button": "Mari Terhubung",
         "copyright": "Hak Cipta © 2024 Aditya Imam Zuhdi"
     }
 }
