@@ -8,7 +8,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import ReactMarkdown from "react-markdown";
 import { v4 as uuidv4 } from "uuid"; // Gunakan uuid untuk sessionId unik
 
-const suggestedQuestions = [
+import { useLanguage } from "@/context/LanguageContext";
+
+const suggestedQuestionsId = [
   "Siapa Aditya Imam Zuhdi?",
   "Apa tech stack yang dikuasai?",
   "Proyek apa saja yang pernah dibuat?",
@@ -17,13 +19,27 @@ const suggestedQuestions = [
   "Bagaimana cara menghubungi Aditya?"
 ];
 
+const suggestedQuestionsEn = [
+  "Who is Aditya Imam Zuhdi?",
+  "What is his tech stack?",
+  "What projects has he built?",
+  "Does Aditya take freelance work?",
+  "Is he available for full-stack collaboration?",
+  "How can I contact Aditya?"
+];
+
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
+  const { language } = useLanguage();
   const profileName = process.env.NEXT_PUBLIC_PROFILE_NAME || "Portfolio Owner";
   const aiTwinName =
     process.env.NEXT_PUBLIC_AI_TWIN_NAME || `${profileName}'s AI Twin`;
-  const welcomeMessage = `Halo! Saya asisten AI milik ${profileName}. Anda bisa menanyakan pengalaman kerja, tech stack, atau proyek yang pernah saya kerjakan. Apa yang ingin Anda ketahui?`;
+  
+  const welcomeMessageId = `Halo! Saya asisten AI milik ${profileName}. Anda bisa menanyakan pengalaman kerja, tech stack, atau proyek yang pernah saya kerjakan. Apa yang ingin Anda ketahui?`;
+  const welcomeMessageEn = `Hello! I am ${profileName}'s AI assistant. You can ask me about his work experience, tech stack, or projects. What would you like to know?`;
+  const welcomeMessage = language === "id" ? welcomeMessageId : welcomeMessageEn;
+  const suggestedQuestions = language === "id" ? suggestedQuestionsId : suggestedQuestionsEn;
 
   // Generate UUID unik hanya sekali saat komponen dimount (per sesi browser/refresh)
   const sessionId = useRef(uuidv4());
@@ -50,6 +66,24 @@ export default function ChatWidget() {
     setInput(e.target.value);
   };
 
+  // Update welcome message dynamically if the user switches language
+  useEffect(() => {
+    setMessages((prev) => {
+      if (prev.length > 0 && prev[0].id === "welcome") {
+        const currentWelcomeText = prev[0].parts?.[0]?.text;
+        if (currentWelcomeText && currentWelcomeText !== welcomeMessage) {
+          const newMessages = [...prev];
+          newMessages[0] = {
+            ...newMessages[0],
+            parts: [{ type: "text", text: welcomeMessage }],
+          };
+          return newMessages as ChatMessage[];
+        }
+      }
+      return prev;
+    });
+  }, [language, welcomeMessage, setMessages]);
+
   const sendMessage = async (userMessage: string) => {
     if (!userMessage.trim() || isLoading) return;
 
@@ -73,6 +107,7 @@ export default function ChatWidget() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          language,
           messages: [...recentMessages, { role: "user", content: userMessage }],
         }),
       });
@@ -276,7 +311,11 @@ export default function ChatWidget() {
                 className="flex-1 bg-black-100 border border-white-100/20 text-white rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-purple/50 placeholder:text-white-100/40"
                 value={input}
                 onChange={handleInputChange}
-                placeholder="Tanya sesuatu tentang saya..."
+                placeholder={
+                  language === "id"
+                    ? "Tanya sesuatu tentang saya..."
+                    : "Ask something about me..."
+                }
                 disabled={isLoading}
               />
               <button

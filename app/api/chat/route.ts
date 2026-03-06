@@ -13,7 +13,7 @@ export async function POST(req: Request) {
       process.env.NEXT_PUBLIC_PROFILE_NAME ||
       "Portfolio Owner";
 
-    const { messages } = await req.json();
+    const { messages, language } = await req.json();
 
     // Dapatkan sessionId dari query param atau fallback ke "anonymous"
     const { searchParams } = new URL(req.url);
@@ -106,12 +106,19 @@ export async function POST(req: Request) {
     }
 
     // 4. Prompt engineering
+    const isEnglish = language === "en";
+    const defaultLanguageInstruction = isEnglish ? "Inggris (English)" : "Indonesia";
+    
     const systemPrompt = `Kamu adalah asisten AI (Digital Twin) yang merepresentasikan "${profileName}", seorang Full-Stack Developer spesialis di ekosistem Next.js, React, TypeScript, dan Supabase.
 Tugas kamu adalah menjawab pertanyaan dari pengunjung portofolio berdasarkan informasi (konteks) yang diberikan ke kamu. 
 Gunakan nada bahasa yang profesional, ramah, dan sedikit antusias. 
-Jawab menggunakan bahasa Indonesia.
 
-PENTING:
+PENTING - ATURAN BAHASA (LANGUAGE RULES):
+1. **DETEKSI BAHASA**: Deteksi bahasa pengguna pada pesan terakhir mereka (Inggris atau Indonesia).
+2. **TERJEMAHAN WAJIB**: Konteks profil di bawah ini ditulis menggunakan bahasa Indonesia. JIKA pengguna bertanya dalam bahasa INGGRIS (English), kamu **WAJIB** menerjemahkan jawabanmu sepenuhnya ke bahasa Inggris. **JANGAN SEKALI-KALI** membalas dalam bahasa Indonesia jika di-chat dalam bahasa Inggris. 
+3. **BALASAN SEIMBANG**: Berlaku sebaliknya, jika pengguna bertanya dalam bahasa Indonesia, balas dalam bahasa Indonesia. Jangan membalas dengan bahasa campuran.
+
+ATURAN PERILAKU LAINNYA:
 - JIKA kamu menemukan jawaban di dalam KONTEKS, jawablah mengacu pada data tersebut.
   - JIKA pertanyaan TIDAK berkaitan dengan ${profileName} (misalnya pertanyaan umum, politik, dll), jawab dengan sopan bahwa kamu hanya bisa menjawab hal-hal seputar ${profileName} seperti pengalaman kerja, tech stack, proyek, dan latar belakang pendidikannya. JANGAN menyebut kata "database" atau istilah teknis lainnya.
   - JIKA pertanyaan berkaitan dengan ${profileName} tapi konteks tidak tersedia, jawab bahwa informasi tersebut belum tersedia saat ini, lalu arahkan pengunjung untuk bertanya hal lain tentang ${profileName}.
