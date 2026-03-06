@@ -1,0 +1,42 @@
+# Rencana Implementasi Bulk Delete Knowledge Base
+
+Fitur hapus massal (bulk delete) akan ditambahkan untuk mempermudah penghapusan beberapa entri knowledge dengan memberikan daftar ID, dipisahkan dengan baris baru (newline).
+
+## Proposed Changes
+
+### Endpoint API Baru untuk Bulk Delete
+#### [NEW] route.ts(file:///c:/Users/5CG4310VMV/Documents/GitHub/PortofolioModern/app/api/admin/knowledge/bulk-delete/route.ts)
+Akan dibuat endpoint API baru dengan metode `DELETE` yang menerima *payload* JSON berisi _array_ dari ID dokumen yang akan dihapus.
+- Membaca Supabase credentials dan melakukan autentikasi dengan `supabase-js`.
+- Mendapatkan parameter `ids` (berupa `number[]`) dari *body request*.
+- Menjalankan *query* hapus ke tabel `documents` menggunakan perintah `in('id', ids)`.
+- Mengembalikan response jumlah dokumen yang sukses dihapus.
+
+### Modifikasi UI Admin Knowledge
+#### [MODIFY] page.tsx(file:///c:/Users/5CG4310VMV/Documents/GitHub/PortofolioModern/app/admin/knowledge/page.tsx)
+- Menambahkan **state** baru:
+  - `showBulkDelete`: boolean (untuk memunculkan area textarea bulk delete).
+  - `bulkDeleteText`: string (untuk menyimpan input list ID dari pengguna).
+  - `isBulkDeleting`: boolean (untuk indikator loading saat proses penghapusan).
+- Menambahkan **fungsi** `handleBulkDelete`:
+  - Mengambil `bulkDeleteText`, memecahnya berdasarkan pemisah baris (`\n`), mengonversi ke angka, dan menyaring nilai yang tidak valid (NaN) atau kosong.
+  - Memanggil endpoint `/api/admin/knowledge/bulk-delete` dengan *method* `DELETE` dan payload berupa *array* ID.
+  - Menampilkan status keberhasilan atau kegagalan.
+  - Memperbarui daftar dokumen (`loadDocuments`).
+- Menambahkan **UI**:
+  - Tombol **Bulk Delete** di sebelah tombol "Export JSON" dan "Refresh" (pada tab *Daftar Knowledge*).
+  - *Textarea* yang muncul (jika *state* aktif) khusus untuk memasukkan ID, lengkap dengan tombol konfirmasi hapus massal.
+
+## Verification Plan
+
+### Automated Tests
+- Tidak terdapat pengujian otomatis (unit tests) yang sudah ada di repositori ini berdasarkan pencarian pada codebase.
+
+### Manual Verification
+1. Jalankan aplikasi admin (dengan perintah `npm run dev` yang saat ini sedang aktif).
+2. Tuju halaman `/admin/knowledge` dan ke *tab* "Daftar Knowledge".
+3. Klik tombol "Bulk Delete".
+4. *Paste* susunan ID per baris pada textarea yang muncul (seperti contoh yang diberikan pengguna).
+5. Klik "Konfirmasi Hapus".
+6. Amati indikator loading dan pastikan pesan sukses muncul. Daftar dokumen di bawahnya juga akan *refresh* dan tidak lagi memuat dokumen dengan ID yang sudah dihapus.
+7. Semua tindakan sudah terverifikasi.

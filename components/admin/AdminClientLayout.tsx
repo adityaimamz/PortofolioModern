@@ -9,10 +9,10 @@ import {
   IconArrowLeft,
   IconUser,
   IconMessage2,
+  IconLoader,
 } from "@tabler/icons-react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function AdminClientLayout({
   children,
@@ -22,36 +22,72 @@ export default function AdminClientLayout({
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
   const [password, setPassword] = useState("");
   const [authError, setAuthError] = useState("");
+  const [isLoggingIn, setIsLoggingIn] = useState(false);
   const [open, setOpen] = useState(false);
 
   React.useEffect(() => {
-    // Check localStorage on mount
-    const authStatus = localStorage.getItem("adminAuth");
-    if (authStatus === "true") {
-      setIsAuthenticated(true);
-    } else {
-      setIsAuthenticated(false);
-    }
+    // Memeriksa autentikasi dengan menembak API /api/admin/me
+    const checkAuthStatus = async () => {
+      try {
+        const res = await fetch("/api/admin/me");
+        if (res.ok) {
+          setIsAuthenticated(true);
+        } else {
+          setIsAuthenticated(false);
+        }
+      } catch (error) {
+        setIsAuthenticated(false);
+      }
+    };
+    
+    checkAuthStatus();
   }, []);
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === process.env.NEXT_PUBLIC_ADMIN_PASSWORD || password === "admin123") {
-      setIsAuthenticated(true);
-      localStorage.setItem("adminAuth", "true");
-      setAuthError("");
-    } else {
-      setAuthError("Kata sandi salah.");
+    setIsLoggingIn(true);
+    setAuthError("");
+
+    try {
+      const res = await fetch("/api/admin/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password }),
+      });
+
+      if (res.ok) {
+        setIsAuthenticated(true);
+      } else {
+        const data = await res.json();
+        setAuthError(data.error || "Gagal masuk. Silakan coba lagi.");
+      }
+    } catch (error) {
+      setAuthError("Terjadi kesalahan sistem saat mencoba masuk.");
+    } finally {
+      setIsLoggingIn(false);
     }
   };
 
-  const handleLogout = () => {
-    setIsAuthenticated(false);
-    localStorage.removeItem("adminAuth");
+  const handleLogout = async () => {
+    try {
+       await fetch("/api/admin/logout", { method: "POST" });
+       setIsAuthenticated(false);
+       // Refresh page untuk memastikan semua state bersih
+       window.location.href = '/admin';
+    } catch (error) {
+       console.error("Gagal logout.", error);
+    }
   };
 
 
-  if (isAuthenticated === null) return null;
+  if (isAuthenticated === null) {
+      return (
+        <div className="flex flex-col items-center justify-center min-h-screen bg-black-100 p-4">
+             <IconLoader className="w-8 h-8 text-purple animate-spin" />
+             <p className="mt-4 text-white-100/60 text-sm animate-pulse">Memuat workspace...</p>
+        </div>
+      );
+  }
 
   if (!isAuthenticated) {
     return (
@@ -59,16 +95,16 @@ export default function AdminClientLayout({
         <div className="w-full max-w-md p-8 bg-black-200 border border-white-100/10 rounded-2xl shadow-xl">
           <div className="flex justify-center mb-6">
             <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-purple to-cyan/50 flex flex-col items-center justify-center shadow-[0_0_20px_rgba(203,172,249,0.3)] border border-purple/30">
-              <span className="text-2xl font-bold text-white">IZ</span>
+               <span className="text-2xl font-bold text-white">IZ</span>
             </div>
           </div>
-          <h1 className="text-2xl font-bold text-center mb-2 text-white">Admin Dashboard</h1>
-          <p className="text-white-100/60 text-center text-sm mb-8">Masuk untuk mengelola Knowledge Base AI</p>
+          <h1 className="text-2xl font-bold text-center mb-2 text-white">Admin Workspace</h1>
+          <p className="text-white-100/60 text-center text-sm mb-8">Otorisasi dibutuhkan untuk mengakses sistem panel</p>
 
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-white-100/70 mb-2">
-                Kata Sandi
+                Sandi Otorisasi
               </label>
               <input
                 type="password"
@@ -77,27 +113,33 @@ export default function AdminClientLayout({
                 className="w-full px-4 py-3 bg-black-100 border border-white-100/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple/50 focus:border-purple/30 text-white placeholder:text-white-100/30 transition-all font-mono"
                 placeholder="••••••••"
                 autoFocus
+                disabled={isLoggingIn}
               />
             </div>
             {authError && (
-              <motion.p 
-                initial={{ opacity: 0, y: -5 }} animate={{ opacity: 1, y: 0 }}
-                className="text-red-400 text-sm bg-red-400/10 px-3 py-2 rounded-lg border border-red-400/20"
-              >
-                {authError}
-              </motion.p>
+               <motion.p 
+                 initial={{ opacity: 0, y: -5 }} animate={{ opacity: 1, y: 0 }}
+                 className="text-red-400 text-sm bg-red-400/10 px-3 py-2 rounded-lg border border-red-400/20"
+               >
+                 {authError}
+               </motion.p>
             )}
             <button
               type="submit"
-              className="w-full py-3 px-4 bg-purple hover:bg-purple/80 text-white font-semibold rounded-xl transition-all shadow-lg hover:shadow-purple/20 mt-4 outline-none focus:ring-2 focus:ring-white/20"
+              disabled={isLoggingIn || !password}
+              className="w-full py-3 px-4 bg-purple hover:bg-purple/80 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold rounded-xl transition-all shadow-lg hover:shadow-purple/20 mt-4 outline-none focus:ring-2 focus:ring-white/20 flex items-center justify-center gap-2"
             >
-              Autentikasi Akses
+              {isLoggingIn ? (
+                <>
+                  <IconLoader className="w-5 h-5 animate-spin" /> Sedang Memverifikasi...
+                </>
+              ) : "Autentikasi Akses"}
             </button>
           </form>
           
            <div className="mt-8 text-center">
             <Link href="/" className="text-sm border-b border-transparent hover:border-white-100/40 text-white-100/60 hover:text-white-100/90 transition-all flex items-center justify-center gap-2 mx-auto w-fit">
-               <IconArrowLeft className="w-4 h-4" /> Kembali ke Portofolio
+               <IconArrowLeft className="w-4 h-4" /> Kembali Ke Portofolio Utama
             </Link>
           </div>
         </div>

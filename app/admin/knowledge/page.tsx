@@ -42,6 +42,11 @@ export default function KnowledgeBasePage() {
   const [isDeletingId, setIsDeletingId] = useState<number | null>(null);
   const [listStatus, setListStatus] = useState({ type: "", text: "" });
 
+  // === Bulk Delete State ===
+  const [showBulkDelete, setShowBulkDelete] = useState(false);
+  const [bulkDeleteText, setBulkDeleteText] = useState("");
+  const [isBulkDeleting, setIsBulkDeleting] = useState(false);
+
   const loadDocuments = useCallback(async () => {
     setIsListLoading(true);
     setListStatus({ type: "", text: "" });
@@ -142,6 +147,75 @@ export default function KnowledgeBasePage() {
       type: "success",
       text: `Berhasil mengekspor ${documents.length} dokumen.`,
     });
+  };
+
+  const handleBulkDelete = async () => {
+    if (!bulkDeleteText.trim()) {
+      setListStatus({
+        type: "error",
+        text: "Harap masukkan minimal satu ID untuk dihapus.",
+      });
+      return;
+    }
+
+    // Parse IDs dari textarea
+    const ids = bulkDeleteText
+      .split("\n")
+      .map((line) => line.trim())
+      .filter((line) => line.length > 0)
+      .map((line) => Number.parseInt(line, 10))
+      .filter((id) => Number.isFinite(id) && id > 0);
+
+    if (ids.length === 0) {
+      setListStatus({
+        type: "error",
+        text: "Tidak ada ID yang valid ditemukan. Pastikan setiap baris berisi angka yang valid.",
+      });
+      return;
+    }
+
+    const shouldDelete = window.confirm(
+      `Yakin ingin menghapus ${ids.length} dokumen knowledge ini? Tindakan ini tidak dapat dibatalkan.`,
+    );
+    if (!shouldDelete) return;
+
+    setIsBulkDeleting(true);
+    setListStatus({ type: "", text: "" });
+
+    try {
+      const response = await fetch("/api/admin/knowledge/bulk-delete", {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ids }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        setListStatus({
+          type: "error",
+          text: data.error || "Gagal menghapus dokumen.",
+        });
+        return;
+      }
+
+      setListStatus({
+        type: "success",
+        text: `Berhasil menghapus ${data.deletedCount} dari ${data.requestedCount} dokumen.`,
+      });
+
+      // Reset form
+      setBulkDeleteText("");
+      setShowBulkDelete(false);
+
+      // Reload documents
+      await loadDocuments();
+    } catch (error) {
+      console.error(error);
+      setListStatus({ type: "error", text: "Gagal menghubungi server." });
+    } finally {
+      setIsBulkDeleting(false);
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -540,6 +614,14 @@ export default function KnowledgeBasePage() {
                       Export JSON
                     </button>
                     <button
+                      onClick={() => setShowBulkDelete(!showBulkDelete)}
+                      disabled={isListLoading || documents.length === 0}
+                      className="inline-flex items-center gap-2 px-3 py-2 text-xs rounded-lg border border-red-500/30 bg-red-500/10 text-red-400 hover:bg-red-500/20 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      <IconTrash className="w-4 h-4" />
+                      Bulk Delete
+                    </button>
+                    <button
                       onClick={() => void loadDocuments()}
                       disabled={isListLoading}
                       className="inline-flex items-center gap-2 px-3 py-2 text-xs rounded-lg border border-white-100/15 bg-white-100/5 hover:bg-white-100/10 disabled:opacity-50 disabled:cursor-not-allowed"
@@ -551,6 +633,83 @@ export default function KnowledgeBasePage() {
                     </button>
                   </div>
                 </div>
+
+                {showBulkDelete && (
+                  <div className="mb-6 p-4 rounded-xl border border-red-500/30 bg-red-500/10 space-y-3">
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-sm font-medium text-red-400">
+                        Bulk Delete Knowledge
+                      </h3>
+                      <button
+                        onClick={() => {
+                          setShowBulkDelete(false);
+                          setBulkDeleteText("");
+                          setListStatus({ type: "", text: "" });
+                        }}
+                        className="text-red-400 hover:text-red-300 text-lg"
+                      >
+                        ✕
+                      </button>
+                    </div>
+                    <p className="text-xs text-red-400/70">
+                      Masukkan ID dokumen yang ingin dihapus, satu ID per baris.
+                    </p>
+                    <textarea
+                      value={bulkDeleteText}
+                      onChange={(e) => setBulkDeleteText(e.target.value)}
+                      rows={5}
+                      className="w-full px-3 py-2 bg-black-100 border border-red-500/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500/50 text-xs font-mono leading-relaxed placeholder:text-white-100/30"
+                      placeholder="1&#10;2&#10;3&#10;4&#10;5"
+                    />
+                    <div className="flex gap-2">
+                      <button
+                        onClick={() => void handleBulkDelete()}
+                        disabled={isBulkDeleting || !bulkDeleteText.trim()}
+                        className="flex-1 inline-flex items-center justify-center px-3 py-2 text-xs font-medium rounded-lg border border-red-500/50 bg-red-500/20 text-red-300 hover:bg-red-500/30 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                      >
+                        {isBulkDeleting ? (
+                          <span className="flex items-center gap-2">
+                            <svg
+                              className="animate-spin h-4 w-4"
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                            >
+                              <circle
+                                className="opacity-25"
+                                cx="12"
+                                cy="12"
+                                r="10"
+                                stroke="currentColor"
+                                strokeWidth="4"
+                              ></circle>
+                              <path
+                                className="opacity-75"
+                                fill="currentColor"
+                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                              ></path>
+                            </svg>
+                            Menghapus...
+                          </span>
+                        ) : (
+                          <>
+                            <IconTrash className="w-4 h-4 mr-1" />
+                            Konfirmasi Hapus Massal
+                          </>
+                        )}
+                      </button>
+                      <button
+                        onClick={() => {
+                          setShowBulkDelete(false);
+                          setBulkDeleteText("");
+                        }}
+                        className="px-3 py-2 text-xs font-medium rounded-lg border border-white-100/15 bg-white-100/5 text-white-100/50 hover:bg-white-100/10"
+                      >
+                        Batal
+                      </button>
+                    </div>
+                  </div>
+                )}
 
                 {isListLoading && (
                   <div className="space-y-3">

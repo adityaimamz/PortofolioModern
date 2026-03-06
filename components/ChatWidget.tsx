@@ -1,34 +1,47 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from "react";
 // @ts-ignore
-import { useChat } from '@ai-sdk/react';
-import { MessageCircle, X, Send, Bot, User } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
-import ReactMarkdown from 'react-markdown';
-import { v4 as uuidv4 } from 'uuid'; // Gunakan uuid untuk sessionId unik
+import { useChat } from "@ai-sdk/react";
+import { MessageCircle, X, Send, Bot, User } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import ReactMarkdown from "react-markdown";
+import { v4 as uuidv4 } from "uuid"; // Gunakan uuid untuk sessionId unik
+
+const suggestedQuestions = [
+  "Siapa Aditya Imam Zuhdi?",
+  "Apa tech stack yang dikuasai?",
+  "Proyek apa saja yang pernah dibuat?",
+  "Apakah Aditya menerima freelance?",
+  "Apakah bisa kolaborasi full-stack?",
+  "Bagaimana cara menghubungi Aditya?"
+];
 
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
-  const [input, setInput] = useState('');
-  
+  const [input, setInput] = useState("");
+  const profileName = process.env.NEXT_PUBLIC_PROFILE_NAME || "Portfolio Owner";
+  const aiTwinName =
+    process.env.NEXT_PUBLIC_AI_TWIN_NAME || `${profileName}'s AI Twin`;
+  const welcomeMessage = `Halo! Saya asisten AI milik ${profileName}. Anda bisa menanyakan pengalaman kerja, tech stack, atau proyek yang pernah saya kerjakan. Apa yang ingin Anda ketahui?`;
+
   // Generate UUID unik hanya sekali saat komponen dimount (per sesi browser/refresh)
   const sessionId = useRef(uuidv4());
-  
+
   type ChatMessage = {
     id: string;
-    role: 'user' | 'assistant' | 'system';
-    parts: { type: 'text'; text: string }[];
+    role: "user" | "assistant" | "system";
+    parts: { type: "text"; text: string }[];
   };
 
   const { messages, setMessages } = useChat({
     messages: [
       {
-        id: 'welcome',
-        role: 'assistant',
-        parts: [{ type: 'text', text: 'Halo! Saya asisten AI milik Aditya Imam Zuhdi. Anda bisa menanyakan pengalaman kerja, Tech Stack, atau proyek yang pernah saya kerjakan. Apa yang ingin Anda ketahui?' }],
-      }
-    ] as ChatMessage[]
+        id: "welcome",
+        role: "assistant",
+        parts: [{ type: "text", text: welcomeMessage }],
+      },
+    ] as ChatMessage[],
   });
 
   const [isLoading, setIsLoading] = useState(false);
@@ -37,67 +50,83 @@ export default function ChatWidget() {
     setInput(e.target.value);
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!input.trim() || isLoading) return;
-    
-    const userMessage = input;
-    setInput('');
+  const sendMessage = async (userMessage: string) => {
+    if (!userMessage.trim() || isLoading) return;
+
     setIsLoading(true);
 
     // Tambahkan pesan user ke UI
-    setMessages([...messages, { 
-      id: Date.now().toString(), 
-      role: 'user', 
-      parts: [{ type: 'text', text: userMessage }] 
-    }]);
+    setMessages((prev) => [
+      ...prev,
+      {
+        id: Date.now().toString(),
+        role: "user",
+        parts: [{ type: "text", text: userMessage }],
+      },
+    ]);
 
     try {
       const maxHistoryLength = 5;
       const recentMessages = messages.slice(-maxHistoryLength);
 
       const response = await fetch(`/api/chat?sessionId=${sessionId.current}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          messages: [...recentMessages, { role: 'user', content: userMessage }]
-        })
+          messages: [...recentMessages, { role: "user", content: userMessage }],
+        }),
       });
 
-      if (!response.ok) throw new Error('Network response was not ok');
-
+      if (!response.ok) throw new Error("Network response was not ok");
 
       const data = await response.json();
       const aiResponseText = data.text;
-      
-      const assistantMessageId = data.id || (Date.now() + 1).toString();
-      
 
-      const words = aiResponseText.split(' ');
-      let currentText = '';
-      
-      setMessages(prev => [...prev, {
-        id: assistantMessageId,
-        role: 'assistant',
-        parts: [{ type: 'text', text: '' }]
-      }]);
-      
+      const assistantMessageId = data.id || (Date.now() + 1).toString();
+
+      const words = aiResponseText.split(" ");
+      let currentText = "";
+
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: assistantMessageId,
+          role: "assistant",
+          parts: [{ type: "text", text: "" }],
+        },
+      ]);
+
       for (let i = 0; i < words.length; i++) {
-        currentText += words[i] + ' ';
+        currentText += words[i] + " ";
         // Update pesan yang sama
-        setMessages(prev => prev.map(msg => 
-          msg.id === assistantMessageId 
-            ? { ...msg, parts: [{ type: 'text', text: currentText }] }
-            : msg
-        ));
+        setMessages((prev) =>
+          prev.map((msg) =>
+            msg.id === assistantMessageId
+              ? { ...msg, parts: [{ type: "text", text: currentText }] }
+              : msg,
+          ),
+        );
         // delay per kata 20ms
-        await new Promise(r => setTimeout(r, 20));
+        await new Promise((r) => setTimeout(r, 20));
       }
     } catch (error) {
-      console.error('Chat failed:', error);
+      console.error("Chat failed:", error);
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!input.trim() || isLoading) return;
+
+    const messageToSend = input;
+    setInput("");
+    await sendMessage(messageToSend);
+  };
+
+  const handleSuggestedClick = async (question: string) => {
+    await sendMessage(question);
   };
 
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -131,7 +160,7 @@ export default function ChatWidget() {
             initial={{ opacity: 0, y: 50, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 50, scale: 0.95 }}
-            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
             className="fixed bottom-6 right-6 w-[350px] sm:w-[400px] h-[550px] max-h-[80vh] flex flex-col bg-black-100 border border-white-100/10 rounded-2xl shadow-2xl z-50 overflow-hidden"
           >
             {/* Header */}
@@ -141,7 +170,9 @@ export default function ChatWidget() {
                   <Bot className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-white text-sm">Aditya's AI Twin</h3>
+                  <h3 className="font-semibold text-white text-sm">
+                    {aiTwinName}
+                  </h3>
                   <p className="text-xs text-green-400 flex items-center gap-1">
                     <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
                     Online
@@ -158,22 +189,22 @@ export default function ChatWidget() {
             </div>
 
             {/* Chat Area */}
-            <div 
+            <div
               ref={scrollRef}
               className="flex-1 overflow-y-auto p-4 space-y-4 max-h-full bg-black/40 scrollbar-thin scrollbar-thumb-white-100/10 scrollbar-track-transparent"
             >
               {messages.map((message: any) => (
                 <div
                   key={message.id}
-                  className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
+                  className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
                 >
                   <div
                     className={`flex gap-3 max-w-[85%] ${
-                      message.role === 'user' ? 'flex-row-reverse' : 'flex-row'
+                      message.role === "user" ? "flex-row-reverse" : "flex-row"
                     }`}
                   >
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-white-100/10 flex items-center justify-center mt-1">
-                      {message.role === 'user' ? (
+                      {message.role === "user" ? (
                         <User className="w-4 h-4 text-white-100/70" />
                       ) : (
                         <Bot className="w-4 h-4 text-purple" />
@@ -181,15 +212,17 @@ export default function ChatWidget() {
                     </div>
                     <div
                       className={`px-4 py-3 rounded-2xl text-sm ${
-                        message.role === 'user'
-                          ? 'bg-purple text-white rounded-tr-sm'
-                          : 'bg-black-200 text-white-100 border border-white-100/10 rounded-tl-sm prose prose-invert prose-sm'
+                        message.role === "user"
+                          ? "bg-purple text-white rounded-tr-sm"
+                          : "bg-black-200 text-white-100 border border-white-100/10 rounded-tl-sm prose prose-invert prose-sm"
                       }`}
-                      style={{ overflowWrap: 'break-word', wordBreak: 'break-word' }}
+                      style={{
+                        overflowWrap: "break-word",
+                        wordBreak: "break-word",
+                      }}
                     >
-                     
                       {message.parts?.map((part: any, index: number) => {
-                        if (part.type === 'text') {
+                        if (part.type === "text") {
                           return (
                             <ReactMarkdown key={index}>
                               {part.text}
@@ -202,6 +235,22 @@ export default function ChatWidget() {
                   </div>
                 </div>
               ))}
+
+              {/* Suggested Questions */}
+              {messages.length === 1 && !isLoading && (
+                <div className="flex flex-wrap gap-2 mt-4 justify-end">
+                  {suggestedQuestions.map((sq, i) => (
+                    <button
+                      key={i}
+                      onClick={() => handleSuggestedClick(sq)}
+                      className="px-3 py-1.5 text-xs bg-purple/10 hover:bg-purple/20 text-white-100 border border-purple/30 hover:border-purple/50 rounded-full transition-all text-left"
+                    >
+                      {sq}
+                    </button>
+                  ))}
+                </div>
+              )}
+
               {isLoading && (
                 <div className="flex justify-start">
                   <div className="flex gap-3 max-w-[85%] flex-row">
