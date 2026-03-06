@@ -7,6 +7,8 @@ import MagicButton from "./MagicButton";
 // import { Spotlight } from "./ui/Spotlight";
 import { Spotlight } from "./ui/SpotlightNew";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
+import { ShootingStars } from "./ui/shooting-stars";
+import { StarsBackground } from "./ui/stars-background";
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -27,7 +29,9 @@ const Hero = () => {
           fill="purple"
         />
         <Spotlight className="left-80 top-28 h-[80vh] w-[50vw]" fill="blue" /> */}
-        <Spotlight />
+        {/* <Spotlight /> */}
+        <ShootingStars className="z-[1]" />
+        <StarsBackground className="z-[1]" />
       </div>
 
       {/**
