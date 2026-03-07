@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useTranslation } from "@/context/LanguageContext";
-import { Timeline } from "./ui/timeline";
+import { Timeline } from "./ui/Timeline";
 
 const Experience = () => {
   const { t } = useTranslation();

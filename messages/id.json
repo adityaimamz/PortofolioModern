@@ -9,8 +9,8 @@
     },
     "hero": {
         "tagline": "Full-Stack Software Engineer",
-        "title": "Membangun Aplikasi Full-Stack yang Skalabel dan Sistem Berbasis AI",
-        "intro": "Halo, saya Aditya Imam Zuhdi — Full-Stack Software Engineer berpengalaman dalam React, Laravel, Python, Go, dan Java untuk membangun aplikasi web modern dan sistem backend yang skalabel.",
+        "title": "Membangun Aplikasi Web yang Skalabel dan Sistem Berbasis AI",
+        "intro": "Saya adalah Full-Stack Software Engineer yang fokus pada pengembangan aplikasi web modern, sistem backend yang skalabel, dan produk berbasis AI yang cerdas. Saya menyukai mengubah masalah kompleks menjadi perangkat lunak yang andal dan efisien.",
         "button": "Unduh Resume",
         "techBadges": [
             {
@@ -45,51 +45,51 @@
             },
             {
                 "value": "10+",
-                "label": "Proyek Selesai"
+                "label": "Proyek yang Diselesaikan"
             },
             {
                 "value": "5+",
-                "label": "Teknologi Backend"
+                "label": "Klien yang Dilayani"
             }
         ]
     },
     "aiCapability": {
         "headingPrefix": "",
         "heading": "Pengembangan Sistem AI",
-        "subtitle": "Membangun sistem cerdas menggunakan teknologi AI modern",
+        "subtitle": "Merancang dan membangun sistem cerdas yang didukung oleh teknologi AI modern.",
         "items": [
             {
                 "title": "Sistem RAG",
-                "desc": "Merancang dan membangun pipeline Retrieval-Augmented Generation yang menggabungkan LLM dengan vector database untuk respons yang akurat dan berbasis data kontekstual."
+                "desc": "Merancang pipeline Retrieval-Augmented Generation yang menggabungkan LLM dengan vector database untuk menghasilkan respons yang kontekstual dan berbasis data nyata."
             },
             {
                 "title": "Integrasi LLM",
-                "desc": "Mengintegrasikan large language model seperti OpenAI GPT dan Google Gemini ke dalam aplikasi web full-stack untuk menggerakkan fitur cerdas dan otomasi."
+                "desc": "Mengintegrasikan large language model seperti OpenAI GPT dan Google Gemini ke dalam aplikasi web untuk mengaktifkan otomasi, workflow cerdas, dan fitur berbasis AI."
             },
             {
-                "title": "AI Chatbot & Asisten",
-                "desc": "Mengembangkan chatbot AI percakapan dan asisten virtual dengan kloning kepribadian, memori multi-gilir, dan integrasi platform seperti WhatsApp."
+                "title": "AI Chatbots & Asisten",
+                "desc": "Membangun sistem AI percakapan termasuk chatbot dan asisten virtual dengan memori multi-gilir, kloning kepribadian, dan integrasi dengan platform seperti WhatsApp."
             },
             {
                 "title": "Pencarian Knowledge Base",
-                "desc": "Membangun sistem pencarian semantik menggunakan vector embedding dan similarity matching untuk pengambilan pengetahuan yang cepat dan relevan dari koleksi dokumen besar."
+                "desc": "Mengembangkan sistem pencarian semantik menggunakan vector embedding untuk mengambil pengetahuan yang relevan dengan cepat dari koleksi dokumen besar."
             }
         ]
     },
     "grid": {
-        "item1Title": "Mengembangkan sistem backend dan aplikasi web yang skalabel menggunakan Go, Python, dan Next.js.",
+        "item1Title": "Membangun sistem backend yang skalabel dan aplikasi web modern menggunakan teknologi seperti Go, Python, dan Next.js.",
         "item1Desc": "Fokus Utama",
-        "item2Title": "Pendekatan teknis yang dipadukan dengan kepekaan terhadap desain visual.",
-        "item2Desc": "Teknologi & Estetika",
+        "item2Title": "Menggabungkan prinsip engineering yang kuat dengan pendekatan thoughtful terhadap user experience dan visual design.",
+        "item2Desc": "Teknologi & Design",
         "item3Title": "Terbiasa bekerja dan berkolaborasi dengan tim lintas zona waktu",
         "item6Title": "Saat ini mengembangkan aplikasi full-stack yang berfokus pada performa dan skalabilitas",
         "item6Desc": "Sedang Dikerjakan",
-        "item7Title": "Tertarik bekerja sama dalam sebuah proyek?"
+        "item7Title": "Tertarik memulai proyek bersama?"
     },
     "techStack": {
         "heading": "Tech Stack",
         "headingPrefix": "",
-        "subtitle": "Teknologi yang saya gunakan untuk membangun aplikasi web modern yang stabil, skalabel, dan mudah dikembangkan"
+        "subtitle": "Kumpulan teknologi yang sering saya gunakan untuk membangun aplikasi yang skalabel, mudah dikelola, dan berkinerja tinggi"
     },
     "experience": {
         "heading": "Pengalaman Kerja",
@@ -99,8 +99,8 @@
             {
                 "title": "Programmer",
                 "company": "PT Sigma Cipta Caraka (Telkomsigma)",
-                "duration": "Jul 2024 - Sekarang",
-                "desc": "Mengembangkan backend dan layanan API untuk aplikasi enterprise menggunakan Django REST Framework, Golang, Java Spring Boot, Flask, FastAPI, dan NestJS.",
+                "duration": "Jul 2024 – Sekarang",
+                "desc": "Mengembangkan backend services dan enterprise-grade API menggunakan teknologi seperti Django REST Framework, Golang, Java Spring Boot, FastAPI, Flask, dan NestJS.",
                 "techStackItems": [
                     {
                         "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/djangorest/djangorest-original.svg",
@@ -128,18 +128,18 @@
                     }
                 ],
                 "achievements": [
-                    "Melakukan upgrade dan migrasi komponen sistem e-CLEARS KPEI menggunakan Java Spring Boot agar kompatibel dengan Java 17+ serta arsitektur microservices.",
-                    "Berkolaborasi dengan tim lintas fungsi dalam pengembangan dan peningkatan aplikasi internal maupun eksternal.",
-                    "Melakukan migrasi dan integrasi data pada implementasi sistem baru untuk memastikan transisi yang stabil.",
-                    "Menyelesaikan bug teknis serta mengimplementasikan fitur baru untuk meningkatkan performa dan stabilitas aplikasi.",
-                    "Mengembangkan aplikasi bisnis berbasis low-code menggunakan Microsoft PowerApps untuk meningkatkan efisiensi proses kerja."
+                    "Migrasi dan upgrade komponen sistem KPEI e-CLEARS menggunakan Java Spring Boot untuk mendukung arsitektur microservices modern dan Java 17+.",
+                    "Berkolaborasi dengan tim lintas fungsi untuk membangun dan meningkatkan aplikasi internal maupun eksternal.",
+                    "Melakukan migrasi data untuk mendukung upgrade sistem dan deployment aplikasi baru.",
+                    "Mendiagnosis dan mengatasi issue di production sambil mengimplementasikan fitur baru untuk meningkatkan stabilitas dan performa.",
+                    "Membangun aplikasi bisnis internal menggunakan Microsoft PowerApps untuk menyederhanakan workflow."
                 ]
             },
             {
-                "title": "Full-Stack Web Developer",
-                "company": "Freelance (Remote)",
-                "duration": "Jan 2023 - Agu 2024",
-                "desc": "Mengembangkan berbagai aplikasi web dan sistem digital untuk klien dari berbagai sektor.",
+                "title": "Full-Stack Web Developer (Freelance)",
+                "company": "Jan 2023 – Agu 2024",
+                "duration": "",
+                "desc": "Memberikan solusi aplikasi web custom untuk klien di berbagai industri, dengan fokus pada keandalan, performa, dan user experience yang baik.",
                 "techStackItems": [
                     {
                         "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
@@ -167,15 +167,15 @@
                     }
                 ],
                 "achievements": [
-                    "Membangun sistem seperti Sistem Antrian Barbershop, Sistem Pakar Perawatan Kulit, Platform E-Learning Sekolah, dan Website Pemesanan Wisata.",
-                    "Menggunakan berbagai teknologi modern untuk menghasilkan aplikasi yang stabil, mudah digunakan, dan memenuhi kebutuhan klien."
+                    "Proyek yang Disampaikan: Sistem Antrian Barbershop, Sistem Pakar Perawatan Kulit, Platform E-Learning Sekolah, Website Pemesanan Wisata.",
+                    "Menggunakan teknologi web modern seperti React, Next.js, Node.js, Laravel, dan Tailwind CSS untuk memberikan solusi yang production-ready."
                 ]
             },
             {
                 "title": "Intern",
                 "company": "Solo Technopark",
-                "duration": "Feb 2023 - Jul 2023",
-                "desc": "Berkontribusi dalam pengembangan sistem digital dan penguatan infrastruktur website organisasi.",
+                "duration": "Feb 2023 – Jul 2023",
+                "desc": "Berkontribusi dalam pengembangan sistem digital dan inisiatif modernisasi infrastruktur.",
                 "techStackItems": [
                     {
                         "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
@@ -199,9 +199,9 @@
                     }
                 ],
                 "achievements": [
-                    "Mengembangkan sistem informasi untuk Soto Panaz, termasuk desain arsitektur sistem, database, serta antarmuka pengguna menggunakan PHP dan Bootstrap.",
-                    "Memigrasikan website Solo Technopark dan Solo Techno Incubator dari WordPress ke stack modern berbasis Next.js, Express.js, dan Tailwind CSS.",
-                    "Melakukan pengujian fungsional, integrasi, dan performa aplikasi serta melakukan perbaikan bug secara berkala."
+                    "Membangun sistem informasi untuk Soto Panaz termasuk desain arsitektur, manajemen database, dan implementasi UI.",
+                    "Migrasi website dari WordPress ke tech stack modern menggunakan Next.js, Express.js, dan Tailwind CSS.",
+                    "Melakukan pengujian functional, integration, dan performance sambil memelihara bug fixes."
                 ]
             }
         ]
@@ -313,33 +313,34 @@
         ]
     },
     "approach": {
-        "heading": "Cara Kerja",
+        "heading": "Pendekatan Saya",
         "headingPrefix": "",
+        "subtitle": "Proses sederhana dan terstruktur yang saya ikuti untuk memastikan setiap proyek diselesaikan dengan efisien dan andal.",
         "phases": [
             {
                 "title": "Perencanaan & Analisis",
-                "order": "Fase 1",
-                "des": "Memahami kebutuhan proyek, tujuan bisnis, target pengguna, serta menentukan struktur sistem dan fitur utama yang dibutuhkan."
+                "order": "Fase 1 –",
+                "des": "Memahami tujuan bisnis, kebutuhan pengguna, dan persyaratan proyek sebelum mendefinisikan arsitektur sistem dan fitur inti."
             },
             {
                 "title": "Pengembangan",
-                "order": "Fase 2",
-                "des": "Mengimplementasikan solusi teknis melalui proses pengembangan bertahap dengan pembaruan progres secara berkala."
+                "order": "Fase 2 –",
+                "des": "Membangun sistem melalui pengembangan iteratif sambil mempertahankan komunikasi yang jelas dan update kemajuan."
             },
             {
-                "title": "Implementasi & Peluncuran",
-                "order": "Fase 3",
-                "des": "Melakukan pengujian, optimasi performa, dan menyiapkan sistem hingga siap digunakan secara penuh."
+                "title": "Deployment & Peluncuran",
+                "order": "Fase 3 –",
+                "des": "Pengujian, optimisasi performa, dan persiapan sistem untuk deployment production."
             }
         ]
     },
     "footer": {
-        "heading": "Siap membawa kehadiran <span>digital</span> Anda ke level berikutnya?",
-        "headingPart1": "Siap membawa kehadiran",
-        "headingHighlight": "digital",
-        "headingPart2": "Anda ke level berikutnya?",
-        "subtitle": "Mari berdiskusi tentang bagaimana saya dapat membantu membangun atau mengembangkan produk digital Anda.",
+        "heading": "Siap membawa <span>produk</span> digital Anda ke level selanjutnya?",
+        "headingPart1": "Siap membawa",
+        "headingHighlight": "produk",
+        "headingPart2": "digital Anda ke level selanjutnya?",
+        "subtitle": "Mari kita diskusikan bagaimana saya dapat membantu membangun, meningkatkan, atau scale produk digital Anda.",
         "button": "Mari Terhubung",
-        "copyright": "Hak Cipta © 2024 Aditya Imam Zuhdi"
+        "copyright": "Copyright © 2024 Aditya Imam Zuhdi"
     }
 }

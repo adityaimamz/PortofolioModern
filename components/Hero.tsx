@@ -7,7 +7,8 @@ import MagicButton from "./MagicButton";
 // import { Spotlight } from "./ui/Spotlight";
 import { Spotlight } from "./ui/SpotlightNew";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
-import { ShootingStars } from "./ui/shooting-stars";
+import { EncryptedText } from "./ui/EncryptedText";
+import { ShootingStars } from "./ui/ShootingStars";
 import { StarsBackground } from "./ui/stars-background";
 
 const Hero = () => {
@@ -72,30 +73,6 @@ const Hero = () => {
             {t("hero.intro")}
           </p>
 
-          {/* Tech Badges */}
-          {/* {(() => {
-            const badges = t("hero.techBadges") as Array<{ icon: string; name: string }> | undefined;
-            return badges && badges.length > 0 ? (
-              <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8">
-                {badges.map((badge, i: number) => (
-                  <span
-                    key={i}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium
-                      bg-white/5 backdrop-blur-md border border-white/10 text-neutral-300
-                      hover:bg-purple/10 hover:border-purple/30 hover:text-white transition-all duration-300"
-                  >
-                    <img
-                      src={badge.icon}
-                      alt={badge.name}
-                      className="w-4 h-4 object-contain"
-                    />
-                    {badge.name}
-                  </span>
-                ))}
-              </div>
-            ) : null;
-          })()} */}
-
           <a href="/Aditya Imam Zuhdi-resume .pdf" download>
             <MagicButton
               title={t("hero.button")}
@@ -106,13 +83,25 @@ const Hero = () => {
 
           {/* Mini Metrics */}
           {(() => {
-            const metrics = t("hero.metrics") as Array<{ value: string; label: string }> | undefined;
+            const metrics = t("hero.metrics") as
+              | Array<{ value: string; label: string }>
+              | undefined;
             return metrics && metrics.length > 0 ? (
               <div className="flex items-center justify-center gap-6 md:gap-10 mt-10">
                 {metrics.map((metric, i) => (
                   <div key={i} className="flex flex-col items-center">
-                    <span className="text-2xl md:text-3xl font-bold text-white">{metric.value}</span>
-                    <span className="text-xs md:text-sm text-neutral-400 mt-1">{metric.label}</span>
+                    <EncryptedText
+                      text={metric.value}
+                      className="text-2xl md:text-3xl font-bold text-white"
+                      revealDelayMs={35}
+                      flipDelayMs={40}
+                    />
+                    <EncryptedText
+                      text={metric.label}
+                      className="text-xs md:text-sm text-neutral-400 mt-1"
+                      revealDelayMs={40}
+                      flipDelayMs={45}
+                    />
                   </div>
                 ))}
               </div>
@@ -125,4 +114,3 @@ const Hero = () => {
 };
 
 export default Hero;
-

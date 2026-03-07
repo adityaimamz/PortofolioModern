@@ -26,7 +26,7 @@ export const BentoGrid = ({
     <div
       className={cn(
         "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5 mx-auto",
-        className
+        className,
       )}
     >
       {children}
@@ -74,7 +74,7 @@ export const BentoGridItem = ({
     <div
       className={cn(
         "row-span-1 relative overflow-hidden rounded-3xl border border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4",
-        className
+        className,
       )}
       style={{
         background: "rgb(15,15,15)",
@@ -122,11 +122,17 @@ export const BentoGridItem = ({
             <div
               className={cn(
                 titleClassName,
-                "group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10"
+                "group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10",
+                id === 2 && "lg:max-w-none justify-center",
               )}
             >
               {/* Description */}
-              <div className="font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-[#C1C2D3] z-10">
+              <div
+                className={cn(
+                  "font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-[#C1C2D3] z-10",
+                  id === 2 && "lg:max-w-full",
+                )}
+              >
                 {id === 1 && description ? (
                   <TextGenerateEffect
                     words={description as string}
@@ -138,7 +144,10 @@ export const BentoGridItem = ({
               </div>
               {/* Title */}
               <div
-                className={`font-sans text-lg lg:text-3xl max-w-96 font-bold z-10 text-white`}
+                className={cn(
+                  "font-sans text-lg lg:text-3xl max-w-96 font-bold z-10 text-white",
+                  id === 2 && "lg:max-w-full",
+                )}
               >
                 {title}
               </div>

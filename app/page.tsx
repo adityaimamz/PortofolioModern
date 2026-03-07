@@ -95,8 +95,8 @@ const Home = () => {
 
         <Hero />
         <Grid />
-        <TechStackGrid />
         <AICapability />
+        <TechStackGrid />
         <Experience />
         <Education />
         <RecentProjects />

@@ -9,8 +9,8 @@
     },
     "hero": {
         "tagline": "Full-Stack Software Engineer",
-        "title": "Building Scalable Full-Stack Applications and AI-Powered Systems",
-        "intro": "Full-Stack Software Engineer building modern web applications and scalable systems.",
+        "title": "Building Scalable Web Applications and AI-Powered Systems",
+        "intro": "I'm a Full-Stack Software Engineer focused on building modern web applications, scalable backend systems, and intelligent AI-powered products. I enjoy turning complex problems into reliable and efficient software.",
         "button": "Download Resume",
         "techBadges": [
             {
@@ -45,41 +45,41 @@
             },
             {
                 "value": "10+",
-                "label": "Projects Built"
+                "label": "Projects Completed"
             },
             {
                 "value": "5+",
-                "label": "Backend Technologies"
+                "label": "Satisfied Clients"
             }
         ]
     },
     "aiCapability": {
         "headingPrefix": "",
         "heading": "AI Systems Development",
-        "subtitle": "Building intelligent systems powered by modern AI technologies",
+        "subtitle": "Designing and building intelligent systems powered by modern AI technologies.",
         "items": [
             {
                 "title": "RAG Systems",
-                "desc": "Designing and building Retrieval-Augmented Generation pipelines that combine LLMs with vector databases for context-aware, accurate responses grounded in real data."
+                "desc": "Designing Retrieval-Augmented Generation pipelines that combine LLMs with vector databases to produce context-aware responses grounded in real data."
             },
             {
                 "title": "LLM Integration",
-                "desc": "Integrating large language models like OpenAI GPT and Google Gemini into full-stack web applications to power intelligent features and automation."
+                "desc": "Integrating large language models such as OpenAI GPT and Google Gemini into web applications to enable automation, intelligent workflows, and AI-driven features."
             },
             {
                 "title": "AI Chatbots & Assistants",
-                "desc": "Developing conversational AI chatbots and virtual assistants with personality cloning, multi-turn memory, and platform integrations like WhatsApp."
+                "desc": "Building conversational AI systems including chatbots and virtual assistants with multi-turn memory, personality cloning, and integrations with platforms like WhatsApp."
             },
             {
                 "title": "Knowledge Base Search",
-                "desc": "Building semantic search systems using vector embeddings and similarity matching for fast, relevant knowledge retrieval from large document collections."
+                "desc": "Developing semantic search systems using vector embeddings to retrieve relevant knowledge quickly from large document collections."
             }
         ]
     },
     "grid": {
-        "item1Title": "Building scalable backend systems and web applications using Go, Python, and Next.js.",
+        "item1Title": "Building scalable backend systems and modern web applications using technologies such as Go, Python, and Next.js.",
         "item1Desc": "Core Focus",
-        "item2Title": "Combining engineering logic with a strong sense of visual design.",
+        "item2Title": "Combining strong engineering principles with a thoughtful approach to user experience and visual design.",
         "item2Desc": "Technology & Design",
         "item3Title": "Comfortable collaborating across different time zones",
         "item6Title": "Currently developing scalable full-stack applications focused on performance and reliability",
@@ -89,7 +89,7 @@
     "techStack": {
         "heading": "Tech Stack",
         "headingPrefix": "My",
-        "subtitle": "Technologies I use to build modern, scalable, and maintainable web applications"
+        "subtitle": "A collection of technologies I frequently use to build scalable, maintainable, and high-performance applications"
     },
     "experience": {
         "heading": "Work Experience",
@@ -99,8 +99,8 @@
             {
                 "title": "Programmer",
                 "company": "PT Sigma Cipta Caraka (Telkomsigma)",
-                "duration": "Jul 2024 - Present",
-                "desc": "Developing backend services and enterprise APIs using Django REST Framework, Golang, Java Spring Boot, Flask, FastAPI, and NestJS.",
+                "duration": "Jul 2024 – Present",
+                "desc": "Developing backend services and enterprise-grade APIs using technologies such as Django REST Framework, Golang, Java Spring Boot, FastAPI, Flask, and NestJS.",
                 "techStackItems": [
                     {
                         "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/djangorest/djangorest-original.svg",
@@ -128,18 +128,18 @@
                     }
                 ],
                 "achievements": [
-                    "Upgraded and migrated components of the KPEI e-CLEARS system using Java Spring Boot, ensuring compatibility with Java 17+ and modern microservices architecture.",
-                    "Collaborated with cross-functional teams to develop and enhance both internal and client-facing web applications.",
-                    "Performed data migrations to ensure smooth integration during system upgrades and new application deployments.",
-                    "Resolved production issues and implemented new features to improve system performance and stability.",
-                    "Developed low-code business applications using Microsoft PowerApps to streamline internal workflows."
+                    "Migrated and upgraded components of the KPEI e-CLEARS system using Java Spring Boot to support modern microservices architecture and Java 17+.",
+                    "Collaborated with cross-functional teams to build and enhance both internal and client-facing applications.",
+                    "Performed data migration to support system upgrades and new deployments.",
+                    "Diagnosed and resolved production issues while implementing new features to improve stability and performance.",
+                    "Built internal business applications using Microsoft PowerApps to streamline workflows."
                 ]
             },
             {
-                "title": "Full-Stack Web Developer",
-                "company": "Freelance (Remote)",
-                "duration": "Jan 2023 - Aug 2024",
-                "desc": "Delivered custom web application solutions for clients across different industries.",
+                "title": "Full-Stack Web Developer (Freelance)",
+                "company": "Jan 2023 – Aug 2024",
+                "duration": "",
+                "desc": "Delivered custom web applications for clients across various industries, focusing on reliability, performance, and user-friendly experiences.",
                 "techStackItems": [
                     {
                         "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
@@ -167,15 +167,15 @@
                     }
                 ],
                 "achievements": [
-                    "Developed systems including a Barber Queue Management System, Skin Treatment Expert System, School E-Learning Platform, and a Tourism Booking Website.",
-                    "Applied modern web technologies to build reliable, user-friendly applications that met client requirements."
+                    "Projects Delivered: Barber Queue Management System, Skin Treatment Expert System, School E-Learning Platform, Tourism Booking Website.",
+                    "Used modern web technologies such as React, Next.js, Node.js, Laravel, and Tailwind CSS to deliver production-ready solutions."
                 ]
             },
             {
                 "title": "Intern",
                 "company": "Solo Technopark",
-                "duration": "Feb 2023 - Jul 2023",
-                "desc": "Contributed to digital system development and website modernization initiatives.",
+                "duration": "Feb 2023 – Jul 2023",
+                "desc": "Contributed to digital system development and modernization initiatives.",
                 "techStackItems": [
                     {
                         "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
@@ -199,9 +199,9 @@
                     }
                 ],
                 "achievements": [
-                    "Developed an information system for Soto Panaz including system architecture, database management, and UI implementation using PHP and Bootstrap.",
-                    "Migrated Solo Technopark and Solo Techno Incubator websites from WordPress to a modern stack using Next.js, Express.js, and Tailwind CSS.",
-                    "Performed functional, integration, and performance testing while maintaining bug fixes across multiple web platforms."
+                    "Built an information system for Soto Panaz including architecture design, database management, and UI implementation.",
+                    "Migrated websites from WordPress to a modern stack using Next.js, Express.js, and Tailwind CSS.",
+                    "Performed functional, integration, and performance testing while maintaining bug fixes."
                 ]
             }
         ]
@@ -315,16 +315,17 @@
     "approach": {
         "heading": "Approach",
         "headingPrefix": "My",
+        "subtitle": "A simple and structured process I follow to ensure every project is delivered efficiently and reliably.",
         "phases": [
             {
                 "title": "Planning & Analysis",
                 "order": "Phase 1",
-                "des": "Understanding project requirements, business goals, and user needs while defining system structure and core features."
+                "des": "Understanding business goals, user needs, and project requirements before defining the system architecture and core features."
             },
             {
                 "title": "Development",
                 "order": "Phase 2",
-                "des": "Implementing the solution through iterative development while providing regular progress updates."
+                "des": "Building the system through iterative development while maintaining clear communication and progress updates."
             },
             {
                 "title": "Deployment & Launch",
@@ -338,7 +339,7 @@
         "headingPart1": "Ready to take",
         "headingHighlight": "your",
         "headingPart2": "digital product to the next level?",
-        "subtitle": "Let's discuss how I can help build or improve your digital product.",
+        "subtitle": "Let's discuss how I can help build, improve, or scale your digital product.",
         "button": "Let's Connect",
         "copyright": "Copyright © 2024 Aditya Imam Zuhdi"
     }
