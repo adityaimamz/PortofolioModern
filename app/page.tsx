@@ -11,6 +11,7 @@ import Approach from "@/components/Approach";
 import Experience from "@/components/Experience";
 import RecentProjects from "@/components/RecentProjects";
 import TechStackGrid from "@/components/TechStackGrid";
+import AICapability from "@/components/AICapability";
 import Education from "@/components/Education";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import {
@@ -95,6 +96,7 @@ const Home = () => {
         <Hero />
         <Grid />
         <TechStackGrid />
+        <AICapability />
         <Experience />
         <Education />
         <RecentProjects />

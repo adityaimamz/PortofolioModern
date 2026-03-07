@@ -3,12 +3,12 @@ import type { NextRequest } from "next/server";
 import { jwtVerify } from "jose";
 import { getJwtSecret } from "@/lib/auth";
 
-// Konfigurasi route mana yang di-intercept oleh middleware ini
+// Konfigurasi route mana yang di-intercept oleh proxy ini
 export const config = {
   matcher: ["/admin/:path*", "/api/admin/:path*"],
 };
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   // Biarkan endpoint login dan logout bebas diakses
   if (
     request.nextUrl.pathname.startsWith("/api/admin/login") ||

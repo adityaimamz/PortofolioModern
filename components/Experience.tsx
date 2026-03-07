@@ -11,6 +11,8 @@ const Experience = () => {
     company: string;
     duration: string;
     desc: string;
+    techStack?: string;
+    techStackItems?: Array<{ icon: string; name: string }>;
     achievements: string[];
   }>;
 
@@ -23,11 +25,9 @@ const Experience = () => {
           {/* Company & Role */}
           <div className="mb-4">
             <h4 className="text-lg md:text-2xl font-bold text-white">
-              {exp.title}
+              {exp.title}{" "}
+              <span className="text-purple">— {exp.company}</span>
             </h4>
-            <p className="text-purple text-sm md:text-base font-semibold mt-1">
-              {exp.company}
-            </p>
           </div>
 
           {/* Description */}
@@ -35,10 +35,38 @@ const Experience = () => {
             {exp.desc}
           </p>
 
-          {/* Achievements */}
+          {/* Tech Stack Badges with Icons */}
+          {exp.techStackItems && exp.techStackItems.length > 0 && (
+            <div className="flex flex-wrap gap-2 mb-6">
+              {exp.techStackItems.map((item, i) => (
+                <span
+                  key={i}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-neutral-300 text-xs md:text-sm font-medium hover:bg-purple/10 hover:border-purple/30 transition-all duration-200"
+                >
+                  <img
+                    src={item.icon}
+                    alt={item.name}
+                    className="w-4 h-4 object-contain"
+                  />
+                  <span>{item.name}</span>
+                </span>
+              ))}
+            </div>
+          )}
+
+          {/* Fallback: old string-based techStack */}
+          {!exp.techStackItems && exp.techStack && (
+            <div className="mb-6">
+              <span className="inline-block px-3 py-1.5 rounded-lg bg-purple/10 border border-purple/20 text-purple-300 text-xs md:text-sm font-medium">
+                {exp.techStack}
+              </span>
+            </div>
+          )}
+
+          {/* Impact / Achievements */}
           {exp.achievements && exp.achievements.length > 0 && (
             <div className="space-y-2">
-              <p className="text-white text-sm font-semibold">
+              <p className="text-white text-sm font-bold">
                 {t("experience.keyAchievements")}
               </p>
               <ul className="space-y-2">

@@ -41,16 +41,16 @@ export function ExpandableProjectCard({ item }: { item: any }) {
       </AnimatePresence>
       <AnimatePresence>
         {active && (
-          <div className="fixed inset-0 grid place-items-center z-[100] p-4 md:p-10">
+          <div className="fixed inset-0 grid place-items-center z-[100] p-4 md:p-8">
             <motion.div
               layoutId={`card-${item.id}-${id}`}
               ref={ref}
-              className="w-full max-w-3xl flex flex-col bg-neutral-900 border border-white/20 sm:rounded-3xl rounded-xl overflow-hidden shadow-2xl"
+              className="w-full max-w-3xl max-h-[90vh] flex flex-col bg-neutral-900 border border-white/20 sm:rounded-3xl rounded-xl overflow-hidden shadow-2xl overflow-y-auto"
             >
-              <div className="relative">
+              <div className="relative flex-shrink-0">
                 <motion.div
                   layoutId={`image-${item.id}-${id}`}
-                  className="w-full h-64 md:h-96 relative overflow-hidden bg-[#111111]"
+                  className="w-full h-48 sm:h-64 md:h-80 relative overflow-hidden bg-[#111111]"
                 >
                   <img
                     src="/bg.png"
@@ -90,11 +90,11 @@ export function ExpandableProjectCard({ item }: { item: any }) {
                 </div>
               </div>
 
-              <div className="p-6 md:p-8 flex flex-col bg-neutral-950">
-                <div className="flex justify-between items-start mb-4 gap-4">
+              <div className="p-4 sm:p-6 md:p-8 flex flex-col bg-neutral-950">
+                <div className="flex justify-between items-start mb-3 sm:mb-4 gap-4">
                   <motion.h1
                     layoutId={`title-${item.id}-${id}`}
-                    className="font-bold text-2xl md:text-3xl text-white"
+                    className="font-bold text-xl sm:text-2xl md:text-3xl text-white"
                   >
                     {item.title}
                   </motion.h1>
@@ -108,15 +108,44 @@ export function ExpandableProjectCard({ item }: { item: any }) {
                     exit={{ opacity: 0, transition: { duration: 0.1 } }}
                     transition={{ delay: 0.1 }}
                   >
+                    {/* Project Tags */}
+                    {item.tags && item.tags.length > 0 && (
+                      <div className="flex flex-wrap gap-2 mb-3">
+                        {item.tags.map((tag: string, idx: number) => (
+                          <span
+                            key={idx}
+                            className="px-2.5 py-1 rounded-full text-xs font-medium bg-purple/15 border border-purple/25 text-purple-300"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                     <p className="text-base text-neutral-300 md:text-lg w-full leading-relaxed">
                       {item.des}
                     </p>
+                    {item.highlights && item.highlights.length > 0 && (
+                      <div className="mt-4">
+                        <p className="text-white font-semibold mb-2">
+                          Key Highlights:
+                        </p>
+                        <ul className="list-disc list-inside text-sm md:text-base text-neutral-300 space-y-1">
+                          {item.highlights.map(
+                            (highlight: string, idx: number) => (
+                              <li key={idx}>
+                                <span className="-ml-2">{highlight}</span>
+                              </li>
+                            ),
+                          )}
+                        </ul>
+                      </div>
+                    )}
                   </motion.div>
 
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mt-4 pt-6 border-t border-white/10">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6 mt-3 sm:mt-4 pt-4 sm:pt-6 border-t border-white/10">
                     <motion.div
                       layoutId={`icons-${item.id}-${id}`}
-                      className="flex items-center"
+                      className="flex items-center gap-1"
                     >
                       {item.iconLists.map((icon: string, index: number) => (
                         <div
@@ -127,7 +156,11 @@ export function ExpandableProjectCard({ item }: { item: any }) {
                             marginLeft: index === 0 ? 0 : "-8px",
                           }}
                         >
-                          <img src={icon} alt={`icon${index}`} className={`p-2 w-full h-full object-contain ${icon === '/express.svg' ? 'invert' : ''}`} />
+                          <img
+                            src={icon}
+                            alt={`icon${index}`}
+                            className={`p-2 w-full h-full object-contain ${icon === "/express.svg" ? "invert" : ""}`}
+                          />
                         </div>
                       ))}
                     </motion.div>
@@ -165,7 +198,11 @@ export function ExpandableProjectCard({ item }: { item: any }) {
               layoutId={`image-${item.id}-${id}`}
               className="absolute inset-0 w-full h-full overflow-hidden rounded-2xl lg:rounded-3xl bg-[#111111]"
             >
-              <img src="/bg.png" alt="bgimg" className="w-full h-full object-cover" />
+              <img
+                src="/bg.png"
+                alt="bgimg"
+                className="w-full h-full object-cover"
+              />
               <img
                 src={item.img}
                 alt="cover"
@@ -198,7 +235,11 @@ export function ExpandableProjectCard({ item }: { item: any }) {
                     transform: `translateX(-${5 * index + 2}px)`,
                   }}
                 >
-                  <img src={icon} alt={`icon${index}`} className={`p-2 ${icon === '/express.svg' ? 'invert' : ''}`} />
+                  <img
+                    src={icon}
+                    alt={`icon${index}`}
+                    className={`p-2 ${icon === "/express.svg" ? "invert" : ""}`}
+                  />
                 </div>
               ))}
             </motion.div>

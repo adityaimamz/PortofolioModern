@@ -18,6 +18,8 @@ const RecentProjects = () => {
   const projectTranslations = t("projects.items") as Array<{
     title: string;
     des: string;
+    highlights?: string[];
+    tags?: string[];
   }>;
 
   return (
@@ -40,6 +42,8 @@ const RecentProjects = () => {
                       ...item,
                       title: projectTranslations[index]?.title ?? item.title,
                       des: projectTranslations[index]?.des ?? item.des,
+                      highlights: projectTranslations[index]?.highlights ?? (item as any).highlights,
+                      tags: projectTranslations[index]?.tags ?? (item as any).tags,
                     }}
                   />
                 </div>
@@ -63,6 +67,8 @@ const RecentProjects = () => {
                   ...item,
                   title: projectTranslations[index]?.title ?? item.title,
                   des: projectTranslations[index]?.des ?? item.des,
+                  highlights: projectTranslations[index]?.highlights ?? (item as any).highlights,
+                  tags: projectTranslations[index]?.tags ?? (item as any).tags,
                 }}
               />
             </div>

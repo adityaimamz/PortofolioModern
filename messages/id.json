@@ -8,10 +8,73 @@
         "contactMe": "Hubungi Saya"
     },
     "hero": {
-        "tagline": "Full-Stack Development untuk Web Modern",
-        "title": "Membangun Produk Digital yang Cepat, Skalabel, dan Mudah Digunakan",
-        "intro": "Halo, saya Aditya Imam Zuhdi — Full-Stack Web Developer yang berfokus pada pengembangan backend, sistem skalabel, dan aplikasi web modern.",
-        "button": "Unduh Resume"
+        "tagline": "Full-Stack Software Engineer",
+        "title": "Membangun Aplikasi Full-Stack yang Skalabel dan Sistem Berbasis AI",
+        "intro": "Halo, saya Aditya Imam Zuhdi — Full-Stack Software Engineer berpengalaman dalam React, Laravel, Python, Go, dan Java untuk membangun aplikasi web modern dan sistem backend yang skalabel.",
+        "button": "Unduh Resume",
+        "techBadges": [
+            {
+                "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+                "name": "React"
+            },
+            {
+                "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg",
+                "name": "Laravel"
+            },
+            {
+                "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+                "name": "Python"
+            },
+            {
+                "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg",
+                "name": "Go"
+            },
+            {
+                "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+                "name": "Java"
+            },
+            {
+                "icon": "/gemini.svg",
+                "name": "AI Systems"
+            }
+        ],
+        "metrics": [
+            {
+                "value": "3+",
+                "label": "Tahun Pengalaman"
+            },
+            {
+                "value": "10+",
+                "label": "Proyek Selesai"
+            },
+            {
+                "value": "5+",
+                "label": "Teknologi Backend"
+            }
+        ]
+    },
+    "aiCapability": {
+        "headingPrefix": "",
+        "heading": "Pengembangan Sistem AI",
+        "subtitle": "Membangun sistem cerdas menggunakan teknologi AI modern",
+        "items": [
+            {
+                "title": "Sistem RAG",
+                "desc": "Merancang dan membangun pipeline Retrieval-Augmented Generation yang menggabungkan LLM dengan vector database untuk respons yang akurat dan berbasis data kontekstual."
+            },
+            {
+                "title": "Integrasi LLM",
+                "desc": "Mengintegrasikan large language model seperti OpenAI GPT dan Google Gemini ke dalam aplikasi web full-stack untuk menggerakkan fitur cerdas dan otomasi."
+            },
+            {
+                "title": "AI Chatbot & Asisten",
+                "desc": "Mengembangkan chatbot AI percakapan dan asisten virtual dengan kloning kepribadian, memori multi-gilir, dan integrasi platform seperti WhatsApp."
+            },
+            {
+                "title": "Pencarian Knowledge Base",
+                "desc": "Membangun sistem pencarian semantik menggunakan vector embedding dan similarity matching untuk pengambilan pengetahuan yang cepat dan relevan dari koleksi dokumen besar."
+            }
+        ]
     },
     "grid": {
         "item1Title": "Mengembangkan sistem backend dan aplikasi web yang skalabel menggunakan Go, Python, dan Next.js.",
@@ -31,13 +94,39 @@
     "experience": {
         "heading": "Pengalaman Kerja",
         "headingPrefix": "",
-        "keyAchievements": "Pencapaian Utama:",
+        "keyAchievements": "Impact:",
         "jobs": [
             {
                 "title": "Programmer",
                 "company": "PT Sigma Cipta Caraka (Telkomsigma)",
                 "duration": "Jul 2024 - Sekarang",
                 "desc": "Mengembangkan backend dan layanan API untuk aplikasi enterprise menggunakan Django REST Framework, Golang, Java Spring Boot, Flask, FastAPI, dan NestJS.",
+                "techStackItems": [
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/djangorest/djangorest-original.svg",
+                        "name": "Django REST"
+                    },
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg",
+                        "name": "Golang"
+                    },
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
+                        "name": "Spring Boot"
+                    },
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
+                        "name": "FastAPI"
+                    },
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg",
+                        "name": "NestJS"
+                    },
+                    {
+                        "icon": "/power-apps.svg",
+                        "name": "PowerApps"
+                    }
+                ],
                 "achievements": [
                     "Melakukan upgrade dan migrasi komponen sistem e-CLEARS KPEI menggunakan Java Spring Boot agar kompatibel dengan Java 17+ serta arsitektur microservices.",
                     "Berkolaborasi dengan tim lintas fungsi dalam pengembangan dan peningkatan aplikasi internal maupun eksternal.",
@@ -51,6 +140,32 @@
                 "company": "Freelance (Remote)",
                 "duration": "Jan 2023 - Agu 2024",
                 "desc": "Mengembangkan berbagai aplikasi web dan sistem digital untuk klien dari berbagai sektor.",
+                "techStackItems": [
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+                        "name": "React"
+                    },
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+                        "name": "Next.js"
+                    },
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+                        "name": "Node.js"
+                    },
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+                        "name": "PHP"
+                    },
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg",
+                        "name": "Laravel"
+                    },
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+                        "name": "Tailwind CSS"
+                    }
+                ],
                 "achievements": [
                     "Membangun sistem seperti Sistem Antrian Barbershop, Sistem Pakar Perawatan Kulit, Platform E-Learning Sekolah, dan Website Pemesanan Wisata.",
                     "Menggunakan berbagai teknologi modern untuk menghasilkan aplikasi yang stabil, mudah digunakan, dan memenuhi kebutuhan klien."
@@ -61,6 +176,28 @@
                 "company": "Solo Technopark",
                 "duration": "Feb 2023 - Jul 2023",
                 "desc": "Berkontribusi dalam pengembangan sistem digital dan penguatan infrastruktur website organisasi.",
+                "techStackItems": [
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+                        "name": "PHP"
+                    },
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
+                        "name": "Bootstrap"
+                    },
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+                        "name": "Next.js"
+                    },
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+                        "name": "Express.js"
+                    },
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+                        "name": "Tailwind CSS"
+                    }
+                ],
                 "achievements": [
                     "Mengembangkan sistem informasi untuk Soto Panaz, termasuk desain arsitektur sistem, database, serta antarmuka pengguna menggunakan PHP dan Bootstrap.",
                     "Memigrasikan website Solo Technopark dan Solo Techno Incubator dari WordPress ke stack modern berbasis Next.js, Express.js, dan Tailwind CSS.",
@@ -115,19 +252,63 @@
         "items": [
             {
                 "title": "Celestial Scroll - Novel Reader",
-                "des": "Platform membaca web modern untuk pembaca light novel dengan fitur kustomisasi tampilan, performa tinggi, dan dukungan Progressive Web App."
+                "des": "Platform membaca web modern untuk pembaca light novel dengan fitur kustomisasi tampilan, performa tinggi, dan dukungan Progressive Web App.",
+                "tags": [
+                    "Full-Stack",
+                    "PWA",
+                    "React",
+                    "Supabase"
+                ],
+                "highlights": [
+                    "Dikembangkan dengan Next.js, React, dan Tailwind CSS untuk pengalaman membaca yang lancar",
+                    "Mengimplementasikan manajemen database terstruktur menggunakan Supabase dan PostgreSQL",
+                    "Mengoptimalkan performa melalui strategi caching dan konfigurasi PWA untuk akses offline"
+                ]
             },
             {
                 "title": "POS for UMKM Cemanting Art",
-                "des": "Aplikasi POS full-stack untuk membantu UMKM dalam mengelola transaksi, pencatatan keuangan, serta laporan laba dan rugi."
+                "des": "Aplikasi POS full-stack untuk membantu UMKM dalam mengelola transaksi, pencatatan keuangan, serta laporan laba dan rugi.",
+                "tags": [
+                    "POS System",
+                    "REST API",
+                    "Node.js",
+                    "MySQL"
+                ],
+                "highlights": [
+                    "Membangun arsitektur REST API yang skalabel menggunakan Node.js dan Express.js",
+                    "Merancang skema database relasional dengan MySQL untuk menangani transaksi dan laporan yang kompleks",
+                    "Menerapkan autentikasi yang aman dan sistem Role-Based Access Control untuk manajemen pengguna"
+                ]
             },
             {
                 "title": "WhatsApp AI Chatbot with RAG",
-                "des": "Sistem backend cerdas yang mengkloning kepribadian pengguna menggunakan RAG (Retrieval-Augmented Generation) untuk balasan otomatis yang personal."
+                "des": "Sistem backend cerdas yang mengkloning kepribadian pengguna menggunakan RAG (Retrieval-Augmented Generation) untuk balasan otomatis yang personal.",
+                "tags": [
+                    "AI / RAG",
+                    "LangChain",
+                    "Vector DB",
+                    "WhatsApp API"
+                ],
+                "highlights": [
+                    "Membangun pipeline RAG menggunakan LangChain, API OpenAI, dan Gemini AI untuk memberikan balasan berbasis konteks",
+                    "Mengintegrasikan Vector Database untuk memetakan pesan pengguna dan mengambil karakteristik kepribadian yang relevan",
+                    "Melakukan kontainerisasi aplikasi (Docker) untuk memastikan skalabilitas tinggi pada proses request dari webhook WhatsApp"
+                ]
             },
             {
                 "title": "E-Learning School",
-                "des": "Platform pembelajaran daring dengan fitur manajemen materi, tugas, serta komunikasi antara siswa dan pengajar."
+                "des": "Platform pembelajaran daring dengan fitur manajemen materi, tugas, serta komunikasi antara siswa dan pengajar.",
+                "tags": [
+                    "Full-Stack",
+                    "Laravel",
+                    "Livewire",
+                    "MySQL"
+                ],
+                "highlights": [
+                    "Menciptakan arsitektur monolitik full-stack menggunakan Laravel dan PHP",
+                    "Menerapkan Livewire untuk antarmuka frontend yang reaktif tanpa framework JavaScript yang kompleks",
+                    "Mengelola sistem peran pengguna, mata pelajaran, dan pencatatan nilai yang didukung oleh database MySQL"
+                ]
             }
         ]
     },

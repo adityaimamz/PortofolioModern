@@ -8,10 +8,73 @@
         "contactMe": "Contact Me"
     },
     "hero": {
-        "tagline": "Full-Stack Development for Modern Web Applications",
-        "title": "Building Fast, Scalable, and User-Centered Digital Products",
-        "intro": "Hi, I'm Aditya Imam Zuhdi — a Full-Stack Web Developer focused on backend engineering, scalable systems, and modern web applications.",
-        "button": "Download Resume"
+        "tagline": "Full-Stack Software Engineer",
+        "title": "Building Scalable Full-Stack Applications and AI-Powered Systems",
+        "intro": "Full-Stack Software Engineer building modern web applications and scalable systems.",
+        "button": "Download Resume",
+        "techBadges": [
+            {
+                "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+                "name": "React"
+            },
+            {
+                "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg",
+                "name": "Laravel"
+            },
+            {
+                "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+                "name": "Python"
+            },
+            {
+                "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg",
+                "name": "Go"
+            },
+            {
+                "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+                "name": "Java"
+            },
+            {
+                "icon": "/gemini.svg",
+                "name": "AI Systems"
+            }
+        ],
+        "metrics": [
+            {
+                "value": "3+",
+                "label": "Years Experience"
+            },
+            {
+                "value": "10+",
+                "label": "Projects Built"
+            },
+            {
+                "value": "5+",
+                "label": "Backend Technologies"
+            }
+        ]
+    },
+    "aiCapability": {
+        "headingPrefix": "",
+        "heading": "AI Systems Development",
+        "subtitle": "Building intelligent systems powered by modern AI technologies",
+        "items": [
+            {
+                "title": "RAG Systems",
+                "desc": "Designing and building Retrieval-Augmented Generation pipelines that combine LLMs with vector databases for context-aware, accurate responses grounded in real data."
+            },
+            {
+                "title": "LLM Integration",
+                "desc": "Integrating large language models like OpenAI GPT and Google Gemini into full-stack web applications to power intelligent features and automation."
+            },
+            {
+                "title": "AI Chatbots & Assistants",
+                "desc": "Developing conversational AI chatbots and virtual assistants with personality cloning, multi-turn memory, and platform integrations like WhatsApp."
+            },
+            {
+                "title": "Knowledge Base Search",
+                "desc": "Building semantic search systems using vector embeddings and similarity matching for fast, relevant knowledge retrieval from large document collections."
+            }
+        ]
     },
     "grid": {
         "item1Title": "Building scalable backend systems and web applications using Go, Python, and Next.js.",
@@ -31,13 +94,39 @@
     "experience": {
         "heading": "Work Experience",
         "headingPrefix": "My",
-        "keyAchievements": "Key Achievements:",
+        "keyAchievements": "Impact:",
         "jobs": [
             {
                 "title": "Programmer",
                 "company": "PT Sigma Cipta Caraka (Telkomsigma)",
                 "duration": "Jul 2024 - Present",
                 "desc": "Developing backend services and enterprise APIs using Django REST Framework, Golang, Java Spring Boot, Flask, FastAPI, and NestJS.",
+                "techStackItems": [
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/djangorest/djangorest-original.svg",
+                        "name": "Django REST"
+                    },
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg",
+                        "name": "Golang"
+                    },
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
+                        "name": "Spring Boot"
+                    },
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
+                        "name": "FastAPI"
+                    },
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg",
+                        "name": "NestJS"
+                    },
+                    {
+                        "icon": "/power-apps.svg",
+                        "name": "PowerApps"
+                    }
+                ],
                 "achievements": [
                     "Upgraded and migrated components of the KPEI e-CLEARS system using Java Spring Boot, ensuring compatibility with Java 17+ and modern microservices architecture.",
                     "Collaborated with cross-functional teams to develop and enhance both internal and client-facing web applications.",
@@ -51,6 +140,32 @@
                 "company": "Freelance (Remote)",
                 "duration": "Jan 2023 - Aug 2024",
                 "desc": "Delivered custom web application solutions for clients across different industries.",
+                "techStackItems": [
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+                        "name": "React"
+                    },
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+                        "name": "Next.js"
+                    },
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+                        "name": "Node.js"
+                    },
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+                        "name": "PHP"
+                    },
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg",
+                        "name": "Laravel"
+                    },
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+                        "name": "Tailwind CSS"
+                    }
+                ],
                 "achievements": [
                     "Developed systems including a Barber Queue Management System, Skin Treatment Expert System, School E-Learning Platform, and a Tourism Booking Website.",
                     "Applied modern web technologies to build reliable, user-friendly applications that met client requirements."
@@ -61,6 +176,28 @@
                 "company": "Solo Technopark",
                 "duration": "Feb 2023 - Jul 2023",
                 "desc": "Contributed to digital system development and website modernization initiatives.",
+                "techStackItems": [
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+                        "name": "PHP"
+                    },
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
+                        "name": "Bootstrap"
+                    },
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+                        "name": "Next.js"
+                    },
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+                        "name": "Express.js"
+                    },
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+                        "name": "Tailwind CSS"
+                    }
+                ],
                 "achievements": [
                     "Developed an information system for Soto Panaz including system architecture, database management, and UI implementation using PHP and Bootstrap.",
                     "Migrated Solo Technopark and Solo Techno Incubator websites from WordPress to a modern stack using Next.js, Express.js, and Tailwind CSS.",
@@ -115,19 +252,63 @@
         "items": [
             {
                 "title": "Celestial Scroll - Novel Reader",
-                "des": "A modern web-based reading platform for light novel readers featuring customizable reading experiences, optimized performance, and Progressive Web App support."
+                "des": "A modern web-based reading platform for light novel readers featuring customizable reading experiences, optimized performance, and Progressive Web App support.",
+                "tags": [
+                    "Full-Stack",
+                    "PWA",
+                    "React",
+                    "Supabase"
+                ],
+                "highlights": [
+                    "Developed with Next.js, React, and Tailwind CSS for a seamless reading experience",
+                    "Implemented robust database management using Supabase and PostgreSQL",
+                    "Optimized performance with caching strategies and PWA configuration for offline access"
+                ]
             },
             {
                 "title": "POS for UMKM Cemanting Art",
-                "des": "A full-stack POS system designed to help small businesses manage transactions, financial records, and profit/loss reporting."
+                "des": "A full-stack POS system designed to help small businesses manage transactions, financial records, and profit/loss reporting.",
+                "tags": [
+                    "POS System",
+                    "REST API",
+                    "Node.js",
+                    "MySQL"
+                ],
+                "highlights": [
+                    "Built scalable REST API architecture using Node.js and Express.js",
+                    "Designed relational database schema with MySQL to handle complex transactions and reporting",
+                    "Implemented secure authentication and role-based access control for different user types"
+                ]
             },
             {
                 "title": "WhatsApp AI Chatbot with RAG",
-                "des": "An intelligent backend system that clones a user's personality using Retrieval-Augmented Generation (RAG) for personalized automated replies."
+                "des": "An intelligent backend system that clones a user's personality using Retrieval-Augmented Generation (RAG) for personalized automated replies.",
+                "tags": [
+                    "AI / RAG",
+                    "LangChain",
+                    "Vector DB",
+                    "WhatsApp API"
+                ],
+                "highlights": [
+                    "Engineered RAG pipeline using LangChain, OpenAI API, and Gemini AI for context-aware responses",
+                    "Integrated Vector Database mapping user messages to retrieve relevant personality traits",
+                    "Containerized application ensuring high scalability for concurrent WhatsApp webhooks"
+                ]
             },
             {
                 "title": "E-Learning School",
-                "des": "An online learning platform featuring course material management, assignment tracking, and communication tools for students and teachers."
+                "des": "An online learning platform featuring course material management, assignment tracking, and communication tools for students and teachers.",
+                "tags": [
+                    "Full-Stack",
+                    "Laravel",
+                    "Livewire",
+                    "MySQL"
+                ],
+                "highlights": [
+                    "Created full-stack monolithic architecture using Laravel and PHP",
+                    "Implemented Livewire for reactive frontend interfaces without complex JavaScript frameworks",
+                    "Managed user roles, courses, and gradebook schemas backed by a MySQL database"
+                ]
             }
         ]
     },
