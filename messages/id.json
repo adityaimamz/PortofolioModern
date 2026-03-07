@@ -319,17 +319,17 @@
         "phases": [
             {
                 "title": "Perencanaan & Analisis",
-                "order": "Fase 1 –",
+                "order": "Fase 1",
                 "des": "Memahami tujuan bisnis, kebutuhan pengguna, dan persyaratan proyek sebelum mendefinisikan arsitektur sistem dan fitur inti."
             },
             {
                 "title": "Pengembangan",
-                "order": "Fase 2 –",
+                "order": "Fase 2",
                 "des": "Membangun sistem melalui pengembangan iteratif sambil mempertahankan komunikasi yang jelas dan update kemajuan."
             },
             {
                 "title": "Deployment & Peluncuran",
-                "order": "Fase 3 –",
+                "order": "Fase 3",
                 "des": "Pengujian, optimisasi performa, dan persiapan sistem untuk deployment production."
             }
         ]
