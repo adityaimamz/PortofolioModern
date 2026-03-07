@@ -87,18 +87,18 @@ const Hero = () => {
               | Array<{ value: string; label: string }>
               | undefined;
             return metrics && metrics.length > 0 ? (
-              <div className="flex items-center justify-center gap-6 md:gap-10 mt-10">
+              <div className="flex items-start justify-center gap-6 md:gap-10 mt-10">
                 {metrics.map((metric, i) => (
-                  <div key={i} className="flex flex-col items-center">
+                  <div key={i} className="flex w-24 md:w-32 flex-col items-center">
                     <EncryptedText
                       text={metric.value}
-                      className="text-2xl md:text-3xl font-bold text-white"
+                      className="text-center text-2xl md:text-3xl font-bold text-white"
                       revealDelayMs={35}
                       flipDelayMs={40}
                     />
                     <EncryptedText
                       text={metric.label}
-                      className="text-xs md:text-sm text-neutral-400 mt-1"
+                      className="mt-1 text-center text-xs md:text-sm text-neutral-400 leading-snug"
                       revealDelayMs={40}
                       flipDelayMs={45}
                     />
