@@ -15,7 +15,7 @@ const Hero = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="pb-20 pt-36">
+    <div className="pb-20 pt-16 md:pt-20">
       {/**
        *  UI: Spotlights
        *  Link: https://ui.aceternity.com/components/spotlight
@@ -52,7 +52,7 @@ const Hero = () => {
         />
       </div>
 
-      <div className="flex justify-center relative my-20 z-10">
+      <div className="relative z-10 mt-8 flex justify-center md:mt-12 lg:mt-16">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
           <p className="uppercase tracking-widest text-xs text-center text-neutral-300 max-w-80">
             {t("hero.tagline")}
