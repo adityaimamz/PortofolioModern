@@ -50,7 +50,7 @@ export const EncryptedText: React.FC<EncryptedTextProps> = ({
   className,
   revealDelayMs = 200,
   charset = DEFAULT_CHARSET,
-  flipDelayMs = 1,
+  flipDelayMs = 10,
   encryptedClassName,
   revealedClassName,
 }) => {
