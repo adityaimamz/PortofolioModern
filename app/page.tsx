@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useTranslation } from "@/context/LanguageContext";
 
 import Hero from "@/components/Hero";
+import About from "@/components/About";
 import Grid from "@/components/Grid";
 import Footer from "@/components/Footer";
 import Clients from "@/components/Clients";
@@ -94,6 +95,7 @@ const Home = () => {
         </Navbar>
 
         <Hero />
+        <About />
         <Grid />
         <AICapability />
         <TechStackGrid />
