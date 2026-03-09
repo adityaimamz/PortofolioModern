@@ -69,11 +69,11 @@ const Hero = () => {
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
           />
 
-          <p className="text-center mt-4 md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
+          <p className="text-center mt-4 lg:mt-0 md:tracking-wider mb-4 lg:mb-0 text-sm md:text-lg lg:text-2xl">
             {t("hero.intro")}
           </p>
 
-          <a href="/Aditya Imam Zuhdi-resume .pdf" download className="mt-8">
+          <a href="/Aditya Imam Zuhdi-resume .pdf" download className="mt-8 lg:mt-0">
             <MagicButton
               title={t("hero.button")}
               icon={<FaDownload />}
