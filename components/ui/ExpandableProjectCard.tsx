@@ -41,11 +41,11 @@ export function ExpandableProjectCard({ item }: { item: any }) {
       </AnimatePresence>
       <AnimatePresence>
         {active && (
-          <div className="fixed inset-0 grid place-items-center z-[100] p-4 md:p-8">
+          <div className="fixed inset-0 grid place-items-center z-[100] p-4 pt-24 sm:p-8 sm:pt-28">
             <motion.div
               layoutId={`card-${item.id}-${id}`}
               ref={ref}
-              className="w-full max-w-3xl max-h-[90vh] flex flex-col bg-neutral-900 border border-white/20 sm:rounded-3xl rounded-xl overflow-hidden shadow-2xl overflow-y-auto"
+              className="w-full max-w-3xl max-h-[80vh] md:max-h-[85vh] flex flex-col bg-neutral-900 border border-white/20 sm:rounded-3xl rounded-xl overflow-hidden shadow-2xl overflow-y-auto"
             >
               <div className="relative flex-shrink-0">
                 <motion.div

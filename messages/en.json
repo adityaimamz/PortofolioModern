@@ -57,10 +57,9 @@
         "heading": "About",
         "role": "Full-Stack Engineer • AI Systems Developer • Backend Architecture Specialist",
         "paragraphs": [
-            "Saya Aditya Imam Zuhdi, seorang Full-Stack Software Engineer yang berbasis di Indonesia, saat ini bekerja di Telkomsigma. Saya mengkhususkan diri dalam membangun aplikasi web modern dan sistem backend menggunakan teknologi seperti JavaScript, Python, Go, dan Java, beserta framework seperti Next.js, Laravel, Django, dan FastAPI.",
-            "Pekerjaan saya berfokus pada perancangan sistem yang andal dan terukur untuk mendukung kebutuhan bisnis di dunia nyata. Dari membangun antarmuka yang ramah pengguna hingga mengembangkan layanan backend dan API yang tangguh, saya senang mengubah masalah yang kompleks menjadi solusi perangkat lunak yang efisien dan mudah dikelola.",
-            "Sepanjang pengalaman saya, saya telah berkolaborasi dengan tim lintas fungsi untuk mengembangkan aplikasi internal maupun eksternal untuk klien, melakukan migrasi data, serta mengimplementasikan fitur-fitur baru yang meningkatkan performa dan stabilitas sistem.",
-            "Saya sangat antusias untuk terus belajar dan mengeksplorasi teknologi baru, terutama dalam arsitektur backend modern dan sistem berbasis AI. Tujuan saya adalah membangun perangkat lunak yang tidak hanya bekerja dengan baik secara teknis, tetapi juga memberikan nilai yang berarti bagi pengguna dan organisasi."
+            "I'm Aditya Imam Zuhdi, a Full-Stack Software Engineer based in Indonesia, currently working at Telkomsigma. I focus on building modern web applications and backend systems using technologies such as JavaScript, Python, Go, and Java, along with frameworks like Next.js, Laravel, Django, and FastAPI.",
+            "I enjoy building reliable, scalable, and maintainable systems that support real-world business needs. From designing intuitive user interfaces to developing robust backend services and APIs, I’m passionate about turning complex problems into efficient software solutions.",
+            "I also have experience collaborating with cross-functional teams to develop applications, perform data migrations, and improve system performance. Currently, I’m interested in exploring modern backend architecture and AI-powered systems to build digital products that create real impact."
         ],
         "closing": "Best regards,",
         "signature": "Aditya",
@@ -276,6 +275,21 @@
         "heading": "Projects",
         "headingPrefix": "Selected",
         "items": [
+            {
+                "title": "Portofolio Modern",
+                "des": "A premium, modern portfolio website built with Next.js, Framer Motion, and Aceternity UI, featuring multi-language support and AI integration.",
+                "tags": [
+                    "Next.js",
+                    "Tailwind CSS",
+                    "Framer Motion",
+                    "i18n"
+                ],
+                "highlights": [
+                    "Designed with a sleek glassmorphism UI and interactive animations using Framer Motion",
+                    "Integrated multi-language support (i18n) for international accessibility",
+                    "Optimized for performance and SEO to ensure a fast and responsive user experience"
+                ]
+            },
             {
                 "title": "Celestial Scroll - Novel Reader",
                 "des": "A modern web-based reading platform for light novel readers featuring customizable reading experiences, optimized performance, and Progressive Web App support.",

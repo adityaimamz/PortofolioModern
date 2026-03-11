@@ -265,6 +265,20 @@ export const techStackItems = [
 
 export const projects = [
   {
+    id: 5,
+    title: "Portofolio Modern",
+    des: "Website portofolio premium yang dibangun dengan Next.js, Framer Motion, dan Aceternity UI, menampilkan antarmuka modern dan integrasi multibahasa.",
+    tags: ["Next.js", "Tailwind CSS", "Framer Motion", "i18n"],
+    highlights: [
+        "Dirancang dengan antarmuka glassmorphism yang elegan dan animasi interaktif menggunakan Framer Motion",
+        "Mengintegrasikan dukungan multibahasa (i18n) untuk jangkauan global",
+        "Optimasi performa dan SEO untuk menghadirkan pengalaman pengguna yang cepat dan responsif"
+    ],
+    img: "/portofolio-modern.webp",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/fm.svg"],
+    link: "https://github.com/adityaimamz/PortofolioModern",
+  },
+  {
     id: 1,
     title: "Celestial Scroll - Novel Reader",
     des: "Platform membaca web modern yang dirancang khusus untuk pembaca light novel dengan fitur kustomisasi penuh dan PWA.",
