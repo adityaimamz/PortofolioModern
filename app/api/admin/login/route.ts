@@ -50,7 +50,13 @@ export async function POST(req: NextRequest) {
     }
 
     // Get admin password hash from environment
-    const adminPasswordHash = process.env.ADMIN_PASSWORD_HASH;
+    let adminPasswordHash = process.env.ADMIN_PASSWORD_HASH;
+    
+    // Normalize: remove any leading backslashes if the env loader didn't consume them
+    if (adminPasswordHash && adminPasswordHash.includes('\\$')) {
+      adminPasswordHash = adminPasswordHash.replace(/\\/g, '');
+    }
+
     const legacyAdminPassword = process.env.ADMIN_PASSWORD;
 
     if (!adminPasswordHash && !legacyAdminPassword) {

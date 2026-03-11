@@ -39,7 +39,7 @@ export default function AdminIndexPage() {
              </div>
          </div>
 
-         <div className="group p-6 bg-black-200 border border-white-100/10 hover:border-blue-500/50 rounded-2xl shadow-xl transition-all hover:shadow-[0_0_20px_rgba(59,130,246,0.15)] flex flex-col gap-4 relative overflow-hidden opacity-70 cursor-not-allowed">
+         <Link href="/admin/chats" className="group p-6 bg-black-200 border border-white-100/10 hover:border-blue-500/50 rounded-2xl shadow-xl transition-all hover:shadow-[0_0_20px_rgba(59,130,246,0.15)] flex flex-col gap-4 relative overflow-hidden opacity-70 cursor-pointer">
              <div className="absolute top-0 right-0 p-4 opacity-50 translate-x-4 -translate-y-4 group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform">
                 <IconMessageChatbot className="w-24 h-24 text-blue-500/20" />
              </div>
@@ -47,10 +47,10 @@ export default function AdminIndexPage() {
                 <IconMessageChatbot className="w-6 h-6 text-blue-500" />
              </div>
              <div>
-                <h3 className="text-lg font-semibold text-white-100 mb-1">Log Pesan <span className="text-[10px] ml-2 px-2 py-0.5 rounded-full bg-white-100/10 text-white-100/70">Segera</span></h3>
+                <h3 className="text-lg font-semibold text-white-100 mb-1">Log Pesan</h3>
                 <p className="text-sm text-white-100/60 leading-relaxed">Pantau history dan riwayat pengguna yang telah berinteraksi dengan AI Anda.</p>
              </div>
-         </div>
+         </Link>
       </div>
     </div>
   );
