@@ -15,7 +15,7 @@ const Hero = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="pb-20 pt-16 md:pt-20">
+    <div className="pb-28 pt-28 md:pt-16">
       {/**
        *  UI: Spotlights
        *  Link: https://ui.aceternity.com/components/spotlight
