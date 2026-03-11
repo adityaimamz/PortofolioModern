@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <footer className="w-full pt-20 pb-10 relative" id="contact">
       {/* background grid */}
-      <div className="w-full absolute left-0 -bottom-10 md:-bottom-24 h-[60vh] md:h-[40vh] md:min-h-96">
+      <div className="w-full absolute left-0 -bottom-10 md:-bottom-24 h-[60vh] md:h-[40vh] md:min-h-96 pointer-events-none">
         <img
           src="/footer-grid.svg"
           alt="grid"
@@ -21,7 +21,7 @@ const Footer = () => {
         />
       </div>
 
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center relative z-10">
         <h1 className="heading lg:max-w-[45vw]">
           {t("footer.headingPart1")}{" "}
           <span className="text-purple">{t("footer.headingHighlight")}</span>{" "}
@@ -38,7 +38,7 @@ const Footer = () => {
           />
         </a>
       </div>
-      <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
+      <div className="flex mt-16 md:flex-row flex-col justify-between items-center relative z-10">
         <p className="mb-4 md:text-base md:mb-0 text-sm md:font-normal font-light">
           {t("footer.copyright").replace("2024", currentYear.toString())}
         </p>
