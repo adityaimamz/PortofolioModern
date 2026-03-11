@@ -16,7 +16,7 @@ const LanguageSwitcher = () => {
             : "text-neutral-400 hover:text-white"
         }`}
       >
-        EN
+        English
       </button>
       <button
         onClick={() => setLanguage("id")}
@@ -26,7 +26,7 @@ const LanguageSwitcher = () => {
             : "text-neutral-400 hover:text-white"
         }`}
       >
-        ID
+        Indonesia
       </button>
     </div>
   );
