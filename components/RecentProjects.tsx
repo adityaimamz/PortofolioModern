@@ -56,7 +56,7 @@ const RecentProjects = () => {
             const globalIndex = startIndex + index;
             return (
               <div
-                className="lg:min-h-[25rem] h-[18rem] flex items-center justify-center sm:w-96 w-[80vw]"
+                className="lg:min-h-[27rem] md:min-h-[25rem] sm:min-h-[23rem] h-[22rem] flex items-center justify-center sm:w-96 w-[80vw]"
                 key={item.id}
               >
                 <ExpandableProjectCard
