@@ -13,11 +13,11 @@ const Footer = () => {
   return (
     <footer className="w-full pt-20 pb-10 relative" id="contact">
       {/* background grid */}
-      <div className="w-full absolute left-0 -bottom-10 md:-bottom-72 h-[60vh] md:h-[40vh] md:min-h-96">
+      <div className="w-full absolute left-0 -bottom-10 md:-bottom-24 h-[60vh] md:h-[40vh] md:min-h-96">
         <img
           src="/footer-grid.svg"
           alt="grid"
-          className="w-full h-full opacity-80 md:opacity-50 object-cover object-bottom"
+          className="w-full h-full opacity-50 object-cover object-bottom"
         />
       </div>
 
