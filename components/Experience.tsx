@@ -46,7 +46,7 @@ const Experience = () => {
                   <img
                     src={item.icon}
                     alt={item.name}
-                    className="w-4 h-4 object-contain"
+                    className={`w-4 h-4 object-contain ${item.name === "Express.js" || item.name === "Flask" ? "invert" : ""}`}
                   />
                   <span>{item.name}</span>
                 </span>

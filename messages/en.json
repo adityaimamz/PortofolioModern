@@ -150,6 +150,22 @@
                     {
                         "icon": "/power-apps.svg",
                         "name": "PowerApps"
+                    },
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg",
+                        "name": "Flask"
+                    },
+                    {
+                        "name": "RabbitMQ",
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rabbitmq/rabbitmq-original.svg"
+                    },
+                    {
+                        "name": "OpenRouter",
+                        "icon": "/openrouter.svg"
+                    },
+                    {
+                        "name": "Vector Database",
+                        "icon": "/db-blue.svg"
                     }
                 ],
                 "achievements": [
@@ -157,7 +173,8 @@
                     "Collaborated with cross-functional teams to build and enhance both internal and client-facing applications.",
                     "Performed data migration to support system upgrades and new deployments.",
                     "Diagnosed and resolved production issues while implementing new features to improve stability and performance.",
-                    "Built internal business applications using Microsoft PowerApps to streamline workflows."
+                    "Built internal business applications using Microsoft PowerApps to streamline workflows.",
+                    "Implemented LLM technology to develop AI features such as intelligent chatbots, document comparison, and automated document versioning."
                 ]
             },
             {
@@ -287,7 +304,8 @@
                 "highlights": [
                     "Designed with a sleek glassmorphism UI and interactive animations using Framer Motion",
                     "Integrated multi-language support (i18n) for international accessibility",
-                    "Optimized for performance and SEO to ensure a fast and responsive user experience"
+                    "Optimized for performance and SEO to ensure a fast and responsive user experience",
+                    "Implemented AI chat widget for visitor interaction and portfolio navigation assistance."
                 ]
             },
             {
@@ -332,7 +350,8 @@
                 "highlights": [
                     "Engineered RAG pipeline using LangChain, OpenAI API, and Gemini AI for context-aware responses",
                     "Integrated Vector Database mapping user messages to retrieve relevant personality traits",
-                    "Containerized application ensuring high scalability for concurrent WhatsApp webhooks"
+                    "Containerized application ensuring high scalability for concurrent WhatsApp webhooks",
+                    "Implemented LLM-based document comparison and automated versioning features to enhance text analysis capabilities."
                 ]
             },
             {

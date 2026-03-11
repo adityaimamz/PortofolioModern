@@ -272,10 +272,11 @@ export const projects = [
     highlights: [
         "Dirancang dengan antarmuka glassmorphism yang elegan dan animasi interaktif menggunakan Framer Motion",
         "Mengintegrasikan dukungan multibahasa (i18n) untuk jangkauan global",
-        "Optimasi performa dan SEO untuk menghadirkan pengalaman pengguna yang cepat dan responsif"
+        "Optimasi performa dan SEO untuk menghadirkan pengalaman pengguna yang cepat dan responsif",
+        "Implementasi widget chat AI untuk interaksi pengunjung dan bantuan navigasi portofolio."
     ],
     img: "/portofolio-modern.webp",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/fm.svg"],
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/fm.svg", "/gemini.svg", "/supabase.svg"],
     link: "https://github.com/adityaimamz/PortofolioModern",
   },
   {
@@ -314,7 +315,8 @@ export const projects = [
     highlights: [
         "Membangun pipeline RAG menggunakan LangChain, API OpenAI, dan Gemini AI untuk memberikan balasan berbasis konteks",
         "Mengintegrasikan Vector Database untuk memetakan pesan pengguna dan mengambil karakteristik kepribadian yang relevan",
-        "Melakukan kontainerisasi aplikasi (Docker) untuk memastikan skalabilitas tinggi pada proses request dari webhook WhatsApp"
+        "Melakukan kontainerisasi aplikasi (Docker) untuk memastikan skalabilitas tinggi pada proses request dari webhook WhatsApp",
+        "Menerapkan fitur perbandingan dokumen (document compare) dan versioning otomatis berbasis LLM untuk meningkatkan kemampuan sistem."
     ],
     img: "/chatbotwa.webp", 
     iconLists: ["/ts.svg", "/nodejs.svg", "/sqlite.svg", "/gemini.svg", "/openrouter.svg"],
@@ -416,13 +418,15 @@ export const workExperience = [
       { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg", name: "FastAPI" },
       { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg", name: "NestJS" },
       { icon: "/power-apps.svg", name: "PowerApps" },
+      { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg", name: "Flask"}
     ],
     achievements: [
       "Upgraded and migrated components of the KPEI e-CLEARS system using Java Spring Boot, ensuring compatibility with Java 17+ and modern microservices architecture.",
       "Collaborated with cross-functional teams to develop and enhance both internal and client-facing web applications.",
       "Performed data migrations to ensure smooth integration during system upgrades and new application deployments.",
       "Resolved production issues and implemented new features to improve system performance and stability.",
-      "Developed low-code business applications using Microsoft PowerApps to streamline internal workflows."
+      "Developed low-code business applications using Microsoft PowerApps to streamline internal workflows.",
+      "Implemented LLM technology to develop AI features such as intelligent chatbots, document comparison, and automated document versioning."
     ],
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",

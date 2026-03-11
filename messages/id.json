@@ -137,6 +137,22 @@
                     {
                         "icon": "/power-apps.svg",
                         "name": "PowerApps"
+                    },
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg",
+                        "name": "Flask"
+                    },
+                    {
+                        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rabbitmq/rabbitmq-original.svg",
+                        "name": "RabbitMQ"
+                    },
+                    {
+                        "icon": "/openrouter.svg",
+                        "name": "OpenRouter"
+                    },
+                    {
+                        "name": "Vector Database",
+                        "icon": "/db-blue.svg"
                     }
                 ],
                 "achievements": [
@@ -144,7 +160,8 @@
                     "Berkolaborasi dengan tim lintas fungsi untuk membangun dan meningkatkan aplikasi internal maupun eksternal.",
                     "Melakukan migrasi data untuk mendukung upgrade sistem dan deployment aplikasi baru.",
                     "Mendiagnosis dan mengatasi issue di production sambil mengimplementasikan fitur baru untuk meningkatkan stabilitas dan performa.",
-                    "Membangun aplikasi bisnis internal menggunakan Microsoft PowerApps untuk menyederhanakan workflow."
+                    "Membangun aplikasi bisnis internal menggunakan Microsoft PowerApps untuk menyederhanakan workflow.",
+                    "Menerapkan teknologi LLM untuk mengembangkan fitur AI seperti chatbot cerdas, sistem perbandingan dokumen (document compare), dan versioning dokumen otomatis."
                 ]
             },
             {
@@ -274,7 +291,8 @@
                 "highlights": [
                     "Dirancang dengan antarmuka glassmorphism yang elegan dan animasi interaktif menggunakan Framer Motion",
                     "Mengintegrasikan dukungan multibahasa (i18n) untuk jangkauan global",
-                    "Optimasi performa dan SEO untuk menghadirkan pengalaman pengguna yang cepat dan responsif"
+                    "Optimasi performa dan SEO untuk menghadirkan pengalaman pengguna yang cepat dan responsif",
+                    "Implementasi widget chat AI untuk interaksi pengunjung dan bantuan navigasi portofolio."
                 ]
             },
             {
@@ -319,7 +337,8 @@
                 "highlights": [
                     "Membangun pipeline RAG menggunakan LangChain, API OpenAI, dan Gemini AI untuk memberikan balasan berbasis konteks",
                     "Mengintegrasikan Vector Database untuk memetakan pesan pengguna dan mengambil karakteristik kepribadian yang relevan",
-                    "Melakukan kontainerisasi aplikasi (Docker) untuk memastikan skalabilitas tinggi pada proses request dari webhook WhatsApp"
+                    "Melakukan kontainerisasi aplikasi (Docker) untuk memastikan skalabilitas tinggi pada proses request dari webhook WhatsApp",
+                    "Menerapkan fitur perbandingan dokumen (document compare) dan versioning otomatis berbasis LLM untuk meningkatkan kemampuan sistem."
                 ]
             },
             {
