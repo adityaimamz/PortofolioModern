@@ -91,7 +91,7 @@ export const BentoGridItem = ({
         <>
           {/* Standard card layout */}
           <div className={`${id === 7 && "flex justify-center"} h-full`}>
-            <div className="w-full h-full absolute">
+            <div className="w-full h-full absolute pointer-events-none">
               {img && (
                 <img
                   src={img}
@@ -101,7 +101,7 @@ export const BentoGridItem = ({
               )}
             </div>
             <div
-              className={`absolute right-0 -bottom-5 ${
+              className={`absolute right-0 -bottom-5 pointer-events-none ${
                 id === 6 && "w-full opacity-80"
               } `}
             >
@@ -122,7 +122,7 @@ export const BentoGridItem = ({
             <div
               className={cn(
                 titleClassName,
-                "group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10",
+                "group-hover/bento:translate-x-2 transition duration-200 relative z-10 md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10",
                 id === 2 && "lg:max-w-none justify-center",
               )}
             >
@@ -157,10 +157,10 @@ export const BentoGridItem = ({
 
               {/* CTA Purple (Card 7) */}
               {id === 7 && (
-                <div className="mt-5 relative">
+                <div className="mt-5 relative z-10">
                   <div
                     className={`absolute -bottom-5 right-0 ${
-                      copied ? "block" : "block"
+                      copied ? "block" : "hidden"
                     }`}
                   >
                     <Lottie
