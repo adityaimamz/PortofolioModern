@@ -6,6 +6,9 @@ import { NextResponse } from "next/server";
 // Memungkinkan response streaming
 export const maxDuration = 60;
 
+// Batas maksimal pesan per IP
+const MAX_MESSAGES_PER_IP = 5;
+
 export async function POST(req: Request) {
   try {
     const profileName =
@@ -35,6 +38,16 @@ export async function POST(req: Request) {
 
     console.log("Menerima query:", userQuery);
 
+    // Ekstrak IP client dari header
+    const forwarded = req.headers.get("x-forwarded-for");
+    const clientIp = forwarded
+      ? forwarded.split(",")[0].trim()
+      : req.headers.get("x-real-ip") ||
+        req.headers.get("cf-connecting-ip") ||
+        "unknown";
+
+    console.log("Client IP:", clientIp);
+
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 
     const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -44,6 +57,27 @@ export async function POST(req: Request) {
     }
 
     const supabase = createClient(supabaseUrl, supabaseServiceKey);
+
+    // ============ CEK RATE LIMIT PER IP ============
+    const { data: limitData } = await supabase
+      .from("ip_rate_limits")
+      .select("message_count")
+      .eq("ip_address", clientIp)
+      .single();
+
+    const currentCount = limitData?.message_count ?? 0;
+    const isNewIp = !limitData;
+
+    if (currentCount >= MAX_MESSAGES_PER_IP) {
+      console.warn(
+        `Rate limit tercapai untuk IP: ${clientIp} (${currentCount}/${MAX_MESSAGES_PER_IP})`,
+      );
+      return NextResponse.json(
+        { error: "rate_limit_exceeded", remaining: 0 },
+        { status: 429 },
+      );
+    }
+    // ===============================================
 
     const _ = await supabase.from("chat_logs").insert({
       session_id: sessionId,
@@ -107,15 +141,17 @@ export async function POST(req: Request) {
 
     // 4. Prompt engineering
     const isEnglish = language === "en";
-    const defaultLanguageInstruction = isEnglish ? "Inggris (English)" : "Indonesia";
-    
+    const defaultLanguageInstruction = isEnglish
+      ? "Inggris (English)"
+      : "Indonesia";
+
     const systemPrompt = `Kamu adalah asisten AI (Digital Twin) yang merepresentasikan "${profileName}", seorang Full-Stack Developer spesialis di ekosistem Next.js, React, TypeScript, dan Supabase.
-Tugas kamu adalah menjawab pertanyaan dari pengunjung portofolio berdasarkan informasi (konteks) yang diberikan ke kamu. 
-Gunakan nada bahasa yang profesional, ramah, dan sedikit antusias. 
+Tugas kamu adalah menjawab pertanyaan dari pengunjung portofolio berdasarkan informasi (konteks) yang diberikan ke kamu.
+Gunakan nada bahasa yang profesional, ramah, dan sedikit antusias.
 
 PENTING - ATURAN BAHASA (LANGUAGE RULES):
 1. **DETEKSI BAHASA**: Deteksi bahasa pengguna pada pesan terakhir mereka (Inggris atau Indonesia).
-2. **TERJEMAHAN WAJIB**: Konteks profil di bawah ini ditulis menggunakan bahasa Indonesia. JIKA pengguna bertanya dalam bahasa INGGRIS (English), kamu **WAJIB** menerjemahkan jawabanmu sepenuhnya ke bahasa Inggris. **JANGAN SEKALI-KALI** membalas dalam bahasa Indonesia jika di-chat dalam bahasa Inggris. 
+2. **TERJEMAHAN WAJIB**: Konteks profil di bawah ini ditulis menggunakan bahasa Indonesia. JIKA pengguna bertanya dalam bahasa INGGRIS (English), kamu **WAJIB** menerjemahkan jawabanmu sepenuhnya ke bahasa Inggris. **JANGAN SEKALI-KALI** membalas dalam bahasa Indonesia jika di-chat dalam bahasa Inggris.
 3. **BALASAN SEIMBANG**: Berlaku sebaliknya, jika pengguna bertanya dalam bahasa Indonesia, balas dalam bahasa Indonesia. Jangan membalas dengan bahasa campuran.
 
 ATURAN PERILAKU LAINNYA:
@@ -182,10 +218,35 @@ ${contextText || "(Tidak ada konteks spesifik tersedia saat ini)"}
             if (logError) console.error("Gagal menyimpan log AI:", logError);
           });
 
+        // ============ INCREMENT RATE LIMIT IP ============
+        if (isNewIp) {
+          supabase
+            .from("ip_rate_limits")
+            .insert({ ip_address: clientIp, message_count: 1 })
+            .then(({ error: e }) => {
+              if (e) console.error("Gagal insert ip_rate_limits:", e.message);
+            });
+        } else {
+          supabase
+            .from("ip_rate_limits")
+            .update({
+              message_count: currentCount + 1,
+              updated_at: new Date().toISOString(),
+            })
+            .eq("ip_address", clientIp)
+            .then(({ error: e }) => {
+              if (e) console.error("Gagal update ip_rate_limits:", e.message);
+            });
+        }
+        // =================================================
+
+        const remaining = MAX_MESSAGES_PER_IP - (currentCount + 1);
+
         return NextResponse.json(
           {
             id: msgId,
             text: responseText,
+            remaining,
           },
           { status: 200 },
         );

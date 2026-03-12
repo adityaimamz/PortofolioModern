@@ -16,7 +16,7 @@ const suggestedQuestionsId = [
   "Proyek apa saja yang pernah dibuat?",
   "Apakah Aditya menerima freelance?",
   "Apakah bisa kolaborasi full-stack?",
-  "Bagaimana cara menghubungi Aditya?"
+  "Bagaimana cara menghubungi Aditya?",
 ];
 
 const suggestedQuestionsEn = [
@@ -25,21 +25,27 @@ const suggestedQuestionsEn = [
   "What projects has he built?",
   "Does Aditya take freelance work?",
   "Is he available for full-stack collaboration?",
-  "How can I contact Aditya?"
+  "How can I contact Aditya?",
 ];
 
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
+  const [isRateLimited, setIsRateLimited] = useState(false);
+  const [remainingMessages, setRemainingMessages] = useState<number | null>(
+    null,
+  );
   const { language } = useLanguage();
   const profileName = process.env.NEXT_PUBLIC_PROFILE_NAME || "Portfolio Owner";
   const aiTwinName =
     process.env.NEXT_PUBLIC_AI_TWIN_NAME || `${profileName}'s AI Twin`;
-  
+
   const welcomeMessageId = `Halo! Saya asisten AI milik ${profileName}. Anda bisa menanyakan pengalaman kerja, tech stack, atau proyek yang pernah saya kerjakan. Apa yang ingin Anda ketahui?`;
   const welcomeMessageEn = `Hello! I am ${profileName}'s AI assistant. You can ask me about his work experience, tech stack, or projects. What would you like to know?`;
-  const welcomeMessage = language === "id" ? welcomeMessageId : welcomeMessageEn;
-  const suggestedQuestions = language === "id" ? suggestedQuestionsId : suggestedQuestionsEn;
+  const welcomeMessage =
+    language === "id" ? welcomeMessageId : welcomeMessageEn;
+  const suggestedQuestions =
+    language === "id" ? suggestedQuestionsId : suggestedQuestionsEn;
 
   // Generate UUID unik hanya sekali saat komponen dimount (per sesi browser/refresh)
   const sessionId = useRef(uuidv4());
@@ -85,7 +91,7 @@ export default function ChatWidget() {
   }, [language, welcomeMessage, setMessages]);
 
   const sendMessage = async (userMessage: string) => {
-    if (!userMessage.trim() || isLoading) return;
+    if (!userMessage.trim() || isLoading || isRateLimited) return;
 
     setIsLoading(true);
 
@@ -112,10 +118,41 @@ export default function ChatWidget() {
         }),
       });
 
+      // Handle rate limit exceeded (429)
+      if (response.status === 429) {
+        setIsRateLimited(true);
+        setRemainingMessages(0);
+        setMessages((prev) => [
+          ...prev,
+          {
+            id: (Date.now() + 1).toString(),
+            role: "assistant",
+            parts: [
+              {
+                type: "text",
+                text:
+                  language === "id"
+                    ? "⚠️ Kamu telah mencapai batas maksimal **5 pesan** untuk IP ini. Terima kasih sudah menggunakan chat!"
+                    : "⚠️ You have reached the maximum limit of **5 messages** for your IP address. Thank you for using the chat!",
+              },
+            ],
+          },
+        ]);
+        return;
+      }
+
       if (!response.ok) throw new Error("Network response was not ok");
 
       const data = await response.json();
       const aiResponseText = data.text;
+
+      // Update sisa pesan dari response server
+      if (typeof data.remaining === "number") {
+        setRemainingMessages(data.remaining);
+        if (data.remaining === 0) {
+          setIsRateLimited(true);
+        }
+      }
 
       const assistantMessageId = data.id || (Date.now() + 1).toString();
 
@@ -303,29 +340,69 @@ export default function ChatWidget() {
             </div>
 
             {/* Input Area */}
-            <form
-              onSubmit={handleSubmit}
-              className="p-3 bg-black-200 border-t border-white-100/10 flex items-center gap-2"
-            >
-              <input
-                className="flex-1 bg-black-100 border border-white-100/20 text-white rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-purple/50 placeholder:text-white-100/40"
-                value={input}
-                onChange={handleInputChange}
-                placeholder={
-                  language === "id"
-                    ? "Tanya sesuatu tentang saya..."
-                    : "Ask something about me..."
-                }
-                disabled={isLoading}
-              />
-              <button
-                type="submit"
-                disabled={isLoading || !input.trim()}
-                className="p-2.5 bg-purple hover:bg-purple/80 text-white rounded-xl transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
-              >
-                <Send className="w-4 h-4" />
-              </button>
-            </form>
+            <div className="bg-black-200 border-t border-white-100/10">
+              {/* Remaining messages counter */}
+              {remainingMessages !== null && !isRateLimited && (
+                <div className="px-3 pt-2 flex justify-end">
+                  <span
+                    className={`text-xs px-2 py-0.5 rounded-full border ${
+                      remainingMessages <= 1
+                        ? "text-red-400 border-red-400/30 bg-red-400/10"
+                        : remainingMessages <= 2
+                          ? "text-yellow-400 border-yellow-400/30 bg-yellow-400/10"
+                          : "text-white-100/40 border-white-100/10 bg-white-100/5"
+                    }`}
+                  >
+                    {language === "id"
+                      ? `${remainingMessages} pesan tersisa`
+                      : `${remainingMessages} messages left`}
+                  </span>
+                </div>
+              )}
+
+              {isRateLimited ? (
+                /* Blocked UI saat rate limit tercapai */
+                <div className="p-4 flex flex-col items-center gap-2 text-center">
+                  <div className="w-8 h-8 rounded-full bg-red-500/10 border border-red-500/30 flex items-center justify-center">
+                    <span className="text-sm">🚫</span>
+                  </div>
+                  <p className="text-xs font-semibold text-red-400">
+                    {language === "id"
+                      ? "Batas chat tercapai (5/5)"
+                      : "Chat limit reached (5/5)"}
+                  </p>
+                  <p className="text-xs text-white-100/40 leading-relaxed">
+                    {language === "id"
+                      ? "Kamu telah menggunakan semua 5 pesan untuk IP ini."
+                      : "You have used all 5 messages for your IP address."}
+                  </p>
+                </div>
+              ) : (
+                <form
+                  onSubmit={handleSubmit}
+                  className="p-3 flex items-center gap-2"
+                >
+                  <input
+                    className="flex-1 bg-black-100 border border-white-100/20 text-white rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-purple/50 placeholder:text-white-100/40"
+                    value={input}
+                    onChange={handleInputChange}
+                    placeholder={
+                      language === "id"
+                        ? "Tanya sesuatu tentang saya..."
+                        : "Ask something about me..."
+                    }
+                    disabled={isLoading}
+                  />
+                  <button
+                    type="submit"
+                    disabled={isLoading || !input.trim()}
+                    className="p-2.5 bg-purple hover:bg-purple/80 text-white rounded-xl transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
+                  >
+                    <Send className="w-4 h-4" />
+                  </button>
+                </form>
+              )}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
